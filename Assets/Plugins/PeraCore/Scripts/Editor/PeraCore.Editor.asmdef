@@ -1,5 +1,5 @@
 {
-    "name": "Core.Editor",
+    "name": "PeraCore.Editor",
     "rootNamespace": "Core.Editor",
     "references": [
         "PeraCore.Runtime"
