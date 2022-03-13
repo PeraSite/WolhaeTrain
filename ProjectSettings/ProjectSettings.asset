@@ -663,7 +663,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     Android: ODIN_INSPECTOR;ODIN_INSPECTOR_3
-    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3
+    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;USE_NEW_INPUT;TMP_PRESENT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
