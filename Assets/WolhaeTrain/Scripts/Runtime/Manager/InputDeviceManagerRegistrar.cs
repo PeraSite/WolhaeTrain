@@ -15,7 +15,7 @@ public class InputDeviceManagerRegistrar : MonoBehaviour {
 		if (!isRegistered) {
 			isRegistered = true;
 			_playerControl.Enable();
-			foreach (var inputAction in _playerControl.Player.Get()) {
+			foreach (var inputAction in _playerControl) {
 				InputDeviceManager.RegisterInputAction(inputAction.name, inputAction);
 			}
 		}
@@ -25,7 +25,7 @@ public class InputDeviceManagerRegistrar : MonoBehaviour {
 		if (isRegistered) {
 			isRegistered = false;
 			_playerControl.Disable();
-			foreach (var inputAction in _playerControl.Player.Get()) {
+			foreach (var inputAction in _playerControl) {
 				InputDeviceManager.UnregisterInputAction(inputAction.name);
 			}
 		}

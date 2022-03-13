@@ -2,6 +2,8 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,7 +11,7 @@ namespace PixelCrushers
 {
 
     /// <summary>
-    /// Manages a UI panel. When the panel is active and on top, it ensures that one of 
+    /// Manages a UI panel. When the panel is active and on top, it ensures that one of
     /// its Selectables is selected if using joystick or keyboard.
     /// </summary>
     [AddComponentMenu("")] // Use wrapper.
@@ -28,12 +30,6 @@ namespace PixelCrushers
         [Tooltip("Reselect previous selectable when disabling this panel.")]
         public bool selectPreviousOnDisable = true;
 
-        [Tooltip("When opening, set this animator trigger.")]
-        public string showAnimationTrigger = "Show";
-
-        [Tooltip("When closing, set this animator trigger.")]
-        public string hideAnimationTrigger = "Hide";
-
         public enum StartState { GameObjectState, Open, Closed }
 
         [Tooltip("Normally the panel considers itself open at start if the GameObject starts active (GameObjectState). To explicitly specify whether the panel should start open or closed, select Open or Closed from the dropdown.")]
@@ -50,6 +46,9 @@ namespace PixelCrushers
             get { return m_deactivateOnHidden; }
             set { m_deactivateOnHidden = value; }
         }
+
+        public CanvasGroup FadePanel;
+        public float AnimationTime = .3f;
 
         public UnityEvent onOpen = new UnityEvent();
         public UnityEvent onClose = new UnityEvent(); // Called when close starts.
@@ -93,26 +92,9 @@ namespace PixelCrushers
             set { m_panelState = value; }
         }
 
-        // Kept for backward compatibility:
-        public virtual bool waitForShowAnimation
-        {
-            get { return waitForShowAnimationToSetOpen; }
-            set { waitForShowAnimationToSetOpen = value; }
-        }
-
         public bool isOpen
         {
             get { return panelState == PanelState.Opening || panelState == PanelState.Open || (panelState == PanelState.Uninitialized && gameObject.activeInHierarchy); }
-        }
-
-        private UIAnimatorMonitor m_animatorMonitor = null;
-        public UIAnimatorMonitor animatorMonitor
-        {
-            get
-            {
-                if (m_animatorMonitor == null) m_animatorMonitor = new UIAnimatorMonitor(gameObject);
-                return m_animatorMonitor;
-            }
         }
 
         protected virtual void Start()
@@ -125,7 +107,6 @@ namespace PixelCrushers
                         panelState = PanelState.Opening;
                         gameObject.SetActive(true);
                         RefreshSelectablesList();
-                        animatorMonitor.SetTrigger(showAnimationTrigger, OnVisible, false);
                         break;
                     case StartState.Closed:
                         panelState = PanelState.Closed;
@@ -136,7 +117,6 @@ namespace PixelCrushers
                         {
                             panelState = PanelState.Opening;
                             RefreshSelectablesList();
-                            animatorMonitor.SetTrigger(showAnimationTrigger, OnVisible, false);
                         }
                         else
                         {
@@ -214,7 +194,13 @@ namespace PixelCrushers
             panelState = PanelState.Opening;
             gameObject.SetActive(true);
             onOpen.Invoke();
-            animatorMonitor.SetTrigger(showAnimationTrigger, OnVisible, waitForShowAnimation);
+
+            if (!FadePanel.SafeIsUnityNull()) {
+                FadePanel.alpha = 0f;
+                FadePanel.DOFade(1f, AnimationTime).OnComplete(OnVisible);
+            } else {
+                OnVisible();
+            }
 
             // With quick panel changes, panel may not reach OnEnable/OnDisable before being reused.
             // Update panelStack here also to handle this case:
@@ -228,7 +214,13 @@ namespace PixelCrushers
             if (panelState == PanelState.Closed || panelState == PanelState.Closing) return;
             panelState = PanelState.Closing;
             onClose.Invoke();
-            animatorMonitor.SetTrigger(hideAnimationTrigger, OnHidden, true);
+
+            if (!FadePanel.SafeIsUnityNull()) {
+                FadePanel.alpha = 1f;
+                FadePanel.DOFade(0f, AnimationTime).OnComplete(OnHidden);
+            } else {
+                OnHidden();
+            }
 
             // Deselect ours:
             if (UnityEngine.EventSystems.EventSystem.current != null && selectables.Contains(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject))

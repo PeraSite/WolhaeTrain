@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SinglePlayerCCGKit/Scenes/Game.unity
-    guid: d0b42c3c1f4c743cbabb99ffbe23de6a
+    path: Assets/WolhaeTrain/Scenes/MainMenu.unity
+    guid: 9a2c06f67411c484db8c6a34f9d695a3
+  - enabled: 1
+    path: Assets/WolhaeTrain/Scenes/Play.unity
+    guid: e2228690061656e449f88d5990fb78e1
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b99c5ba2df1e7734a868268898b83ea2,
       type: 2}

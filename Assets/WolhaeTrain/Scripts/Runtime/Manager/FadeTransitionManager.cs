@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class FadeTransitionManager : SceneTransitionManager {
 	public CanvasGroup Fade;
-	public float AnimationTime;
+	public float AnimationTime = 0.3f;
 
 	public BoolVariable IsFading;
 
