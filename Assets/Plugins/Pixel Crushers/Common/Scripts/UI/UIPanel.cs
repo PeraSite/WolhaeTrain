@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
@@ -48,6 +49,8 @@ namespace PixelCrushers
         }
 
         public CanvasGroup FadePanel;
+
+        [ShowIf("@FadePanel != null")]
         public float AnimationTime = .3f;
 
         public UnityEvent onOpen = new UnityEvent();

@@ -8,8 +8,7 @@ namespace PixelCrushers
     /// <summary>
     /// Provides inspector-selectable methods to control SaveSystem.
     /// </summary>
-    [AddComponentMenu("")] // Use wrapper instead.
-    public class SaveSystemMethods : MonoBehaviour
+    public class SaveSystemMethods : ScriptableObject
     {
 
         [Tooltip("Scene to load in LoadOrRestart method if no saved game exists yet.")]

@@ -769,7 +769,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297734426}
+      - m_Target: {fileID: 11400000, guid: 237f5f11a0660cb4b9542b508a6e9e5e, type: 2}
         m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, PixelCrushers
         m_MethodName: LoadFromSlot
         m_Mode: 3
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297734426}
+      - m_Target: {fileID: 11400000, guid: 237f5f11a0660cb4b9542b508a6e9e5e, type: 2}
         m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, PixelCrushers
         m_MethodName: RestartGame
         m_Mode: 5
@@ -1746,18 +1746,6 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   borderWidth: 0
   falloffDistance: 1
---- !u!114 &1297734426 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5093490925378682946, guid: ed6a068fa8cb32343b42d0bf4ad8ff7f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5093490926362729304}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d3329b6cd68ab4a99cdab5d7d333c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1323867563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,6 +2226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0543d373f69a401bbd033a1d17154d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ContinueButton: {fileID: 455553150}
 --- !u!1 &1801292905
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 611286483}
-  m_Father: {fileID: 5093490925378682957}
+  m_Father: {fileID: 4025627148862690387}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 611286485}
   - component: {fileID: 611286484}
   m_Layer: 0
-  m_Name: Fade
+  m_Name: FadeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,13 +202,11 @@ GameObject:
   - component: {fileID: 5093490925378682958}
   - component: {fileID: 5093490925378682959}
   - component: {fileID: 5093490925378682956}
-  - component: {fileID: 5093490925378682944}
   - component: {fileID: 5093490925378682945}
-  - component: {fileID: 5093490925378682946}
-  - component: {fileID: 3742847587165916729}
   - component: {fileID: 1297734434}
+  - component: {fileID: 2716877847673412038}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: CoreManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 505926190}
+  - {fileID: 4025627148862690387}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -301,19 +299,6 @@ MonoBehaviour:
   m_saveCurrentScene: 1
   m_framesToWaitBeforeApplyData: 1
   m_debug: 0
---- !u!114 &5093490925378682944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5093490925378682954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fbafe64f40b0694b8d4ec9c082f8bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_prettyPrint: 0
 --- !u!114 &5093490925378682945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,45 +315,6 @@ MonoBehaviour:
   encrypt: 0
   encryptionPassword: My Password
   m_debug: 0
---- !u!114 &5093490925378682946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5093490925378682954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d3329b6cd68ab4a99cdab5d7d333c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultStartingSceneName: Play
---- !u!114 &3742847587165916729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5093490925378682954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2136731e071bee419f51aed2a417dfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuInputButton: Cancel
-  guiSkin: {fileID: 0}
-  buttonSize: {x: 200, y: 30}
-  saveSlot: 1
-  instructions: Press Escape for menu.
-  instructionsDuration: 5
-  pauseWhileOpen: 0
-  allowCursorWhileOpen: 0
-  onShow:
-    m_PersistentCalls:
-      m_Calls: []
-  onHide:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1297734434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,4 +329,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 611286484}
   AnimationTime: 0.5
+  BlackTime: 0.5
   IsFading: {fileID: 11400000, guid: dcf5accec368fc7468dd62431c18370f, type: 2}
+--- !u!114 &2716877847673412038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093490925378682954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26091a52f5954de7a7c6a03c8292b16d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Format: 1
+--- !u!1 &6715102357471418305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4025627148862690387}
+  m_Layer: 0
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4025627148862690387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715102357471418305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 505926190}
+  m_Father: {fileID: 5093490925378682957}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
