@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: MoveBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":453.0,"y":-31.2},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_action":{"strafe":{"_name":"moveDirection","_targetVariableID":"52450589-ec8a-4474-9fbc-13aed7f306fe"},"turn":{},"forward":{"_value":1.0},"up":{},"moveSpeed":{"_value":1.0},"rotationSpeed":{"_value":1.0},"repeat":true,"$type":"NodeCanvas.Tasks.Actions.InputMove"},"_position":{"x":451.0023,"y":56.86874},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"},{"_action":{"strafe":{"_name":"Strafe","_targetVariableID":"671e6552-dbc8-4d9c-973a-03dfc8dcc6d4"},"turn":{"_name":"Turn"},"forward":{"_name":"Forward"},"up":{"_name":"Up"},"moveSpeed":{"_value":1.0},"rotationSpeed":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.InputMove"},"_position":{"x":521.9962,"y":499.7991},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.22
+    _category: 
+    _comments: 
+    _translation: {x: 142, y: 83}
+    _zoomFactor: 1
+  _haltSerialization: 0
