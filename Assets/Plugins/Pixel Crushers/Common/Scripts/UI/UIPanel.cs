@@ -199,6 +199,7 @@ namespace PixelCrushers
             onOpen.Invoke();
 
             if (!FadePanel.SafeIsUnityNull()) {
+                FadePanel.DOKill();
                 FadePanel.alpha = 0f;
                 FadePanel.DOFade(1f, AnimationTime).OnComplete(OnVisible);
             } else {
@@ -219,6 +220,7 @@ namespace PixelCrushers
             onClose.Invoke();
 
             if (!FadePanel.SafeIsUnityNull()) {
+                FadePanel.DOKill();
                 FadePanel.alpha = 1f;
                 FadePanel.DOFade(0f, AnimationTime).OnComplete(OnHidden);
             } else {

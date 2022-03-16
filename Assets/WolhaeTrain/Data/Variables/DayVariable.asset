@@ -9,16 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8a67b68db3d4650908f8cf6adeda60, type: 3}
+  m_Script: {fileID: 11500000, guid: 53426f85ab199ba4e9d2642e465b0eca, type: 3}
   m_Name: DayVariable
   m_EditorClassIdentifier: 
-  _developerDescription: "\uD50C\uB808\uC774\uD55C \uC77C \uC218"
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _developerDescription: 
   _id: 
-  _value: 1
-  _changed: {fileID: 11400000, guid: 6147cb0801b4d574e84d0befea050c0a, type: 2}
+  _value: 0
+  _changed: {fileID: 11400000, guid: b5b779733ec6fa943b47145bb164adb4, type: 2}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
-  _oldValue: 1
+  _oldValue: 0
   _initialValue: 1
   _preChangeTransformers: []

@@ -330,7 +330,7 @@ MonoBehaviour:
   Fade: {fileID: 611286484}
   AnimationTime: 0.5
   BlackTime: 0.5
-  IsFading: {fileID: 11400000, guid: dcf5accec368fc7468dd62431c18370f, type: 2}
+  IsFading: {fileID: 11400000, guid: 67c9c8a753074ab4b806ab8c0c608f9d, type: 2}
 --- !u!114 &2716877847673412038
 MonoBehaviour:
   m_ObjectHideFlags: 0
