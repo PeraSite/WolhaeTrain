@@ -46,6 +46,7 @@ namespace UnityAtoms
                     _onEvent -= (Action<T>)d;
                 }
             }
+            _replayBuffer.Clear();
         }
 
         /// <summary>

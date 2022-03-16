@@ -9,53 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feba2c6352714d92af2edb3791e6ef40, type: 3}
+  m_Script: {fileID: 11500000, guid: 53e5c52bfeaa0e64cb0d44b3fda34b63, type: 3}
   m_Name: Dad
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _value
-      Entry: 7
-      Data: 0|CharacterStat, Assembly-CSharp
-    - Name: Hunger
-      Entry: 3
-      Data: 50
-    - Name: Mental
-      Entry: 3
-      Data: 50
-    - Name: Effects
-      Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[StatusEffect, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _oldValue
-      Entry: 9
-      Data: 0
-    - Name: _initialValue
-      Entry: 9
-      Data: 0
   _developerDescription: 
   _id: 
-  _changed: {fileID: 0}
+  _value:
+    Type: 1
+    Hunger: 31
+    Mental: 75
+    Effects: 
+  _changed: {fileID: 11400000, guid: a093c587b8c7de54da1c3f732032dff9, type: 2}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
+  _oldValue:
+    Type: 1
+    Hunger: 34
+    Mental: 75
+    Effects: 
+  _initialValue:
+    Type: 1
+    Hunger: 40
+    Mental: 75
+    Effects: 
   _preChangeTransformers: []
