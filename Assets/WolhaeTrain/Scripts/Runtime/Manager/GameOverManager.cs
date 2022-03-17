@@ -1,20 +1,24 @@
-﻿using UnityAtoms;
+﻿using PixelCrushers;
+using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour {
-	[Header("엔딩 이벤트")]
+	[Header("엔딩")]
 	public EndingDataEvent EndingEvent;
+
+	public string EndingScene;
 
 	[Header("연료")]
 	public IntEvent FuelChangedEvent;
 
-	public EndingData FuelEnding;
+	public EndingDataConstant FuelEnding;
 
 	[Header("청결")]
 	public IntEvent CleanChangedEvent;
 
-	public EndingData CleanEnding;
+	public EndingDataConstant CleanEnding;
 
 
 	public void OnEnable() {
@@ -29,13 +33,15 @@ public class GameOverManager : MonoBehaviour {
 
 	private void OnFuelChanged(int newFuel) {
 		if (newFuel <= 0) {
-			EndingEvent.Raise(FuelEnding);
+			SceneManager.LoadScene(EndingScene);
+			EndingEvent.Raise(FuelEnding.Value);
 		}
 	}
 
 	private void OnCleanChanged(int newClean) {
 		if (newClean <= 0) {
-			EndingEvent.Raise(CleanEnding);
+			SceneManager.LoadScene(EndingScene);
+			EndingEvent.Raise(CleanEnding.Value);
 		}
 	}
 }

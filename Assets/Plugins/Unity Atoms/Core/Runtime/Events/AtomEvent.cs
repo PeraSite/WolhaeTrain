@@ -1,6 +1,6 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace UnityAtoms
@@ -35,6 +35,10 @@ namespace UnityAtoms
 
         private Queue<T> _replayBuffer = new Queue<T>();
 
+        public override void EditorInit() {
+            _replayBuffer.Clear();
+        }
+
         private void OnDisable()
         {
             // Clear all delegates when exiting play mode
@@ -46,7 +50,6 @@ namespace UnityAtoms
                     _onEvent -= (Action<T>)d;
                 }
             }
-            _replayBuffer.Clear();
         }
 
         /// <summary>

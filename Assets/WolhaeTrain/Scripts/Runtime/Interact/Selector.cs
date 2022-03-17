@@ -1,5 +1,6 @@
 ﻿using Sirenix.Utilities;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Selector : MonoBehaviour {
 	private Interactable _lastInteractable;
@@ -10,6 +11,8 @@ public class Selector : MonoBehaviour {
 	}
 
 	private void Update() {
+		if (EventSystem.current.IsPointerOverGameObject()) return;
+
 		var hit = Physics2D.GetRayIntersection(_cam.ScreenPointToRay(Input.mousePosition));
 
 		if (hit.collider.SafeIsUnityNull()) {

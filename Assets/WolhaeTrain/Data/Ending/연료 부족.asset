@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8a6dda8391c498f900e79df9157d774, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f89fcc98c3816142bd377fd65181eac, type: 3}
   m_Name: "\uC5F0\uB8CC \uBD80\uC871"
   m_EditorClassIdentifier: 
-  Title: "\uC5F0\uB8CC \uBD80\uC871"
-  Description: "\uC5F0\uB8CC\uAC00 \uBD80\uC871\uD574 \uAE30\uCC28\uAC00 \uBA48\uCDC4\uC2B5\uB2C8\uB2E4.
-    \uAC00\uC871\uC740 \uB354 \uC774\uC0C1 \uAC08 \uACF3\uC774 \uC5C6\uC2B5\uB2C8\uB2E4."
+  _developerDescription: 
+  _id: 
+  _value:
+    Title: "\uC5F0\uB8CC \uBD80\uC871"
+    Description: "\uC5F0\uB8CC\uAC00 \uBD80\uC871\uD558\uBA74 \uB098\uB294 \uC5D4\uB529\n"

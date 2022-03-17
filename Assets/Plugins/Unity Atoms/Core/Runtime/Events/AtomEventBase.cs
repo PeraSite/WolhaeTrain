@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace UnityAtoms
 {
     /// <summary>
@@ -81,6 +85,31 @@ namespace UnityAtoms
                 }
             }
         }
+
+        public virtual void EditorInit() {
+
+        }
+
+#if UNITY_EDITOR
+        /// <summary>
+        /// Set of all AtomEvent instances in editor.
+        /// </summary>
+        protected static HashSet<AtomEventBase> _instances = new();
+        protected virtual void OnEnable() {
+            if (EditorSettings.enterPlayModeOptionsEnabled)
+            {
+                _instances.Add(this);
+            }
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InvokeEditorInit() {
+            foreach (var instance in _instances) {
+                instance.EditorInit();
+            }
+        }
+#endif
+
 
     }
 }
