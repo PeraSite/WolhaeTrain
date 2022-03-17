@@ -1,23 +1,17 @@
-﻿using System.Linq;
-using Aarthificial.Reanimation;
-using Sirenix.Utilities;
+﻿using Aarthificial.Reanimation;
 using UnityEngine;
 
 public class AIController : MonoBehaviour {
 	public float MoveSpeed = 1f;
-	public float CheckDistance = 1f;
 	public float StateUpdateTime = 3f;
-	public LayerMask CheckMask;
 
 	private float _timer;
 	private int _moveInput;
 
-	private Collider2D _collider;
 	private Reanimator _reanimator;
 	private Rigidbody2D _rigidbody;
 
 	private void Awake() {
-		_collider = GetComponent<Collider2D>();
 		_reanimator = GetComponent<Reanimator>();
 		_rigidbody = GetComponent<Rigidbody2D>();
 	}
@@ -67,23 +61,5 @@ public class AIController : MonoBehaviour {
 		} else {
 			_moveInput = 0;
 		}
-	}
-
-
-	private RaycastHit2D[] hits = new RaycastHit2D[5];
-
-	private bool CanGo() {
-		var center = _collider.bounds.center;
-		var flipX = _moveInput < 0;
-		var target = center + new Vector3(flipX ? -CheckDistance : CheckDistance, 0, 0);
-		Physics2D.LinecastNonAlloc(center, target, hits, CheckMask);
-
-		foreach (var col in hits.Select(h => h.collider)) {
-			if (col.SafeIsUnityNull()) continue;
-			if (col == _collider) continue;
-			Debug.Log($"{gameObject.name} hits {col.gameObject.name}");
-			return false;
-		}
-		return true;
 	}
 }
