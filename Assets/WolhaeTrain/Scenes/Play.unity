@@ -3474,6 +3474,7 @@ GameObject:
   - component: {fileID: 845294387}
   - component: {fileID: 845294386}
   - component: {fileID: 845294389}
+  - component: {fileID: 845294390}
   m_Layer: 0
   m_Name: GameplayManager
   m_TagString: Untagged
@@ -3518,8 +3519,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8af98b11e614884a08739dbd5ac1255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayVariable: {fileID: 11400000, guid: 4dc43eda60ea1fb4a83b35569380f879, type: 2}
   NextDayEvent: {fileID: 11400000, guid: 841581c970feb6f4cb688208a6c2da6d, type: 2}
+  DayVariable: {fileID: 11400000, guid: 4dc43eda60ea1fb4a83b35569380f879, type: 2}
+  FuelVariable: {fileID: 11400000, guid: 6e9bbc536a6648344bfdae7d2380a341, type: 2}
+  CleanVariable: {fileID: 11400000, guid: 0a1285db312bde34cbeb59529e0a521a, type: 2}
+  FuelDecreaseAmount: 30
+  CleanDecreaseAmount: 5
 --- !u!4 &845294388
 Transform:
   m_ObjectHideFlags: 0
@@ -3547,6 +3552,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3aebadde77d46afbf8c7c3cb748957f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &845294390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845294385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c39d6c70d1d4459b69fb077aede6263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndingEvent: {fileID: 11400000, guid: a57a1191e999b6442ba27b9338d3ced8, type: 2}
+  FuelChangedEvent: {fileID: 11400000, guid: 6efd045e3189dd0448ca1f0911a3531a, type: 2}
+  FuelEnding:
+    Title: 
+    Description: 
+  CleanChangedEvent: {fileID: 11400000, guid: 90a02da66cb7382449834dcef036f41b, type: 2}
+  CleanEnding:
+    Title: 
+    Description: 
 --- !u!1 &847130636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5254,11 +5280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.5
-  CheckDistance: 1
   StateUpdateTime: 5
-  CheckMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &1224537144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7208,11 +7230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.5
-  CheckDistance: 1
   StateUpdateTime: 5
-  CheckMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &1683849675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9101,11 +9119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.5
-  CheckDistance: 1
   StateUpdateTime: 5
-  CheckMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &1971614436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9898,11 +9912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.5
-  CheckDistance: 1
   StateUpdateTime: 5
-  CheckMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &2068860684
 MonoBehaviour:
   m_ObjectHideFlags: 0
