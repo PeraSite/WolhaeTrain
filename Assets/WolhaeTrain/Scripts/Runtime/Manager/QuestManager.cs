@@ -54,21 +54,21 @@ public class QuestManager : MonoBehaviour {
 
 		for (var i = 0; i < Random.Range(1, MaxNormalQuestAmount + 1); i++) {
 			var normal = possible.Where(q => !q.IsStory).RandomOrNull();
-			if (normal != null) {
+			if (normal.Title != null) {
 				MakeQuestActive(normal);
 			}
 		}
 
 		if (Random.Range(0, 100) <= StoryQuestProbability) {
 			var story = possible.Where(q => q.IsStory).RandomOrNull();
-			if (story != null)
+			if (story.Title != null)
 				MakeQuestActive(story);
 		}
 	}
 
 	public void ClearRandom() {
 		var quest = ActiveQuests.RandomOrNull();
-		if (quest == null) return;
+		if (quest.Title == null) return;
 
 		MakeQuestClear(quest);
 	}

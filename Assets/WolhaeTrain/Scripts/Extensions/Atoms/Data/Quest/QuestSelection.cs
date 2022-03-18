@@ -1,6 +1,8 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
+[Serializable]
 public struct QuestSelection {
 	[BoxGroup("선택지")]
 	public string ButtonText, ResultText;

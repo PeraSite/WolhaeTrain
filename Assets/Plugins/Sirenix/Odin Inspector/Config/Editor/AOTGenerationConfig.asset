@@ -16,44 +16,60 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 
-  lastScan: 637825955689718595
+  lastScan: 637832586544474675
   supportSerializedTypes:
-  - TypeName: System.Boolean, mscorlib
+  - TypeName: CharacterType, WolhaeTrain.Extensions
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[Direction, Assembly-CSharp],[System.Boolean,
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Memo,
+      WolhaeTrain.Runtime]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
       mscorlib]], mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[Direction, Assembly-CSharp],[System.Collections.Generic.List`1[[UnityEngine.Transform,
-      UnityEngine.CoreModule]], mscorlib]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: Direction, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[Direction, Assembly-CSharp]],
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.Int32, mscorlib]],
       mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[Direction, Assembly-CSharp]],
+  - TypeName: System.Int32, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: IQuestAction, WolhaeTrain.Extensions
+    IsCustom: 0
+    Emit: 1
+  - TypeName: IQuestCondition, WolhaeTrain.Extensions
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
       mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: IInputMiddleware, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.List`1[[IInputMiddleware, Assembly-CSharp]],
+  - TypeName: System.Collections.Generic.List`1[[IQuestCondition, WolhaeTrain.Extensions]],
       mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule]],
+  - TypeName: System.Collections.Generic.List`1[[Quest, WolhaeTrain.Extensions]],
       mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: System.Object, mscorlib
+  - TypeName: System.Collections.Generic.List`1[[QuestSelection, WolhaeTrain.Extensions]],
+      mscorlib
     IsCustom: 0
     Emit: 1
-  - TypeName: UnityEngine.Transform, UnityEngine.CoreModule
+  - TypeName: Memo, WolhaeTrain.Runtime
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Quest, WolhaeTrain.Extensions
+    IsCustom: 0
+    Emit: 1
+  - TypeName: QuestSelection, WolhaeTrain.Extensions
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Boolean, mscorlib
     IsCustom: 0
     Emit: 1

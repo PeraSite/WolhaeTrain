@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using Sirenix.Utilities;
 using UnityEngine;
 
-public class Quest {
+public struct Quest {
 	[BoxGroup("정보")]
 	public string Title;
 
@@ -21,13 +24,16 @@ public class Quest {
 	[BoxGroup("정보")]
 	public bool IsStory;
 
-	public List<QuestSelection> Selections = new();
+	[OdinSerialize]
+	public List<QuestSelection> Selections;
 
+	[OdinSerialize]
 	[HideReferenceObjectPicker]
-	public List<IQuestCondition> Conditions = new();
+	public List<IQuestCondition> Conditions;
 
+	[OdinSerialize]
 	[HideReferenceObjectPicker]
-	public List<IQuestAction> Actions = new();
+	public List<IQuestAction> Actions;
 
 	public bool CheckConditions() => Conditions.All(condition => condition.Check());
 
@@ -37,15 +43,12 @@ public class Quest {
 	[ButtonGroup]
 	private void PrintConditions() => Debug.Log(Conditions.All(condition => condition.Check()));
 
-	protected bool Equals(Quest other) {
+	public bool Equals(Quest other) {
 		return Title == other.Title;
 	}
 
 	public override bool Equals(object obj) {
-		if (ReferenceEquals(null, obj)) return false;
-		if (ReferenceEquals(this, obj)) return true;
-		if (obj.GetType() != this.GetType()) return false;
-		return Equals((Quest) obj);
+		return obj is Quest other && Equals(other);
 	}
 
 	public override int GetHashCode() {

@@ -83,7 +83,10 @@ public class QuestGenerator : OdinEditorWindow {
 				_ => CharacterType.None
 			},
 			Description = data[3],
-			SpawnProbability = data[7].Replace("%", "").AsInt(0)
+			SpawnProbability = data[7].Replace("%", "").AsInt(0),
+			Selections = new List<QuestSelection>(),
+			Actions = new List<IQuestAction>(),
+			Conditions = new List<IQuestCondition>()
 		});
 
 		var selection1 = new QuestSelection {

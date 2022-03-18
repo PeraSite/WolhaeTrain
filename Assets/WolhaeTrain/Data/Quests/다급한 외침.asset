@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _value
       Entry: 7
-      Data: 0|Quest, Assembly-CSharp
+      Data: Quest, WolhaeTrain.Extensions
     - Name: Title
       Entry: 1
       Data: "\uB2E4\uAE09\uD55C \uC678\uCE68"
@@ -43,14 +43,14 @@ MonoBehaviour:
       Data: false
     - Name: Selections
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.List`1[[QuestSelection, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: QuestSelection, Assembly-CSharp
+      Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
       Data: "\uB9CE\uC774 \uAE09\uD558\uC2E0\uAC00\uBD10. \uC11C\uB85C \uB3D5\uACE0
@@ -79,7 +79,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: QuestSelection, Assembly-CSharp
+      Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
       Data: "\uBB34\uC2A8 \uC77C\uC778\uC904 \uC54C\uACE0? \uC131\uAC00\uC2E0 \uC77C\uC774
@@ -114,7 +114,7 @@ MonoBehaviour:
       Data: 
     - Name: Conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.List`1[[IQuestCondition, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12
@@ -127,7 +127,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12
