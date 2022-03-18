@@ -1,12 +1,12 @@
-﻿using System;
-using UnityAtoms;
-using UnityAtoms.BaseAtoms;
+﻿using UnityAtoms;
 using UnityEngine;
 
-public class CharacterDataContainer : MonoBehaviour {
+public class Character : MonoBehaviour {
+	[Header("이벤트")]
 	public CharacterStatEvent CharacterStatChangedEvent;
 	public StatusUIUpdateEvent StatusUIUpdateEvent;
 
+	[Header("스탯")]
 	public CharacterStatVariable Stat;
 	public Vector3 UIOffset;
 

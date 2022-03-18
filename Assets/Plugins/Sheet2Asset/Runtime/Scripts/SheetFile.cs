@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+#if UNITY_EDITOR
 using PeraCore.Editor;
+#endif
 using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
 
-[HideMonoScript]
 public class SheetFile : CustomScriptableObject {
 	[PropertyOrder(0)]
 	public string ID;

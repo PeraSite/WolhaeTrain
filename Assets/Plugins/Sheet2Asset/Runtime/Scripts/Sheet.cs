@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cysharp.Threading.Tasks;
-using PeraCore.Editor;
 using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
+#if UNITY_EDITOR
+using PeraCore.Editor;
+#endif
 
-[HideMonoScript]
 public class Sheet : CustomScriptableObject {
 	[HideInInspector]
 	[PropertyOrder(1)]

@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355403e8e0d841c194ee6c7f188aefe2, type: 3}
+  m_Name: "\uC704\uD5D8\uD55C \uB180\uC774"
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Selections
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, Assembly-CSharp
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uBB34\uC2A8 \uB180\uC774\uC9C0? \uB098\uB3C4 \uAC19\uC774 \uB080\uB2E4.\n(10%
+        \uD655\uB960\uB85C \uB2E4\uCE68 \uC0C1\uD0DC\uC774\uC0C1 \uD68D\uB4DD)"
+    - Name: ResultText
+      Entry: 1
+      Data: "\uB108\uBB34 \uC2E0\uB09C \uB098\uBA38\uC9C0 \uCE5C\uAD6C\uB4E4\uC774\uB791
+        \uB180\uB2E4\uAC00 \uC704\uD5D8\uD560 \uBED4 \uD588\uC5B4. "
+    - Name: Fuel
+      Entry: 3
+      Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: 0
+    - Name: Hunger
+      Entry: 3
+      Data: -5
+    - Name: Mental
+      Entry: 3
+      Data: 15
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, Assembly-CSharp
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uCE5C\uAD6C\uB4E4\uC774\uB791 \uB180\uACE0 \uC2F6\uC9C0\uB9CC \uC5C4\uB9C8\uD55C\uD14C
+        \uD63C\uB0A0 \uAC83 \uAC19\uC544.. \uAC70\uC808\uD55C\uB2E4."
+    - Name: ResultText
+      Entry: 1
+      Data: "\uCE5C\uAD6C\uB4E4\uC774 \uC5C6\uC73C\uB2C8\uAE4C \uC678\uB85C\uC6CC.."
+    - Name: Fuel
+      Entry: 3
+      Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: 0
+    - Name: Hunger
+      Entry: 3
+      Data: 0
+    - Name: Mental
+      Entry: 3
+      Data: -10
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Conditions
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Actions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Title: "\uC704\uD5D8\uD55C \uB180\uC774"
+  Description: "\uB2E4\uB978 \uCE78\uC5D0\uC11C \uCE5C\uAD6C\uB4E4\uC744 \uB9CC\uB0AC\uC5B4.
+    \uCE5C\uAD6C\uB4E4\uC774 \uC7AC\uBC0C\uB294 \uB180\uC774\uB97C \uD558\uC790\uB294\uB370.. "
+  Talker: 4
+  SpawnProbability: 40
