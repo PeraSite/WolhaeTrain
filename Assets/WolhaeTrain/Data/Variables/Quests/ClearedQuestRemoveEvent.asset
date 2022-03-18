@@ -25,4 +25,4 @@ MonoBehaviour:
       Entry: 6
       Data: 
   _developerDescription: 
-  _replayBufferSize: 1
+  _replayBufferSize: 5

@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-#if UNITY_EDITOR
-using PeraCore.Editor;
-#endif
 using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -36,14 +33,18 @@ public class SheetFile : CustomScriptableObject {
 		Worksheets.Remove(selected);
 
 #if UNITY_EDITOR
-		selected.DeleteObject();
+		UnityEditor.Undo.DestroyObjectImmediate(selected);
+		UnityEditor.AssetDatabase.SaveAssets();
+		UnityEditor.AssetDatabase.Refresh();
 #endif
 	}
 
 #if UNITY_EDITOR
 	[ContextMenu("Delete Self")]
 	private void DeleteSelf() {
-		this.DeleteObject();
+		UnityEditor.Undo.DestroyObjectImmediate(this);
+		UnityEditor.AssetDatabase.SaveAssets();
+		UnityEditor.AssetDatabase.Refresh();
 	}
 #endif
 }

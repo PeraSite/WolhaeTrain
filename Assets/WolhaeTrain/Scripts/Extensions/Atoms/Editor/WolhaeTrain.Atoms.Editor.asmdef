@@ -1,0 +1,22 @@
+{
+    "name": "WolhaeTrain.Atoms.Editor",
+    "rootNamespace": "",
+    "references": [
+        "UnityAtoms.UnityAtomsBaseAtoms.Editor",
+        "UnityAtoms.UnityAtomsCore.Editor",
+        "UnityAtoms.UnityAtomsBaseAtoms.Runtime",
+        "UnityAtoms.UnityAtomsCore.Runtime",
+        "WolhaeTrain.Extensions"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

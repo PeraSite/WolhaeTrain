@@ -1,0 +1,27 @@
+{
+    "name": "WolhaeTrain.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cd0624525ae0db442b9d3d7f27953406",
+        "GUID:55e860d6caea31c40989464d3b9d7201",
+        "GUID:de076f81348b6474da286cb231bcaedf",
+        "GUID:380cda8a42522de4b820cbc8c9961ec7",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:199ea8ef61cbfd04981549e94d6043c2",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:dc47925d1a5fa2946bdd37746b2b5d48",
+        "GUID:48ccd27d8dcd67844af9a9a5acf794c1",
+        "GUID:20c55a645d90bd94482d61cce18cb1b9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

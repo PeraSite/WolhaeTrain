@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using UnityAtoms;
@@ -31,7 +32,8 @@ public class QuestManager : MonoBehaviour {
 		MakeQuestActiveEvent.Register(MakeQuestActive);
 		MakeQuestClearEvent.Register(MakeQuestClear);
 
-		Debug.Log(ActiveQuests.Count);
+		Debug.Log("QuestDatabase" + string.Join(",", QuestDatabase.Select(q => q.Title)));
+		Debug.Log("Active Quests" + string.Join(",", ActiveQuests.Select(q => q.Title)));
 		if (ActiveQuests.Count == 0)
 			GenerateNewQuest();
 	}

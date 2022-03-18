@@ -4,9 +4,6 @@ using System.Linq;
 using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
-#if UNITY_EDITOR
-using PeraCore.Editor;
-#endif
 
 public class Sheet : CustomScriptableObject {
 	[HideInInspector]
@@ -35,7 +32,9 @@ public class Sheet : CustomScriptableObject {
 #if UNITY_EDITOR
 	[ContextMenu("Delete Self")]
 	private void DeleteSelf() {
-		this.DeleteObject();
+		UnityEditor.Undo.DestroyObjectImmediate(this);
+		UnityEditor.AssetDatabase.SaveAssets();
+		UnityEditor.AssetDatabase.Refresh();
 	}
 #endif
 }

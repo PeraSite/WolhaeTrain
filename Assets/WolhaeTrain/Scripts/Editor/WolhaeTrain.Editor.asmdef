@@ -1,0 +1,25 @@
+{
+    "name": "WolhaeTrain.Editor",
+    "rootNamespace": "",
+    "references": [
+        "PeraCore.Editor",
+        "PeraCore.Runtime",
+        "UnityAtoms.UnityAtomsBaseAtoms.Editor",
+        "UnityAtoms.UnityAtomsBaseAtoms.Runtime",
+        "UnityAtoms.UnityAtomsCore.Editor",
+        "UnityAtoms.UnityAtomsCore.Runtime",
+        "WolhaeTrain.Extensions",
+        "Sheet2Asset.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -47,7 +47,7 @@ public class VariableSaver : Saver {
 
 	public override void OnRestartGame() {
 		foreach (var variable in Variables) {
-			variable.Reset();
+			variable.ResetValue();
 		}
 		foreach (var list in Lists) {
 			list.Clear();

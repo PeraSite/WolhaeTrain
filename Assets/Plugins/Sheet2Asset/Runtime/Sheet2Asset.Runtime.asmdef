@@ -1,0 +1,16 @@
+{
+    "name": "Sheet2Asset.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:380cda8a42522de4b820cbc8c9961ec7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

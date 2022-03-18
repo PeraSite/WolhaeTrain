@@ -7,8 +7,7 @@ public class SpriteOutline : MonoBehaviour {
 
 	private SpriteRenderer _spriteRenderer;
 
-	private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor");
-	private static readonly int OutlineThicknessID = Shader.PropertyToID("_OutlineThickness");
+	private static readonly int OutlinePixelWidth = Shader.PropertyToID("_OutlinePixelWidth");
 
 	private void Awake() {
 		_spriteRenderer = GetComponent<SpriteRenderer>();
@@ -24,11 +23,11 @@ public class SpriteOutline : MonoBehaviour {
 
 	[ButtonGroup]
 	public void ActivateOutline() {
-		_spriteRenderer.material.EnableKeyword("OUTBASE_ON");
+		_spriteRenderer.material.SetFloat(OutlinePixelWidth, 1.0f);
 	}
 
 	[ButtonGroup]
 	public void DeactivateOutline() {
-		_spriteRenderer.material.DisableKeyword("OUTBASE_ON");
+		_spriteRenderer.material.SetFloat(OutlinePixelWidth, 0.0f);
 	}
 }

@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8667f0e2e337aad4da8a0a32a1352716, type: 3}
   m_Name: FuelChangedEvent
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _developerDescription: 
-  _replayBufferSize: 0
+  _replayBufferSize: 3
   _inspectorRaiseValue: 0

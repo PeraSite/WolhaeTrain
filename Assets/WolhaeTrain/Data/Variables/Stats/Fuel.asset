@@ -12,13 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53426f85ab199ba4e9d2642e465b0eca, type: 3}
   m_Name: Fuel
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _developerDescription: 
   _id: 
-  _value: 0
+  _value: 70
   _changed: {fileID: 11400000, guid: 6efd045e3189dd0448ca1f0911a3531a, type: 2}
   _changedWithHistory: {fileID: 0}
-  _triggerChangedOnOnEnable: 0
+  _triggerChangedOnOnEnable: 1
   _triggerChangedWithHistoryOnOnEnable: 0
-  _oldValue: 20
+  _oldValue: 70
   _initialValue: 70
   _preChangeTransformers: []

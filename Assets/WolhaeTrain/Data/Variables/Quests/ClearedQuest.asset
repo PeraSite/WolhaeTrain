@@ -35,6 +35,6 @@ MonoBehaviour:
       Data: 
   _developerDescription: 
   Cleared: {fileID: 0}
-  _startCleared: 0
+  _startCleared: 1
   Added: {fileID: 11400000, guid: 58436130315c8ac439af9f327d8400a7, type: 2}
   Removed: {fileID: 11400000, guid: 29b60cc92f66b3d42afa96b7f31fb847, type: 2}

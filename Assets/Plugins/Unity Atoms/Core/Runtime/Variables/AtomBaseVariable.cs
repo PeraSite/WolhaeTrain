@@ -23,7 +23,7 @@ namespace UnityAtoms
         /// <summary>
         /// Abstract method that could be implemented to reset the Variable value.
         /// </summary>
-        public abstract void Reset(bool shouldTriggerEvents = false);
+        public abstract void ResetValue(bool shouldTriggerEvents = true);
     }
 
     /// <summary>
@@ -71,7 +71,7 @@ namespace UnityAtoms
         /// <summary>
         /// Not implemented.abstract Throws Exception
         /// </summary>
-        public override void Reset(bool shouldTriggerEvents = false)
+        public override void ResetValue(bool shouldTriggerEvents = true)
         {
             throw new NotImplementedException();
         }

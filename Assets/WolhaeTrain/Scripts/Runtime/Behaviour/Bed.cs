@@ -8,9 +8,11 @@ public class Bed : MonoBehaviour {
 
 	public VoidEvent EndDayEvent;
 
+	public StringEvent AlertEvent;
+
 	public void TryEndDay() {
 		if (ActiveQuest.Count > 0) {
-			Debug.Log("퀘스트를 다 깨야합니다.");
+			AlertEvent.Raise("퀘스트를 다 깨야합니다.");
 			return;
 		}
 

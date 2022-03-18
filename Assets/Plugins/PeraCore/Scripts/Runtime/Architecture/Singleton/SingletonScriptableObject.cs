@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 namespace PeraCore.Runtime {
@@ -14,12 +13,12 @@ namespace PeraCore.Runtime {
 #if UNITY_EDITOR
 					// If we're running the game in the editor, the "Preloaded Assets" array will be ignored.
 					// So get all the assets of type T using AssetDatabase.
-					var objsGUID = AssetDatabase.FindAssets("t:" + typeof(T).Name);
+					var objsGUID = UnityEditor.AssetDatabase.FindAssets("t:" + typeof(T).Name);
 					var count = objsGUID.Length;
 					objs = new T[count];
 					for (var i = 0; i < count; i++) {
-						objs[i] = AssetDatabase.LoadAssetAtPath<T>(
-							AssetDatabase.GUIDToAssetPath(objsGUID[i]));
+						objs[i] = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(
+							UnityEditor.AssetDatabase.GUIDToAssetPath(objsGUID[i]));
 					}
 #else
                 // Get all asset of type T from Resources or loaded assets.

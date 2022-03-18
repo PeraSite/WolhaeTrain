@@ -1,5 +1,4 @@
 ﻿using PixelCrushers;
-using UnityEditor;
 using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour {
@@ -8,7 +7,7 @@ public class MainMenuUI : MonoBehaviour {
 
 	public void QuitGame() {
 #if UNITY_EDITOR
-		EditorApplication.isPlaying = false;
+		UnityEditor.EditorApplication.isPlaying = false;
 #endif
 		Application.Quit();
 	}

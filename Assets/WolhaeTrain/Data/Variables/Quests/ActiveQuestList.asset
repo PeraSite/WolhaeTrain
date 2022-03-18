@@ -26,7 +26,244 @@ MonoBehaviour:
       Data: 0|System.Collections.Generic.List`1[[Quest, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|Quest, Assembly-CSharp
+    - Name: Title
+      Entry: 1
+      Data: "\uC194\uAE43\uD55C \uAC70\uB798"
+    - Name: Description
+      Entry: 1
+      Data: "\uC624\uB298 \uB2E4\uB978 \uCE78\uC5D0\uC11C \uB9CC\uB09C \uC678\uBD80\uC778\uC774
+        \uAC15\uC544\uC9C0\uC640 \uC2DD\uB7C9\uC744 \uAC70\uB798\uD558\uACE0 \uC2F6\uB300.
+        \uB0B4\uC77C \uB2E4\uC2DC \uCC3E\uC544\uC628\uB2E4\uB294\uB370..."
+    - Name: Talker
+      Entry: 3
+      Data: 2
+    - Name: SpawnProbability
+      Entry: 3
+      Data: 60
+    - Name: IsStory
+      Entry: 5
+      Data: false
+    - Name: Selections
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, Assembly-CSharp
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uC2DD\uB7C9\uC774 \uBD80\uC871\uD588\uB294\uB370 \uB2E4\uD589\uC774\uC57C.
+        \uC8C4\uCC45\uAC10\uC774 \uB4E4\uC9C0\uB9CC \uAD50\uD658\uD55C\uB2E4."
+    - Name: ResultText
+      Entry: 1
+      Data: "\uC6B0\uB9AC \uAC00\uC871\uC744 \uC704\uD55C \uC120\uD0DD\uC77C\uAC70\uC57C..
+        \uC544\uB9C8\uB3C4.."
+    - Name: Fuel
+      Entry: 3
       Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: 0
+    - Name: Hunger
+      Entry: 3
+      Data: 10
+    - Name: Mental
+      Entry: 3
+      Data: -5
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, Assembly-CSharp
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uAC15\uC544\uC9C0\uB294 \uC6B0\uB9AC \uAC00\uC871\uC774\uC57C. \uC808\uB300
+        \uADF8\uB7F4 \uC218 \uC5C6\uB2E4."
+    - Name: ResultText
+      Entry: 1
+      Data: "\uC6B0\uB9AC \uACE0\uBD09\uC774\uB294 \uC18C\uC911\uD574."
+    - Name: Fuel
+      Entry: 3
+      Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: -5
+    - Name: Hunger
+      Entry: 3
+      Data: 0
+    - Name: Mental
+      Entry: 3
+      Data: 10
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Conditions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Actions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|Quest, Assembly-CSharp
+    - Name: Title
+      Entry: 1
+      Data: "\uC0C8\uB85C\uC6B4 \uCE5C\uAD6C"
+    - Name: Description
+      Entry: 1
+      Data: "\uAE30\uCC28 \uBC16\uC5D0\uC11C \uAC15\uC544\uC9C0 \uC6B8\uC74C \uC18C\uB9AC\uAC00
+        \uB4E4\uB824!"
+    - Name: Talker
+      Entry: 3
+      Data: 4
+    - Name: SpawnProbability
+      Entry: 3
+      Data: 60
+    - Name: IsStory
+      Entry: 5
+      Data: false
+    - Name: Selections
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, Assembly-CSharp
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uAD76\uC5C8\uC744 \uAC15\uC544\uC9C0\uB97C \uC0DD\uAC01\uD558\uBA74
+        \uB9C8\uC74C\uC774 \uC544\uD30C... \uB370\uB824\uC628\uB2E4."
+    - Name: ResultText
+      Entry: 1
+      Data: "\uC2DD\uB7C9\uC740 \uC904\uC5B4\uB4E4\uACA0\uC9C0\uB9CC \uAC15\uC544\uC9C0\uB97C
+        \uB370\uB824\uC628\uB2E4\uACE0 \uD558\uB2C8 \uB2E4\uB4E4 \uAE30\uBED0\uBCF4\uC5EC."
+    - Name: Fuel
+      Entry: 3
+      Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: -10
+    - Name: Hunger
+      Entry: 3
+      Data: -5
+    - Name: Mental
+      Entry: 3
+      Data: 10
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, Assembly-CSharp
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uC6B0\uB9AC \uC0B4\uAE30\uB3C4 \uD798\uB4E0\uB370 \uBB34\uC2A8... \uB370\uB824\uC624\uC9C0
+        \uC54A\uB294\uB2E4."
+    - Name: ResultText
+      Entry: 1
+      Data: "\uAC15\uC544\uC9C0\uB294 \uB2E4\uB978 \uACF3\uC73C\uB85C \uAC00\uBC84\uB838\uC5B4."
+    - Name: Fuel
+      Entry: 3
+      Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: 10
+    - Name: Hunger
+      Entry: 3
+      Data: 5
+    - Name: Mental
+      Entry: 3
+      Data: 0
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Conditions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Actions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -35,6 +272,6 @@ MonoBehaviour:
       Data: 
   _developerDescription: 
   Cleared: {fileID: 0}
-  _startCleared: 0
+  _startCleared: 1
   Added: {fileID: 11400000, guid: 02e3ac88c7471de44aef9b1e584fbf9a, type: 2}
   Removed: {fileID: 11400000, guid: 1cebf56d11dd2b941bae93344d067dab, type: 2}
