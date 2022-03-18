@@ -18,6 +18,9 @@ public class Quest {
 	[SuffixLabel("%", true)]
 	public int SpawnProbability;
 
+	[BoxGroup("정보")]
+	public bool IsStory;
+
 	public List<QuestSelection> Selections = new();
 
 	[HideReferenceObjectPicker]

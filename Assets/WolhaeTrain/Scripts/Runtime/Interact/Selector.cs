@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Selector : MonoBehaviour {
+
+	public LayerMask Mask;
+
 	private Interactable _lastInteractable;
 	private Camera _cam;
 
@@ -13,7 +16,7 @@ public class Selector : MonoBehaviour {
 	private void Update() {
 		if (EventSystem.current.IsPointerOverGameObject()) return;
 
-		var hit = Physics2D.GetRayIntersection(_cam.ScreenPointToRay(Input.mousePosition));
+		var hit = Physics2D.GetRayIntersection(_cam.ScreenPointToRay(Input.mousePosition), float.MaxValue, Mask);
 
 		if (hit.collider.SafeIsUnityNull()) {
 			if (!_lastInteractable.SafeIsUnityNull()) {

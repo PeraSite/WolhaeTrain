@@ -1,42 +1,99 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using UnityAtoms;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class QuestManager : MonoBehaviour {
+	[Header("이벤트")]
+	public VoidEvent GenerateNewQuestEvent;
+
+	public QuestEvent MakeQuestActiveEvent;
+	public QuestEvent MakeQuestClearEvent;
+
+	[Header("목록")]
 	public QuestValueList QuestDatabase;
+
 	public QuestValueList ActiveQuests;
 	public QuestValueList ClearedQuest;
 
-	[Button]
-	public void GetNewQuest() {
-		var possible = QuestDatabase.Where(q => !IsActiveQuest(q) && !IsClearedQuest(q) && q.CheckConditions());
-		Debug.Log(string.Join(",", possible.Select(q => q.Title)));
+	[Header("확률")]
+	[SuffixLabel("%", true)]
+	public int MaxNormalQuestAmount = 2;
+
+	public int StoryQuestProbability = 40;
+
+	private void OnEnable() {
+		GenerateNewQuestEvent.Register(GenerateNewQuest);
+		MakeQuestActiveEvent.Register(MakeQuestActive);
+		MakeQuestClearEvent.Register(MakeQuestClear);
+
+		Debug.Log(ActiveQuests.Count);
+		if (ActiveQuests.Count == 0)
+			GenerateNewQuest();
 	}
 
-	public void MakeActiveQuest(Quest quest) {
+	private void OnDisable() {
+		GenerateNewQuestEvent.Unregister(GenerateNewQuest);
+		MakeQuestActiveEvent.Unregister(MakeQuestActive);
+		MakeQuestClearEvent.Unregister(MakeQuestClear);
+	}
+
+	[Button]
+	public void GenerateNewQuest() {
+		var possible = QuestDatabase.Where(
+			q =>
+				!IsActiveQuest(q) && !IsClearedQuest(q) && q.CheckConditions() &&
+				Random.Range(0, 100) <= q.SpawnProbability
+		).ToList();
+
+		for (var i = 0; i < Random.Range(1, MaxNormalQuestAmount + 1); i++) {
+			var normal = possible.Where(q => !q.IsStory).RandomOrNull();
+			if (normal != null) {
+				MakeQuestActive(normal);
+			}
+		}
+
+		if (Random.Range(0, 100) <= StoryQuestProbability) {
+			var story = possible.Where(q => q.IsStory).RandomOrNull();
+			if (story != null)
+				MakeQuestActive(story);
+		}
+	}
+
+	public void ClearRandom() {
+		var quest = ActiveQuests.RandomOrNull();
+		if (quest == null) return;
+
+		MakeQuestClear(quest);
+	}
+
+	public void MakeQuestActive(Quest quest) {
 		if (IsActiveQuest(quest)) return;
 		if (IsClearedQuest(quest)) return;
-
+		Debug.Log("New active quest:" + quest.Title);
 		ActiveQuests.Add(quest);
 	}
 
-	public void MakeClearQuest(Quest quest) {
+	public void MakeQuestClear(Quest quest) {
 		if (IsClearedQuest(quest)) return;
-
+		Debug.Log("Quest Cleared: " + quest.Title);
 		ActiveQuests.Remove(quest);
 		ClearedQuest.Add(quest);
 	}
 
 
 	[Button]
-	private void MakeActiveQuestConstant(QuestConstant quest) {
-		MakeActiveQuest(quest.Value);
+	private void MakeQuestActiveConstant(QuestConstant quest) {
+		MakeQuestActive(quest.Value);
 	}
 
 	[Button]
-	private void MakeClearQuestConstant(QuestConstant quest) {
-		MakeClearQuest(quest.Value);
+	private void MakeQuestClearConstant(QuestConstant quest) {
+		MakeQuestClear(quest.Value);
 	}
 
 	private bool IsActiveQuest(Quest quest) {

@@ -41,6 +41,7 @@ namespace PeraCore.Runtime {
 			return source.SelectMany(ts => ts);
 		}
 
+		[CanBeNull]
 		public static T RandomOrNull<T>(this IEnumerable<T> source) {
 			var list = source.ToList();
 			return list.IsNullOrEmpty() ? default : list[list.RandomIndex()];

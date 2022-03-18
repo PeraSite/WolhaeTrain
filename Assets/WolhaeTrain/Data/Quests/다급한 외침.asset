@@ -38,6 +38,9 @@ MonoBehaviour:
     - Name: SpawnProbability
       Entry: 3
       Data: 50
+    - Name: IsStory
+      Entry: 5
+      Data: false
     - Name: Selections
       Entry: 7
       Data: 1|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],

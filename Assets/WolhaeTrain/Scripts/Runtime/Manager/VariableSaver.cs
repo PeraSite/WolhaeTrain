@@ -21,7 +21,9 @@ public class VariableSaver : Saver {
 			GetAtomID,
 			list => list.IList
 		);
-		return SaveSystem.Serialize(varDict) + Separator + SaveSystem.Serialize(listDict);
+		var recordData = SaveSystem.Serialize(varDict) + Separator + SaveSystem.Serialize(listDict);
+
+		return recordData;
 	}
 
 	public override void ApplyData(string data) {
@@ -39,9 +41,7 @@ public class VariableSaver : Saver {
 		foreach (var list in Lists) {
 			var id = GetAtomID(list);
 			var valueList = listDict[id];
-			foreach (var value in valueList) {
-				list.Add(value);
-			}
+			list.IList = valueList;
 		}
 	}
 

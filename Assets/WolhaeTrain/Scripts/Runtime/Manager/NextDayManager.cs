@@ -7,6 +7,8 @@ public class NextDayManager : MonoBehaviour {
 	[Header("이벤트")]
 	public VoidEvent NextDayEvent;
 
+	public VoidEvent GenerateNewQuestEvent;
+
 	[Header("변수")]
 	public IntVariable DayVariable;
 	public IntVariable FuelVariable;
@@ -33,6 +35,7 @@ public class NextDayManager : MonoBehaviour {
 		DayVariable.Add(1);
 		FuelVariable.Value = Mathf.Clamp(FuelVariable.Value - FuelDecreaseAmount, 0, 100);
 		CleanVariable.Value = Mathf.Clamp(CleanVariable.Value - CleanDecreaseAmount, 0, 100);
+		GenerateNewQuestEvent.Raise();
 		SaveSystem.SaveToSlot(SaveSlot);
 	}
 }
