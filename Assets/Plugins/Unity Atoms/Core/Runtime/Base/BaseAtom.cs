@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace UnityAtoms
@@ -6,7 +7,7 @@ namespace UnityAtoms
     /// None generic base class for all Atoms.
     /// </summary>
     [AtomsSearchable]
-    public abstract class BaseAtom : ScriptableObject
+    public abstract class BaseAtom : SerializedScriptableObject
     {
         /// <summary>
         /// A description of the Atom made for documentation purposes.

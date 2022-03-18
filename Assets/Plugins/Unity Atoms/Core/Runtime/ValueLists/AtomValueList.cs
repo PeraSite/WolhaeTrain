@@ -42,6 +42,20 @@ namespace UnityAtoms
         [SerializeField]
         private List<T> list = new List<T>();
 
+        protected override void EditorInit() {
+            if (_startCleared) {
+                list.Clear();
+            }
+        }
+
+        public override void Add(object obj) {
+            Add((T) obj);
+        }
+
+        public override void Remove(object obj) {
+            Remove((T) obj);
+        }
+
         /// <summary>
         /// Add an item to the list.
         /// </summary>
@@ -215,6 +229,6 @@ namespace UnityAtoms
 
         #endregion // Observable
 
-        protected override IList IList { get => List; }
+        public override IList IList { get => List; set => list = (List<T>) value; }
     }
 }

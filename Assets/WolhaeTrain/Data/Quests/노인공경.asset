@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355403e8e0d841c194ee6c7f188aefe2, type: 3}
+  m_Script: {fileID: 11500000, guid: d37cba921453a7540b60268e5ada6db8, type: 3}
   m_Name: "\uB178\uC778\uACF5\uACBD"
   m_EditorClassIdentifier: 
   serializationData:
@@ -21,9 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: _value
+      Entry: 7
+      Data: 0|Quest, Assembly-CSharp
+    - Name: Title
+      Entry: 1
+      Data: "\uB178\uC778\uACF5\uACBD"
+    - Name: Description
+      Entry: 1
+      Data: "\uC624\uB298 \uB2E4\uB978 \uCE78\uC5D0 \uACC4\uC2E0 \uD560\uC544\uBC84\uC9C0\uAC00
+        \uBA39\uC744 \uAC83 \uC880 \uB2EC\uB77C\uACE0 \uBD80\uD0C1\uD558\uC168\uC5B4.
+        \uBCF4\uB2C8\uAE4C \uB9CE\uC774 \uAD76\uC73C\uC2E0 \uAC83 \uAC19\uC740\uB370.."
+    - Name: Talker
+      Entry: 3
+      Data: 4
+    - Name: SpawnProbability
+      Entry: 3
+      Data: 60
     - Name: Selections
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -93,7 +110,7 @@ MonoBehaviour:
       Data: 
     - Name: Conditions
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -106,7 +123,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -117,9 +134,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Title: "\uB178\uC778\uACF5\uACBD"
-  Description: "\uC624\uB298 \uB2E4\uB978 \uCE78\uC5D0 \uACC4\uC2E0 \uD560\uC544\uBC84\uC9C0\uAC00
-    \uBA39\uC744 \uAC83 \uC880 \uB2EC\uB77C\uACE0 \uBD80\uD0C1\uD558\uC168\uC5B4.
-    \uBCF4\uB2C8\uAE4C \uB9CE\uC774 \uAD76\uC73C\uC2E0 \uAC83 \uAC19\uC740\uB370.."
-  Talker: 4
-  SpawnProbability: 60
+    - Name: 
+      Entry: 8
+      Data: 
+  _developerDescription: 
+  _id: 

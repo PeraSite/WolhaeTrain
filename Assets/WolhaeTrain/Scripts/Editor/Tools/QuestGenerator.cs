@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.WebPages;
@@ -7,6 +6,7 @@ using PeraCore.Editor;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
+using UnityAtoms;
 using UnityEditor;
 using UnityEngine;
 
@@ -34,7 +34,7 @@ public class QuestGenerator : OdinEditorWindow {
 
 	public bool GenerateAsset;
 
-	public QuestList List;
+	public QuestValueList List;
 
 	[Button]
 	private void Generate() {
@@ -56,14 +56,14 @@ public class QuestGenerator : OdinEditorWindow {
 		}
 
 		if (GenerateAsset) {
-			if(!List.SafeIsUnityNull()) List.Quests.Clear();
+			if(!List.SafeIsUnityNull()) List.Clear();
 
 			grid.Select(GenerateQuestionData)
 				.ForEach(data => {
-					if (data.Title == "n") return;
-					data.CreateAsset(Path.Combine(TargetFolder, $"{data.Title}.asset"));
+					if (data.Value.Title == "n") return;
+					data.CreateAsset(Path.Combine(TargetFolder, $"{data.Value.Title}.asset"));
 					if (!List.SafeIsUnityNull()) {
-						List.Quests.Add(data);
+						List.Add(data.Value);
 					}
 				});
 			AssetDatabase.Refresh();
@@ -71,19 +71,21 @@ public class QuestGenerator : OdinEditorWindow {
 	}
 
 
-	private QuestData GenerateQuestionData(List<string> data) {
-		var instance = CreateInstance<QuestData>();
-		instance.Title = data[1];
-		instance.Talker = data[2] switch {
-			"아빠" => CharacterType.Dad,
-			"엄마" => CharacterType.Mom,
-			"딸" => CharacterType.Daughter,
-			"아들" => CharacterType.Son,
-			_ => CharacterType.None
-		};
-		instance.Description = data[3];
+	private QuestConstant GenerateQuestionData(List<string> data) {
+		var instance = CreateInstance<QuestConstant>();
+		instance.InitConstant(new Quest {
+			Title = data[1],
+			Talker = data[2] switch {
+				"아빠" => CharacterType.Dad,
+				"엄마" => CharacterType.Mom,
+				"딸" => CharacterType.Daughter,
+				"아들" => CharacterType.Son,
+				_ => CharacterType.None
+			},
+			Description = data[3],
+			SpawnProbability = data[7].Replace("%", "").AsInt(0)
+		});
 
-		instance.SpawnProbability = data[7].Replace("%", "").AsInt(0);
 		var selection1 = new QuestSelection {
 			ButtonText = data[8],
 			Fuel = data[9].AsInt(0),
@@ -104,8 +106,8 @@ public class QuestGenerator : OdinEditorWindow {
 			canSelectIfHaveEffect = data[6] == "선택지 2"
 		};
 
-		instance.Selections.Add(selection1);
-		instance.Selections.Add(selection2);
+		instance.Value.Selections.Add(selection1);
+		instance.Value.Selections.Add(selection2);
 		return instance;
 	}
 }

@@ -72,10 +72,9 @@ namespace UnityAtoms
             OnEventNoValue -= listener.OnEventRaised;
         }
 
-        public void OnBeforeSerialize() { }
-
-        public virtual void OnAfterDeserialize()
+        protected override void OnAfterDeserialize()
         {
+            base.OnAfterDeserialize();
             // Clear all delegates when exiting play mode
             if (OnEventNoValue != null)
             {

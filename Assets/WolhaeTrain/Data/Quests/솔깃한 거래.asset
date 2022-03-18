@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355403e8e0d841c194ee6c7f188aefe2, type: 3}
+  m_Script: {fileID: 11500000, guid: d37cba921453a7540b60268e5ada6db8, type: 3}
   m_Name: "\uC194\uAE43\uD55C \uAC70\uB798"
   m_EditorClassIdentifier: 
   serializationData:
@@ -21,9 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: _value
+      Entry: 7
+      Data: 0|Quest, Assembly-CSharp
+    - Name: Title
+      Entry: 1
+      Data: "\uC194\uAE43\uD55C \uAC70\uB798"
+    - Name: Description
+      Entry: 1
+      Data: "\uC624\uB298 \uB2E4\uB978 \uCE78\uC5D0\uC11C \uB9CC\uB09C \uC678\uBD80\uC778\uC774
+        \uAC15\uC544\uC9C0\uC640 \uC2DD\uB7C9\uC744 \uAC70\uB798\uD558\uACE0 \uC2F6\uB300.
+        \uB0B4\uC77C \uB2E4\uC2DC \uCC3E\uC544\uC628\uB2E4\uB294\uB370..."
+    - Name: Talker
+      Entry: 3
+      Data: 2
+    - Name: SpawnProbability
+      Entry: 3
+      Data: 60
     - Name: Selections
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -93,7 +110,7 @@ MonoBehaviour:
       Data: 
     - Name: Conditions
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -106,7 +123,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -117,9 +134,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Title: "\uC194\uAE43\uD55C \uAC70\uB798"
-  Description: "\uC624\uB298 \uB2E4\uB978 \uCE78\uC5D0\uC11C \uB9CC\uB09C \uC678\uBD80\uC778\uC774
-    \uAC15\uC544\uC9C0\uC640 \uC2DD\uB7C9\uC744 \uAC70\uB798\uD558\uACE0 \uC2F6\uB300.
-    \uB0B4\uC77C \uB2E4\uC2DC \uCC3E\uC544\uC628\uB2E4\uB294\uB370..."
-  Talker: 2
-  SpawnProbability: 60
+    - Name: 
+      Entry: 8
+      Data: 
+  _developerDescription: 
+  _id: 

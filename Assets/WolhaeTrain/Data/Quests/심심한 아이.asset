@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355403e8e0d841c194ee6c7f188aefe2, type: 3}
+  m_Script: {fileID: 11500000, guid: d37cba921453a7540b60268e5ada6db8, type: 3}
   m_Name: "\uC2EC\uC2EC\uD55C \uC544\uC774"
   m_EditorClassIdentifier: 
   serializationData:
@@ -21,9 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: _value
+      Entry: 7
+      Data: 0|Quest, Assembly-CSharp
+    - Name: Title
+      Entry: 1
+      Data: "\uC2EC\uC2EC\uD55C \uC544\uC774"
+    - Name: Description
+      Entry: 1
+      Data: "\uC544\uC774\uB4E4\uC774 \uAE30\uCC28 \uC548\uC5D0\uB9CC \uC788\uC5B4\uC11C
+        \uADF8\uB7F0\uC9C0 \uC2EC\uC2EC\uD574\uD558\uACE0 \uC788\uC5B4. \uC7A0\uAE50
+        \uB180\uC544\uC904\uAE4C?"
+    - Name: Talker
+      Entry: 3
+      Data: 2
+    - Name: SpawnProbability
+      Entry: 3
+      Data: 60
     - Name: Selections
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -94,7 +111,7 @@ MonoBehaviour:
       Data: 
     - Name: Conditions
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -107,7 +124,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -118,9 +135,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Title: "\uC2EC\uC2EC\uD55C \uC544\uC774"
-  Description: "\uC544\uC774\uB4E4\uC774 \uAE30\uCC28 \uC548\uC5D0\uB9CC \uC788\uC5B4\uC11C
-    \uADF8\uB7F0\uC9C0 \uC2EC\uC2EC\uD574\uD558\uACE0 \uC788\uC5B4. \uC7A0\uAE50
-    \uB180\uC544\uC904\uAE4C?"
-  Talker: 2
-  SpawnProbability: 60
+    - Name: 
+      Entry: 8
+      Data: 
+  _developerDescription: 
+  _id: 

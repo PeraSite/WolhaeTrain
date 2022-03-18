@@ -1,7 +1,7 @@
 ﻿using Aarthificial.Reanimation;
 using UnityEngine;
 
-public class AIController : MonoBehaviour {
+public class CharacterController : MonoBehaviour {
 	public float MoveSpeed = 1f;
 	public float StateUpdateTime = 3f;
 

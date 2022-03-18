@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355403e8e0d841c194ee6c7f188aefe2, type: 3}
+  m_Script: {fileID: 11500000, guid: d37cba921453a7540b60268e5ada6db8, type: 3}
   m_Name: "\uB2E4\uAE09\uD55C \uC678\uCE68"
   m_EditorClassIdentifier: 
   serializationData:
@@ -21,9 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: _value
+      Entry: 7
+      Data: 0|Quest, Assembly-CSharp
+    - Name: Title
+      Entry: 1
+      Data: "\uB2E4\uAE09\uD55C \uC678\uCE68"
+    - Name: Description
+      Entry: 1
+      Data: "\uB2E4\uB978 \uCE78\uC5D0\uC11C \uC628 \uD55C \uBD84\uC774 \uAE09\uD558\uAC8C
+        \uC790\uAE30\uB97C \uB3C4\uC640\uB2EC\uB77C\uB294\uB370 \uC5B4\uB5A1\uD558\uC9C0.
+        \uB3C4\uC640\uC904\uAE4C?"
+    - Name: Talker
+      Entry: 3
+      Data: 1
+    - Name: SpawnProbability
+      Entry: 3
+      Data: 50
     - Name: Selections
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.List`1[[QuestSelection, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -94,7 +111,7 @@ MonoBehaviour:
       Data: 
     - Name: Conditions
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[IQuestCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -107,7 +124,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[IQuestAction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -118,9 +135,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Title: "\uB2E4\uAE09\uD55C \uC678\uCE68"
-  Description: "\uB2E4\uB978 \uCE78\uC5D0\uC11C \uC628 \uD55C \uBD84\uC774 \uAE09\uD558\uAC8C
-    \uC790\uAE30\uB97C \uB3C4\uC640\uB2EC\uB77C\uB294\uB370 \uC5B4\uB5A1\uD558\uC9C0.
-    \uB3C4\uC640\uC904\uAE4C?"
-  Talker: 1
-  SpawnProbability: 50
+    - Name: 
+      Entry: 8
+      Data: 
+  _developerDescription: 
+  _id: 

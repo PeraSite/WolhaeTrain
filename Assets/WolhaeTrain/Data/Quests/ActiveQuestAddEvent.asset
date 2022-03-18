@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45bc0c07040449898e8abe8a91853196, type: 3}
-  m_Name: QuestList
+  m_Script: {fileID: 11500000, guid: 08712cceb1fc0344ab8c51a43a64bd80, type: 3}
+  m_Name: ActiveQuestAddEvent
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -20,5 +20,9 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  Quests: []
+    SerializationNodes:
+    - Name: _inspectorRaiseValue
+      Entry: 6
+      Data: 
+  _developerDescription: 
+  _replayBufferSize: 1

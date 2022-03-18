@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using PixelCrushers;
+using Sirenix.OdinInspector;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -18,6 +19,8 @@ public class NextDayManager : MonoBehaviour {
 	[SuffixLabel("Per day", true)]
 	public int CleanDecreaseAmount = 5;
 
+	public int SaveSlot = 1;
+
 	private void OnEnable() {
 		NextDayEvent.Register(OnNextDay);
 	}
@@ -30,5 +33,6 @@ public class NextDayManager : MonoBehaviour {
 		DayVariable.Add(1);
 		FuelVariable.Value = Mathf.Clamp(FuelVariable.Value - FuelDecreaseAmount, 0, 100);
 		CleanVariable.Value = Mathf.Clamp(CleanVariable.Value - CleanDecreaseAmount, 0, 100);
+		SaveSystem.SaveToSlot(SaveSlot);
 	}
 }

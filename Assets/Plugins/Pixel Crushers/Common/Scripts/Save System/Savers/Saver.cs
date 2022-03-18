@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace PixelCrushers
@@ -9,7 +10,7 @@ namespace PixelCrushers
     /// Abstract base class for a "saver", which is a component that contributes
     /// to saved game data.
     /// </summary>
-    public abstract class Saver : MonoBehaviour
+    public abstract class Saver : SerializedMonoBehaviour
     {
 
         [Tooltip("Save data under this key. If blank, use GameObject name.")]
