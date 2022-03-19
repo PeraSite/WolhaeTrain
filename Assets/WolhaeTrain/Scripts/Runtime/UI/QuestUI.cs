@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PeraCore.Runtime;
 using PixelCrushers;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using TMPro;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
@@ -17,6 +15,7 @@ public class QuestUI : SerializedMonoBehaviour {
 	public TextMeshProUGUI DayText;
 
 	[Header("퀘스트")]
+	public QuestValueList QuestDatabase;
 	public QuestValueList ActiveQuest;
 
 	public Memo MemoPrefab;
@@ -24,7 +23,6 @@ public class QuestUI : SerializedMonoBehaviour {
 	public Dictionary<int, Memo> CreatedMemo = new(); //Dictionary<position, CreatedMemo>
 
 	public QuestEvent MakeQuestActiveEvent;
-
 	public QuestEvent OnActiveQuestAddEvent;
 	public QuestEvent OnActiveQuestRemoveEvent;
 	public QuestEvent OnClearQuestAddEvent;
@@ -64,7 +62,7 @@ public class QuestUI : SerializedMonoBehaviour {
 
 		FuelChangedEvent.Unregister(OnFuelChanged);
 		CleanChangedEvent.Unregister(OnCleanChanged);
-
+		
 		foreach (var memo in CreatedMemo.Values) {
 			Destroy(memo.gameObject);
 		}

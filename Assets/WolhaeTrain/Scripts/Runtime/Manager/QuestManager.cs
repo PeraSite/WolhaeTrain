@@ -12,6 +12,8 @@ public class QuestManager : MonoBehaviour {
 	[Header("이벤트")]
 	public VoidEvent GenerateNewQuestEvent;
 
+	public IntPairEvent QuestSelectedEvent;
+
 	public QuestEvent MakeQuestActiveEvent;
 	public QuestEvent MakeQuestClearEvent;
 
@@ -31,6 +33,7 @@ public class QuestManager : MonoBehaviour {
 		GenerateNewQuestEvent.Register(GenerateNewQuest);
 		MakeQuestActiveEvent.Register(MakeQuestActive);
 		MakeQuestClearEvent.Register(MakeQuestClear);
+		QuestSelectedEvent.Register(OnQuestSelected);
 
 		Debug.Log("QuestDatabase" + string.Join(",", QuestDatabase.Select(q => q.Title)));
 		Debug.Log("Active Quests" + string.Join(",", ActiveQuests.Select(q => q.Title)));
@@ -42,6 +45,7 @@ public class QuestManager : MonoBehaviour {
 		GenerateNewQuestEvent.Unregister(GenerateNewQuest);
 		MakeQuestActiveEvent.Unregister(MakeQuestActive);
 		MakeQuestClearEvent.Unregister(MakeQuestClear);
+		QuestSelectedEvent.Unregister(OnQuestSelected);
 	}
 
 	[Button]
@@ -70,6 +74,15 @@ public class QuestManager : MonoBehaviour {
 		var quest = ActiveQuests.RandomOrNull();
 		if (quest.Title == null) return;
 
+		MakeQuestClear(quest);
+	}
+
+	private void OnQuestSelected(IntPair pair) {
+		var (questID, selectIndex) = pair;
+		var quest = QuestDatabase.First(q => q.ID == questID);
+		if (quest.Title == null) return;
+		if (!IsActiveQuest(quest)) return;
+		Debug.Log("User select " + quest.Title + " to " + selectIndex);
 		MakeQuestClear(quest);
 	}
 

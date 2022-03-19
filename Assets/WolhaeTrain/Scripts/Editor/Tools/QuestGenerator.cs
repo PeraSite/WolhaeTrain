@@ -74,6 +74,7 @@ public class QuestGenerator : OdinEditorWindow {
 	private QuestConstant GenerateQuestionData(List<string> data) {
 		var instance = CreateInstance<QuestConstant>();
 		instance.InitConstant(new Quest {
+			ID = data[0].AsInt(0),
 			Title = data[1],
 			Talker = data[2] switch {
 				"아빠" => CharacterType.Dad,

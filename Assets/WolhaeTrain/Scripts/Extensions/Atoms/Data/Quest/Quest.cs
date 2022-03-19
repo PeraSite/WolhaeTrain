@@ -8,6 +8,9 @@ using UnityEngine;
 
 public struct Quest {
 	[BoxGroup("정보")]
+	public int ID;
+
+	[BoxGroup("정보")]
 	public string Title;
 
 	[BoxGroup("정보")]

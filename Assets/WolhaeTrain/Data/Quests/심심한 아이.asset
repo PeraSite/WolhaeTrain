@@ -24,6 +24,9 @@ MonoBehaviour:
     - Name: _value
       Entry: 7
       Data: Quest, WolhaeTrain.Extensions
+    - Name: ID
+      Entry: 3
+      Data: 5
     - Name: Title
       Entry: 1
       Data: "\uC2EC\uC2EC\uD55C \uC544\uC774"
