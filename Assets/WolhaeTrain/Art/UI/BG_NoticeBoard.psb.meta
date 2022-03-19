@@ -204,7 +204,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 221
-      y: 50
+      y: 61
       width: 5
       height: 7
     spriteID: bb7aff0c27bfd84419601fb83332639c
@@ -216,7 +216,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 96, y: -19}
+    uvTransform: {x: 96, y: -8}
   - name: Pin_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -259,6 +259,27 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 202, y: -15}
+  - name: FuelGauge
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 221
+      y: 50
+      width: 20
+      height: 3
+    spriteID: 74badf0129e24854a9c6e1b59d6ab50b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 183, y: -15}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -270,7 +291,7 @@ ScriptedImporter:
       y: 4
       width: 160
       height: 90
-    spriteID: 38efceb3e7f615947bce081ccd708144
+    spriteID: 76598964145e3d14ca99bb229d92cc63
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -382,7 +403,7 @@ ScriptedImporter:
     mosaicPosition: {x: 236, y: 4}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   - name: Day
     spriteName: Day
     isGroup: 0
@@ -392,17 +413,17 @@ ScriptedImporter:
     mosaicPosition: {x: 48, y: 102}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   - name: Pin_1
     spriteName: Pin_1
     isGroup: 0
     parentIndex: -1
     spriteID: bb7aff0c27bfd84419601fb83332639c
     layerID: 62
-    mosaicPosition: {x: 221, y: 50}
+    mosaicPosition: {x: 221, y: 61}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   - name: Pin_2
     spriteName: Pin_2
     isGroup: 0
@@ -412,7 +433,7 @@ ScriptedImporter:
     mosaicPosition: {x: 236, y: 24}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   - name: Check
     spriteName: Check
     isGroup: 0
@@ -422,13 +443,23 @@ ScriptedImporter:
     mosaicPosition: {x: 236, y: 37}
     flatten: 0
     isImported: 1
+    isVisible: 0
+  - name: FuelGauge
+    spriteName: FuelGauge
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 74badf0129e24854a9c6e1b59d6ab50b
+    layerID: 85
+    mosaicPosition: {x: 221, y: 50}
+    flatten: 0
+    isImported: 1
     isVisible: 1
   - name: Background
     spriteName: Background
     isGroup: 0
     parentIndex: -1
-    spriteID: 38efceb3e7f615947bce081ccd708144
-    layerID: 41
+    spriteID: 76598964145e3d14ca99bb229d92cc63
+    layerID: 84
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1

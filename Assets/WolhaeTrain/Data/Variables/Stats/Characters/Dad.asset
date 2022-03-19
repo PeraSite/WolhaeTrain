@@ -12,20 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e5c52bfeaa0e64cb0d44b3fda34b63, type: 3}
   m_Name: Dad
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _developerDescription: 
   _id: 
   _value:
     Type: 1
-    Hunger: 31
+    Hunger: 40
     Mental: 75
     Effects: 
   _changed: {fileID: 11400000, guid: a093c587b8c7de54da1c3f732032dff9, type: 2}
-  _changedWithHistory: {fileID: 0}
+  _changedWithHistory: {fileID: 11400000, guid: 3aa328eb169965b4493af802c5345820,
+    type: 2}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
   _oldValue:
     Type: 1
-    Hunger: 34
+    Hunger: 40
     Mental: 75
     Effects: 
   _initialValue:

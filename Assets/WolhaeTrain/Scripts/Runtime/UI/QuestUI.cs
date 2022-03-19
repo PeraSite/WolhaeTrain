@@ -3,10 +3,12 @@ using System.Linq;
 using DG.Tweening;
 using PixelCrushers;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using TMPro;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestUI : SerializedMonoBehaviour {
 	[Header("일차")]
@@ -17,11 +19,12 @@ public class QuestUI : SerializedMonoBehaviour {
 
 	[Header("퀘스트")]
 	public QuestValueList QuestDatabase;
+
 	public QuestValueList ActiveQuest;
 
 	public Memo MemoPrefab;
 	public List<RectTransform> MemoPositions = new();
-	public Dictionary<int, Memo> CreatedMemo = new(); //Dictionary<position, CreatedMemo>
+	private Dictionary<int, Memo> CreatedMemo = new(); //Dictionary<position, CreatedMemo>
 	public Canvas Canvas;
 
 	public QuestEvent MakeQuestActiveEvent;
@@ -30,14 +33,21 @@ public class QuestUI : SerializedMonoBehaviour {
 	public QuestEvent OnClearQuestAddEvent;
 	public QuestEvent OnClearQuestRemoveEvent;
 
-	[Header("공통 스탯")]
+	[Header("연료")]
 	public IntVariable FuelVariable;
+
 	public IntEvent FuelChangedEvent;
 	public TextMeshProUGUI FuelText;
+	public Image FuelGauge;
 
+
+	[Header("청결")]
 	public IntVariable CleanVariable;
+
 	public IntEvent CleanChangedEvent;
 	public TextMeshProUGUI CleanText;
+	public List<GameObject> Checks;
+
 
 	[Header("지도")]
 	public RectTransform Map;
@@ -67,7 +77,7 @@ public class QuestUI : SerializedMonoBehaviour {
 
 		FuelChangedEvent.Unregister(OnFuelChanged);
 		CleanChangedEvent.Unregister(OnCleanChanged);
-		
+
 		foreach (var memo in CreatedMemo.Values) {
 			Destroy(memo.gameObject);
 		}
@@ -76,12 +86,25 @@ public class QuestUI : SerializedMonoBehaviour {
 
 	private void OnCleanChanged(int clean) {
 		Debug.Log("Clean changed to" + clean);
-		CleanText.text = clean + "%";
+		CleanText.text = clean switch {
+			>= 100 => "VERY\nCLEAN",
+			>= 80 => "CLEAN",
+			>= 60 => "USABLE",
+			>= 40 => "DIRTY",
+			>= 20 => "VERY\nDIRTY",
+			_ => "<color=#840808>DEATH</color>"
+		};
+		var checkAmount = clean / 20;
+		Debug.Log(checkAmount);
+		Checks.ForEach((check, index) => {
+			check.SetActive(index <= checkAmount);
+		});
 	}
 
 	private void OnFuelChanged(int fuel) {
 		Debug.Log("Fuel changed to" + fuel);
-		FuelText.text = fuel + "%";
+		FuelText.text = fuel.ToString();
+		FuelGauge.fillAmount = fuel / 100f;
 	}
 
 	private void OnDayChanged(int day) {
@@ -133,6 +156,8 @@ public class QuestUI : SerializedMonoBehaviour {
 	}
 
 	public void MoveMapPin() {
+		ParentPinTransform.gameObject.SetActive(true);
+
 		var screenPosition = Input.mousePosition;
 		RectTransformUtility.ScreenPointToLocalPointInRectangle(Map, screenPosition, null, out var localPosition);
 		ParentPinTransform.anchoredPosition = localPosition;

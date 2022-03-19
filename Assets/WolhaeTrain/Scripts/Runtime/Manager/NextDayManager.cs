@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using PixelCrushers;
 using Sirenix.OdinInspector;
 using UnityAtoms;
@@ -48,12 +49,49 @@ public class NextDayManager : SerializedMonoBehaviour {
 		FuelVariable.Value = Clamp100(FuelVariable.Value - FuelDecreaseAmount);
 		CleanVariable.Value = Clamp100(CleanVariable.Value - CleanDecreaseAmount);
 		foreach (var stat in Stats) {
+			var willAddedEffects = new HashSet<StatusEffect>(stat.Value.Effects);
+
+			//test
+			if (Random.Range(0, 100) <= 60) {
+				willAddedEffects.Add(StatusEffect.Exhaust);
+			}
+
+			//탈진
+			if (stat.Value.Hunger <= 20) {
+				if (Random.Range(0, 100) <= 30) {
+					willAddedEffects.Add(StatusEffect.Exhaust);
+				}
+			}
+
+			//감기
+			if (CleanVariable.Value <= 20) {
+				if (Random.Range(0, 100) <= 30) {
+					willAddedEffects.Add(StatusEffect.Cold);
+				}
+			}
+
+			//감염
+			if (CleanVariable.Value <= 10 && stat.Value.Mental <= 10) {
+				if (Random.Range(0, 100) <= 5) {
+					willAddedEffects.Add(StatusEffect.Infect);
+				}
+			}
+
+			//미침
+			if (stat.Value.Mental <= 10) {
+				if (Random.Range(0, 100) <= 20) {
+					willAddedEffects.Add(StatusEffect.Crazy);
+				}
+			}
+
 			stat.Value = stat.Value with {
 				Hunger = Clamp100(stat.Value.Hunger - HungerDecreaseAmount),
 				Mental = Clamp100(stat.Value.Mental - MentalDecreaseAmount),
+				Effects = willAddedEffects.ToArray()
 			};
 		}
 		GenerateNewQuestEvent.Raise();
+
 		SaveSystem.SaveToSlot(SaveSlot);
 	}
 

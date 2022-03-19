@@ -1,13 +1,18 @@
-﻿using UnityAtoms;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Sirenix.OdinInspector;
+using UnityAtoms;
 using UnityEngine;
 
 public class Character : MonoBehaviour {
 	[Header("이벤트")]
 	public CharacterStatEvent CharacterStatChangedEvent;
+
 	public StatusUIUpdateEvent StatusUIUpdateEvent;
 
 	[Header("스탯")]
 	public CharacterStatVariable Stat;
+
 	public Vector3 UIOffset;
 
 	private bool _isShowing;
@@ -56,5 +61,14 @@ public class Character : MonoBehaviour {
 			ShowPanel = true,
 			Position = _transform.position + UIOffset,
 		});
+	}
+
+	[Button]
+	public void AddEffect(StatusEffect Effect) {
+		var effects = Stat.Value.Effects.ToHashSet();
+		effects.Add(Effect);
+		Stat.Value = Stat.Value with {
+			Effects = effects.ToArray()
+		};
 	}
 }

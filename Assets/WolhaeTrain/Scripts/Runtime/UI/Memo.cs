@@ -17,11 +17,13 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 	public TextMeshProUGUI Title;
 	public TextMeshProUGUI Description;
 	public List<TextMeshProUGUI> Selection;
+	public Image Icon;
 
 	[Header("데이터")]
 	public IntPairEvent OnQuestSelected;
 
-	public List<Sprite> Sprites;
+	public List<Sprite> MemoSprites;
+	public List<Sprite> IconSprites;
 
 	[HideInInspector]
 	public Quest Quest;
@@ -35,9 +37,10 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 	private void Awake() {
 		_rectTransform = GetComponent<RectTransform>();
 	}
+
 	[Button]
 	public void Init(Quest quest, int position, Canvas canvas) {
-		Image.sprite = Sprites.Random();
+		Image.sprite = MemoSprites.Random();
 		var sprite = Image.sprite;
 		Image.rectTransform.sizeDelta = new Vector2(sprite.rect.width * 10, sprite.rect.height * 10);
 		Title.text = quest.Title;
@@ -47,6 +50,7 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 		Position = position;
 		Quest = quest;
 		_canvas = canvas;
+		Icon.sprite = IconSprites[(int) (quest.Talker - 1)];
 	}
 
 	public void OnSelected(int selectIndex) {

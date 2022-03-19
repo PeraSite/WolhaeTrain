@@ -1,19 +1,19 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.WebPages;
+using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using TMPro;
-using UnityAtoms;
-using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-public class StatusUI : MonoBehaviour {
+public class StatusUI : SerializedMonoBehaviour {
 	public StatusUIUpdateEvent StatusUIUpdateEvent;
 
 	public GameObject Panel;
 
 	public TextMeshProUGUI Hunger;
 	public TextMeshProUGUI Mental;
-	public TextMeshProUGUI Effect;
+	public Dictionary<StatusEffect, GameObject> RowData;
 
 	private Camera _cam;
 	private CharacterType _lastType;
@@ -40,8 +40,11 @@ public class StatusUI : MonoBehaviour {
 				_lastType = payload.Stat.Type;
 				Hunger.text = payload.Stat.Hunger.ToString();
 				Mental.text = payload.Stat.Mental.ToString();
-				var effectText = string.Join(", ", payload.Stat.Effects.Select(e => e.GetName()));
-				Effect.text = effectText.IsEmpty() ? "없음" : effectText;
+
+				RowData.ForEach(pair => {
+					var (type, obj) = pair;
+					obj.SetActive(payload.Stat.Effects.Contains(type));
+				});
 			}
 			var screenPoint = _cam.WorldToScreenPoint(payload.Position);
 			Panel.transform.position = screenPoint;
