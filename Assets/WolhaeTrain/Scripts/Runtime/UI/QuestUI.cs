@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using PixelCrushers;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -21,6 +22,7 @@ public class QuestUI : SerializedMonoBehaviour {
 	public Memo MemoPrefab;
 	public List<RectTransform> MemoPositions = new();
 	public Dictionary<int, Memo> CreatedMemo = new(); //Dictionary<position, CreatedMemo>
+	public Canvas Canvas;
 
 	public QuestEvent MakeQuestActiveEvent;
 	public QuestEvent OnActiveQuestAddEvent;
@@ -40,7 +42,10 @@ public class QuestUI : SerializedMonoBehaviour {
 	[Header("지도")]
 	public RectTransform Map;
 
+	public RectTransform ParentPinTransform;
 	public RectTransform PinTransform;
+	public float PinStartY = 8;
+	public float PinEndY = 35;
 
 	private void OnEnable() {
 		DayChangedEvent.Register(OnDayChanged);
@@ -110,7 +115,7 @@ public class QuestUI : SerializedMonoBehaviour {
 		var parent = MemoPositions.Where((pos, index) => !CreatedMemo.ContainsKey(index)).First();
 		var index = MemoPositions.IndexOf(parent);
 		var newMemo = Instantiate(MemoPrefab, parent);
-		newMemo.Init(quest, index);
+		newMemo.Init(quest, index, Canvas);
 		CreatedMemo[index] = newMemo;
 	}
 
@@ -130,6 +135,9 @@ public class QuestUI : SerializedMonoBehaviour {
 	public void MoveMapPin() {
 		var screenPosition = Input.mousePosition;
 		RectTransformUtility.ScreenPointToLocalPointInRectangle(Map, screenPosition, null, out var localPosition);
-		PinTransform.anchoredPosition = localPosition;
+		ParentPinTransform.anchoredPosition = localPosition;
+		PinTransform.DOKill();
+		PinTransform.anchoredPosition = new Vector2(0, PinStartY);
+		PinTransform.DOAnchorPosY(PinEndY, 0.2f);
 	}
 }

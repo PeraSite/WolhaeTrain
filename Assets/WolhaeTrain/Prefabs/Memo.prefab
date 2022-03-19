@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC15\uC544\uC9C0\uC5D0\uAC8C\uB294 \uBBF8\uC548\uD558\uC9C0\uB9CC \uAC1C
-    \uC0AC\uB8CC\uB97C \uBE8F\uC5B4 \uBA39\uB294\uB2E4."
+  m_text: "\uC804\uBB38\uAC00\uC778 \uB0B4\uAC00 \uB098\uC124 \uCC28\uB840\uB2E4.
+    \uC77C\uB2E8 \uACE0\uCE5C\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0354ea2fee9372d498c19f62f478bea8, type: 2}
   m_sharedMaterial: {fileID: -8952903127173210463, guid: 0354ea2fee9372d498c19f62f478bea8,
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_fontSize: 25
   m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 23.6
+  m_fontSizeMax: 25
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3381538903243200671}
   - component: {fileID: 7940528426217842407}
   - component: {fileID: 3362149293270534354}
-  - component: {fileID: 7427351632633766048}
+  - component: {fileID: 6097088251600029342}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -204,8 +204,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC6B0\uB9AC \uAC00\uC871\uB4E4\uC774 \uC2DD\uC0AC\uD558\uAE30\uC5D0\uB294
-    \uC74C\uC2DD\uC774 \uBD80\uC871\uD55C\uB370 \uC5B4\uB5A1\uD558\uC9C0?"
+  m_text: "\uD0D0\uD5D8\uD558\uB358 \uC911 \uB0AF\uC120 \uC774\uB4E4\uC744 \uB9CC\uB0AC\uC5B4.
+    \uADF8\uB4E4\uC740 \uB0A8\uB9E4\uAC19\uC558\uACE0 \uC6B0\uB9AC\uC5D0\uAC8C \uC6B0\uD638\uC801\uC774\uC5C8\uC5B4.
+    \uB0A8\uB9E4\uB294 \uC6B0\uB9AC\uC5D0\uAC8C \uB2E4\uC74C \uBAA9\uC801\uC9C0\uB97C
+    \uB9D0\uD574\uC8FC\uACE0 \uAC70\uAE38 \uCC3E\uC544\uC624\uB77C\uB358\uB370...
+    \uBBFF\uC5B4\uB3C4 \uB420\uAE4C?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0354ea2fee9372d498c19f62f478bea8, type: 2}
   m_sharedMaterial: {fileID: -8952903127173210463, guid: 0354ea2fee9372d498c19f62f478bea8,
@@ -233,7 +236,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
+  m_fontSize: 20.55
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -275,7 +278,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7427351632633766048
+--- !u!114 &6097088251600029342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,8 +309,8 @@ GameObject:
   - component: {fileID: 6374012923401469592}
   - component: {fileID: 5887193415088504885}
   - component: {fileID: 1501137481727049000}
-  - component: {fileID: 7241709878900273216}
   - component: {fileID: 5291993390189229984}
+  - component: {fileID: 2092829030991653758}
   m_Layer: 5
   m_Name: Selection1
   m_TagString: Untagged
@@ -374,26 +377,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7241709878900273216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819558025005379135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: 70
-  m_PreferredWidth: -1
-  m_PreferredHeight: 70
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!114 &5291993390189229984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,6 +433,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2092829030991653758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819558025005379135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: 70
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &4123250941560513389
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: -251}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 410, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4123250942365077234
@@ -679,7 +682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2741115286351242324, guid: 3d17ee7e47fdd5b4da088de3eb41ddb9,
+  m_Sprite: {fileID: -647919220927203885, guid: 4c61660978a469d4f8d9f9771dedaa5d,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -752,9 +755,9 @@ MonoBehaviour:
   - {fileID: 3108189382777501153}
   OnQuestSelected: {fileID: 11400000, guid: b72619c3da1ca7648bc247649e1e46e1, type: 2}
   Sprites:
-  - {fileID: 2741115286351242324, guid: 3d17ee7e47fdd5b4da088de3eb41ddb9, type: 3}
-  - {fileID: -6141764041977541863, guid: 3d17ee7e47fdd5b4da088de3eb41ddb9, type: 3}
-  - {fileID: 3456792030904783117, guid: 3d17ee7e47fdd5b4da088de3eb41ddb9, type: 3}
+  - {fileID: -647919220927203885, guid: 4c61660978a469d4f8d9f9771dedaa5d, type: 3}
+  - {fileID: -176201771903321621, guid: 4c61660978a469d4f8d9f9771dedaa5d, type: 3}
+  - {fileID: -2529443386727237474, guid: 4c61660978a469d4f8d9f9771dedaa5d, type: 3}
   Position: 0
 --- !u!114 &5475624027292289281
 MonoBehaviour:
@@ -773,7 +776,7 @@ MonoBehaviour:
     m_Right: 20
     m_Top: 20
     m_Bottom: 30
-  m_ChildAlignment: 1
+  m_ChildAlignment: 4
   m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -880,9 +883,9 @@ MonoBehaviour:
   m_fontSize: 25
   m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 25
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

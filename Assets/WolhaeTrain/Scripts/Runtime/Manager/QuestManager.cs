@@ -79,7 +79,7 @@ public class QuestManager : MonoBehaviour {
 
 	private void OnQuestSelected(IntPair pair) {
 		var (questID, selectIndex) = pair;
-		var quest = QuestDatabase.First(q => q.ID == questID);
+		var quest = QuestDatabase.FirstOrDefault(q => q.ID == questID);
 		if (quest.Title == null) return;
 		if (!IsActiveQuest(quest)) return;
 		Debug.Log("User select " + quest.Title + " to " + selectIndex);
