@@ -8,8 +8,7 @@ public class ImageOutline : MonoBehaviour {
 
 	private Image _image;
 
-	private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor");
-	private static readonly int OutlineThicknessID = Shader.PropertyToID("_OutlineThickness");
+	private static readonly int OutlinePixelWidth = Shader.PropertyToID("_OutlinePixelWidth");
 
 	private void Awake() {
 		_image = GetComponent<Image>();
@@ -25,11 +24,11 @@ public class ImageOutline : MonoBehaviour {
 
 	[ButtonGroup]
 	public void ActivateOutline() {
-		_image.material.EnableKeyword("OUTBASE_ON");
+		_image.material.SetFloat(OutlinePixelWidth, 1.0f);
 	}
 
 	[ButtonGroup]
 	public void DeactivateOutline() {
-		_image.material.DisableKeyword("OUTBASE_ON");
+		_image.material.SetFloat(OutlinePixelWidth, 0.0f);
 	}
 }

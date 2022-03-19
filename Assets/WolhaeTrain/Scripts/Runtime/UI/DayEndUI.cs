@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using PixelCrushers;
+using Sirenix.Utilities;
 using TMPro;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
@@ -22,6 +24,11 @@ public class DayEndUI : MonoBehaviour {
 
 	public TextMeshProUGUI Summary;
 
+	[Header("캐릭터")]
+	public List<CharacterStatVariable> Characters;
+
+	public List<TextMeshProUGUI> EffectText;
+
 	private void OnEnable() {
 		EndDayEvent.Register(OnDayEnd);
 		QuestSelectedEvent.Register(OnQuestSelected);
@@ -39,6 +46,10 @@ public class DayEndUI : MonoBehaviour {
 	}
 
 	private void OnDayEnd() {
+		Characters.ForEach((stat, index) => {
+			var effectText = EffectText[index];
+			effectText.text = string.Join("\n", stat.Value.Effects.Select(e => e.GetName()));
+		});
 		Panel.Open();
 	}
 

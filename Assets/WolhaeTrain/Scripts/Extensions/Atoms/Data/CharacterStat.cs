@@ -24,3 +24,14 @@ public enum StatusEffect {
 	Hurt,
 	Crazy,
 }
+
+public static class StatusEffectUtil {
+	public static string GetName(this StatusEffect effect) => effect switch {
+		StatusEffect.Exhaust => "탈진",
+		StatusEffect.Cold => "감기",
+		StatusEffect.Infect => "감염",
+		StatusEffect.Hurt => "상처",
+		StatusEffect.Crazy => "미침",
+		_ => throw new ArgumentOutOfRangeException(nameof(effect), effect, null)
+	};
+}

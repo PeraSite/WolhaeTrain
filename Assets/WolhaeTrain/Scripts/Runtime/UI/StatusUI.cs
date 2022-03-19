@@ -40,7 +40,7 @@ public class StatusUI : MonoBehaviour {
 				_lastType = payload.Stat.Type;
 				Hunger.text = payload.Stat.Hunger.ToString();
 				Mental.text = payload.Stat.Mental.ToString();
-				var effectText = string.Join(", ", payload.Stat.Effects.Select(GetEffectName));
+				var effectText = string.Join(", ", payload.Stat.Effects.Select(e => e.GetName()));
 				Effect.text = effectText.IsEmpty() ? "없음" : effectText;
 			}
 			var screenPoint = _cam.WorldToScreenPoint(payload.Position);
@@ -49,16 +49,5 @@ public class StatusUI : MonoBehaviour {
 			Panel.SetActive(false);
 			_lastType = CharacterType.None;
 		}
-	}
-
-	private string GetEffectName(StatusEffect effect) {
-		return effect switch {
-			StatusEffect.Exhaust => "탈진",
-			StatusEffect.Cold => "감기",
-			StatusEffect.Infect => "감염",
-			StatusEffect.Hurt => "상처",
-			StatusEffect.Crazy => "미침",
-			_ => throw new ArgumentOutOfRangeException(nameof(effect), effect, null)
-		};
 	}
 }
