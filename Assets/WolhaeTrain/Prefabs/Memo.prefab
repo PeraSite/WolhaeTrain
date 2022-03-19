@@ -236,8 +236,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.55
-  m_fontSizeBase: 30
+  m_fontSize: 23
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 20
@@ -447,9 +447,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 70
+  m_MinHeight: 60
   m_PreferredWidth: -1
-  m_PreferredHeight: -1
+  m_PreferredHeight: 60
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -754,8 +754,17 @@ MonoBehaviour:
   Selection:
   - {fileID: 1448667302763510773}
   - {fileID: 3108189382777501153}
+  SelectionObjects:
+  - {fileID: 1819558025005379135}
+  - {fileID: 9000315582008850676}
   Icon: {fileID: 1416016770174121327}
   OnQuestSelected: {fileID: 11400000, guid: b72619c3da1ca7648bc247649e1e46e1, type: 2}
+  SelectRestrictEffects: 000000000200000004000000
+  Characters:
+  - {fileID: 11400000, guid: 48de6c9354dff574786a42b3e631fa1c, type: 2}
+  - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
+  - {fileID: 11400000, guid: 94fc7c930c1f52f4b8b8ba4ab6804668, type: 2}
+  - {fileID: 11400000, guid: d1ece276f3123cc43bff446f5442b74d, type: 2}
   MemoSprites:
   - {fileID: -647919220927203885, guid: 4c61660978a469d4f8d9f9771dedaa5d, type: 3}
   - {fileID: -176201771903321621, guid: 4c61660978a469d4f8d9f9771dedaa5d, type: 3}
@@ -765,7 +774,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2686b0f8b5eceed41b8d8812ccebaeed, type: 3}
   - {fileID: 21300000, guid: 13b571392957e954ca8a8b0eb9171458, type: 3}
   - {fileID: 21300000, guid: 5baab517d12e23d4986548ed394afbcc, type: 3}
-  Position: 0
 --- !u!114 &5475624027292289281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,9 +1089,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 70
+  m_MinHeight: 60
   m_PreferredWidth: -1
-  m_PreferredHeight: 70
+  m_PreferredHeight: 60
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1

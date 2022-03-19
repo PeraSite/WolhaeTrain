@@ -57,6 +57,13 @@ public class QuestUI : SerializedMonoBehaviour {
 	public float PinStartY = 8;
 	public float PinEndY = 35;
 
+	public List<StatusEffect> ExploreRestrictEffects = new();
+	public CharacterStatEvent CharacterStatChangedEvent;
+	public List<Image> CharacterIcons;
+	public List<CharacterStatVariable> CharacterStats;
+	public List<GameObject> Circles;
+	public CharacterStatEvent ExploreSelectedEvent;
+
 	private void OnEnable() {
 		DayChangedEvent.Register(OnDayChanged);
 		SaveSystem.saveDataApplied += OnSaveLoaded;
@@ -66,6 +73,8 @@ public class QuestUI : SerializedMonoBehaviour {
 
 		FuelChangedEvent.Register(OnFuelChanged);
 		CleanChangedEvent.Register(OnCleanChanged);
+
+		CharacterStatChangedEvent.Register(OnCharacterStatChanged);
 	}
 
 	private void OnDisable() {
@@ -78,6 +87,8 @@ public class QuestUI : SerializedMonoBehaviour {
 		FuelChangedEvent.Unregister(OnFuelChanged);
 		CleanChangedEvent.Unregister(OnCleanChanged);
 
+		CharacterStatChangedEvent.Unregister(OnCharacterStatChanged);
+
 		foreach (var memo in CreatedMemo.Values) {
 			Destroy(memo.gameObject);
 		}
@@ -87,7 +98,7 @@ public class QuestUI : SerializedMonoBehaviour {
 	private void OnCleanChanged(int clean) {
 		Debug.Log("Clean changed to" + clean);
 		CleanText.text = clean switch {
-			>= 100 => "VERY\nCLEAN",
+			>= 90 => "VERY\nCLEAN",
 			>= 80 => "CLEAN",
 			>= 60 => "USABLE",
 			>= 40 => "DIRTY",
@@ -95,10 +106,7 @@ public class QuestUI : SerializedMonoBehaviour {
 			_ => "<color=#840808>DEATH</color>"
 		};
 		var checkAmount = clean / 20;
-		Debug.Log(checkAmount);
-		Checks.ForEach((check, index) => {
-			check.SetActive(index <= checkAmount);
-		});
+		Checks.ForEach((check, index) => { check.SetActive(index <= checkAmount); });
 	}
 
 	private void OnFuelChanged(int fuel) {
@@ -110,6 +118,9 @@ public class QuestUI : SerializedMonoBehaviour {
 	private void OnDayChanged(int day) {
 		Debug.Log("Day changed to" + day);
 		DayText.text = day + "일 째";
+
+		ParentPinTransform.gameObject.SetActive(false);
+		Circles.ForEach((obj, index) => { obj.SetActive(false); });
 	}
 
 	private void OnSaveLoaded() {
@@ -164,5 +175,23 @@ public class QuestUI : SerializedMonoBehaviour {
 		PinTransform.DOKill();
 		PinTransform.anchoredPosition = new Vector2(0, PinStartY);
 		PinTransform.DOAnchorPosY(PinEndY, 0.2f);
+	}
+
+	private void OnCharacterStatChanged(CharacterStat stat) {
+		if (stat.Type == CharacterType.None) return;
+		var ID = (int) (stat.Type - 1);
+		CharacterIcons[ID].color = stat.Effects.Any(e => ExploreRestrictEffects.Contains(e))
+			? new Color(1f, 1f, 1f, 0.5f)
+			: new Color(1f, 1f, 1f, 1f);
+	}
+
+	public void SetExploreCharacter(int selected) {
+		var stat = CharacterStats[selected].Value;
+		if (stat.Effects.Any(e => ExploreRestrictEffects.Contains(e))) return;
+
+		Circles.ForEach((obj, index) => { obj.SetActive(selected == index); });
+
+		Debug.Log("탐험 지정 : " + stat.Type);
+		ExploreSelectedEvent.Raise(stat);
 	}
 }

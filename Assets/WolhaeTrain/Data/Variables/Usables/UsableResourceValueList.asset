@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0cb83f60de8b4c82a54c0f753ed6d, type: 3}
+  m_Name: UsableResourceValueList
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _developerDescription: 
+  Cleared: {fileID: 0}
+  _startCleared: 0
+  Added: {fileID: 0}
+  Removed: {fileID: 0}
+  list:
+  - Name: "\uBBF8\uC9C0\uADFC\uD55C \uBB3C"
+    Fuel: 0
+    Clean: 10
+    Hunger: 0
+    Mental: 0
+  - Name: "\uD0C4\uC0B0 \uC74C\uB8CC"
+    Fuel: 0
+    Clean: 0
+    Hunger: 10
+    Mental: 0
+  - Name: "\uD1B5\uC870\uB9BC"
+    Fuel: 0
+    Clean: 0
+    Hunger: 10
+    Mental: 0
+  - Name: "\uC989\uC11D \uC2DD\uD488"
+    Fuel: 0
+    Clean: 0
+    Hunger: 10
+    Mental: 0
+  - Name: "\uAC10\uAE30\uC57D"
+    Fuel: 0
+    Clean: 10
+    Hunger: 0
+    Mental: 0
+  - Name: "\uC9C4\uD1B5\uC81C"
+    Fuel: 0
+    Clean: 0
+    Hunger: 0
+    Mental: 10
+  - Name: "\uAE30\uB984\uD1B5"
+    Fuel: 10
+    Clean: 0
+    Hunger: 0
+    Mental: 0
+  - Name: "\uBD80\uB8E8\uB9C8\uBE14"
+    Fuel: 0
+    Clean: 0
+    Hunger: 0
+    Mental: 10
+  - Name: "\uD2B8\uB7FC\uD504 \uCE74\uB4DC"
+    Fuel: 0
+    Clean: 0
+    Hunger: 0
+    Mental: 10

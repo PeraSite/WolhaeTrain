@@ -184,6 +184,7 @@ namespace PixelCrushers
         protected virtual void OnDisable()
         {
             StopAllCoroutines();
+            FadePanel.DOKill();
             if (selectPreviousOnDisable && InputDeviceManager.autoFocus && UnityEngine.EventSystems.EventSystem.current != null && m_previousSelected != null && !selectables.Contains(m_previousSelected))
             {
                 UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(m_previousSelected);

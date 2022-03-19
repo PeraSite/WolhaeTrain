@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -17,19 +18,20 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 	public TextMeshProUGUI Title;
 	public TextMeshProUGUI Description;
 	public List<TextMeshProUGUI> Selection;
+	public List<GameObject> SelectionObjects;
 	public Image Icon;
 
 	[Header("데이터")]
 	public IntPairEvent OnQuestSelected;
 
+	public List<StatusEffect> SelectRestrictEffects;
+
+	public List<CharacterStatVariable> Characters;
 	public List<Sprite> MemoSprites;
 	public List<Sprite> IconSprites;
 
 	[HideInInspector]
 	public Quest Quest;
-
-	[HideInInspector]
-	public int Position;
 
 	private RectTransform _rectTransform;
 	private Canvas _canvas;
@@ -47,10 +49,20 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 		Description.text = quest.Description;
 		Selection.ForEach((sel, index) => { sel.text = quest.Selections[index].ButtonText; });
 
-		Position = position;
 		Quest = quest;
 		_canvas = canvas;
-		Icon.sprite = IconSprites[(int) (quest.Talker - 1)];
+		var type = quest.Talker;
+		var ID = (int) (type - 1);
+		Icon.sprite = IconSprites[ID];
+		var stat = Characters[ID].Value;
+		if (stat.Effects.Any(e => SelectRestrictEffects.Contains(e))) {
+			SelectionObjects.ForEach((obj, index) => {
+				var sel = quest.Selections[index];
+				if (!sel.canSelectIfHaveEffect) {
+					obj.SetActive(false);
+				}
+			});
+		}
 	}
 
 	public void OnSelected(int selectIndex) {

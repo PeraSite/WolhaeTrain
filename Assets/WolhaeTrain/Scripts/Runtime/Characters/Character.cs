@@ -31,6 +31,10 @@ public class Character : MonoBehaviour {
 	}
 
 	private void OnStatChanged(CharacterStat stat) {
+		if (stat.Type == Stat.Value.Type)
+			Debug.Log(
+				$"Character Stat Updated: {stat.Type}: {stat.Hunger}, {stat.Mental}, {string.Join(",", stat.Effects)}");
+
 		if (!_isShowing) return;
 		StatusUIUpdateEvent.Raise(new StatusUIUpdatePayload {
 			ShowPanel = true,

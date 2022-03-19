@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50645327af85467c9a304eaa29f667a7, type: 3}
   m_Name: StatusUIUpdateEvent
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _developerDescription: 
-  _replayBufferSize: 0
+  _replayBufferSize: 1
   _inspectorRaiseValue:
     ShowPanel: 1
     Stat:

@@ -10,11 +10,11 @@ public record CharacterStat {
 }
 
 public enum CharacterType {
-	None,
-	Dad,
-	Mom,
-	Son,
-	Daughter
+	None = 0,
+	Dad = 1,
+	Mom = 2,
+	Son = 3,
+	Daughter = 4
 }
 
 public enum StatusEffect {
@@ -25,13 +25,24 @@ public enum StatusEffect {
 	Crazy,
 }
 
-public static class StatusEffectUtil {
-	public static string GetName(this StatusEffect effect) => effect switch {
-		StatusEffect.Exhaust => "탈진",
-		StatusEffect.Cold => "감기",
-		StatusEffect.Infect => "감염",
-		StatusEffect.Hurt => "상처",
-		StatusEffect.Crazy => "미침",
-		_ => throw new ArgumentOutOfRangeException(nameof(effect), effect, null)
-	};
+public static class Util {
+	public static string GetName(this CharacterType type) =>
+		type switch {
+			CharacterType.None => "",
+			CharacterType.Dad => "정훈",
+			CharacterType.Mom => "하나",
+			CharacterType.Son => "현승",
+			CharacterType.Daughter => "원재",
+			_ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+		};
+
+	public static string GetName(this StatusEffect effect) =>
+		effect switch {
+			StatusEffect.Exhaust => "탈진",
+			StatusEffect.Cold => "감기",
+			StatusEffect.Infect => "감염",
+			StatusEffect.Hurt => "상처",
+			StatusEffect.Crazy => "미침",
+			_ => throw new ArgumentOutOfRangeException(nameof(effect), effect, null)
+		};
 }

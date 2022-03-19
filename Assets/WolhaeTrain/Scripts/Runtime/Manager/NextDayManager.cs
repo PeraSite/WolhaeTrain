@@ -51,11 +51,6 @@ public class NextDayManager : SerializedMonoBehaviour {
 		foreach (var stat in Stats) {
 			var willAddedEffects = new HashSet<StatusEffect>(stat.Value.Effects);
 
-			//test
-			if (Random.Range(0, 100) <= 60) {
-				willAddedEffects.Add(StatusEffect.Exhaust);
-			}
-
 			//탈진
 			if (stat.Value.Hunger <= 20) {
 				if (Random.Range(0, 100) <= 30) {
@@ -85,6 +80,7 @@ public class NextDayManager : SerializedMonoBehaviour {
 			}
 
 			stat.Value = stat.Value with {
+				Type = stat.Value.Type,
 				Hunger = Clamp100(stat.Value.Hunger - HungerDecreaseAmount),
 				Mental = Clamp100(stat.Value.Mental - MentalDecreaseAmount),
 				Effects = willAddedEffects.ToArray()
