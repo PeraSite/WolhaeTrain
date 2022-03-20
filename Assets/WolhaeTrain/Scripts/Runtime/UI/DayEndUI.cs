@@ -72,7 +72,7 @@ public class DayEndUI : MonoBehaviour {
 
 	private void OnEndDayRequest() {
 		if (_hasExplored) {
-			var percent = _lastExplore.Type is CharacterType.Dad or CharacterType.Son ? 30 : 20;
+			var percent = _lastExplore.Type is CharacterType.Dad or CharacterType.Son ? 50 : 30;
 			if (Random.Range(0, 100) <= percent) { //탐험 성공
 				var usable = UsableList.Random();
 				var text = "";

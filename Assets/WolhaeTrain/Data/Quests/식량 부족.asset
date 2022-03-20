@@ -44,7 +44,7 @@ MonoBehaviour:
       Data: 1
     - Name: SpawnProbability
       Entry: 3
-      Data: 60
+      Data: 70
     - Name: IsStory
       Entry: 5
       Data: false

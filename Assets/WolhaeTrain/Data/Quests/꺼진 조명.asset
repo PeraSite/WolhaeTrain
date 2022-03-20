@@ -39,7 +39,7 @@ MonoBehaviour:
       Data: 1
     - Name: SpawnProbability
       Entry: 3
-      Data: 60
+      Data: 70
     - Name: IsStory
       Entry: 5
       Data: false
@@ -63,7 +63,7 @@ MonoBehaviour:
         \uBC1D\uC544\uC84C\uC5B4."
     - Name: Fuel
       Entry: 3
-      Data: -5
+      Data: 0
     - Name: Clean
       Entry: 3
       Data: -5

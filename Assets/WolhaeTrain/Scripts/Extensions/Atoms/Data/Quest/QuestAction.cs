@@ -31,10 +31,13 @@ public class SetBoolVariableAction : IQuestAction {
 public class EndingAction : IQuestAction {
 
 	public EndingDataEvent Event;
+	public EndingDataVariable Variable;
+
 	[InlineProperty, HideLabel]
 	public EndingDataConstant Data;
 
 	public void Execute() {
+		Variable.Value = Data.Value;
 		Event.Raise(Data.Value);
 	}
 }

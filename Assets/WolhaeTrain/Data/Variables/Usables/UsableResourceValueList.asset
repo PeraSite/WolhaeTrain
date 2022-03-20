@@ -72,3 +72,13 @@ MonoBehaviour:
     Clean: 0
     Hunger: 0
     Mental: 10
+  - Name: "\uD070 \uAE30\uB984\uD1B5"
+    Fuel: 15
+    Clean: 0
+    Hunger: 0
+    Mental: 0
+  - Name: "\uD734\uC9C0"
+    Fuel: 0
+    Clean: 10
+    Hunger: 0
+    Mental: 0

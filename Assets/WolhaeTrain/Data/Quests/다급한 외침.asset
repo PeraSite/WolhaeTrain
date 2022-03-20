@@ -44,7 +44,7 @@ MonoBehaviour:
       Data: 1
     - Name: SpawnProbability
       Entry: 3
-      Data: 50
+      Data: 60
     - Name: IsStory
       Entry: 5
       Data: false
@@ -68,7 +68,7 @@ MonoBehaviour:
         \uC92C\uC5B4. \uB3C4\uC640\uC8FC\uAE38 \uC798\uD588\uC5B4."
     - Name: Fuel
       Entry: 3
-      Data: -5
+      Data: 0
     - Name: Clean
       Entry: 3
       Data: 5

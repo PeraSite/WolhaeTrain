@@ -99,6 +99,9 @@ MonoBehaviour:
     - Name: Event
       Entry: 10
       Data: 0
+    - Name: Variable
+      Entry: 6
+      Data: 
     - Name: Data
       Entry: 10
       Data: 1
