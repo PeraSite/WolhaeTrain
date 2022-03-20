@@ -36,6 +36,8 @@ public class QuestGenerator : OdinEditorWindow {
 
 	public QuestDatabase QuestDatabase;
 
+	public bool PrintDebug;
+
 	[Button]
 	private void Generate() {
 		SheetAPI.InitService(ServiceAccountID, PrivateKey);
@@ -51,18 +53,18 @@ public class QuestGenerator : OdinEditorWindow {
 					.Select(cell => cell.FormattedValue).ToList()
 				).Where(row => !row.IsNullOrEmpty()).ToList()).ToList();
 
-		foreach (var row in grid) {
-			Debug.Log(string.Join(",", row));
+		if (PrintDebug) {
+			foreach (var row in grid) {
+				Debug.Log(string.Join(",", row));
+			}
 		}
 
 		if (GenerateAsset) {
-			if (!QuestDatabase.SafeIsUnityNull()) QuestDatabase.Clear();
-
 			grid.Select(GenerateQuestionData)
 				.ForEach(data => {
 					if (data.Value.Title == "n") return;
-					data.CreateAsset(Path.Combine(TargetFolder, $"{data.Value.Title}.asset"));
-					if (!QuestDatabase.SafeIsUnityNull()) {
+					if (QuestDatabase.All(qc => qc.Value.ID != data.Value.ID)) {
+						data.CreateAsset(Path.Combine(TargetFolder, $"{data.Value.Title}.asset"));
 						QuestDatabase.Add(data);
 					}
 				});
@@ -73,7 +75,6 @@ public class QuestGenerator : OdinEditorWindow {
 
 	private QuestConstant GenerateQuestionData(List<string> data) {
 		var id = data[0].AsInt(0);
-
 		var exist = QuestDatabase.Any(qc => qc.Value.ID == id);
 		var instance = QuestDatabase.FirstOrDefault(qc => qc.Value.ID == id) ?? CreateInstance<QuestConstant>();
 
@@ -116,8 +117,9 @@ public class QuestGenerator : OdinEditorWindow {
 			Actions = exist ? instance.Value.Selections[1].Actions : new List<IQuestAction>()
 		};
 
-		instance.Value.Selections.Insert(0, selection1);
-		instance.Value.Selections.Insert(1, selection2);
+		instance.Value.Selections.Clear();
+		instance.Value.Selections.Add(selection1);
+		instance.Value.Selections.Add(selection2);
 		return instance;
 	}
 }

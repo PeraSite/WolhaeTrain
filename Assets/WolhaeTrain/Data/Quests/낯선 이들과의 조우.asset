@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d37cba921453a7540b60268e5ada6db8, type: 3}
-  m_Name: "\uC228\uACA8\uB454 \uC2DD\uB7C9"
+  m_Name: "\uB0AF\uC120 \uC774\uB4E4\uACFC\uC758 \uC870\uC6B0"
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 94fc7c930c1f52f4b8b8ba4ab6804668, type: 2}
+    - {fileID: 11400000, guid: 4dc43eda60ea1fb4a83b35569380f879, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -27,23 +27,26 @@ MonoBehaviour:
       Data: Quest, WolhaeTrain.Extensions
     - Name: ID
       Entry: 3
-      Data: 11
+      Data: 14
     - Name: Title
       Entry: 1
-      Data: "\uC228\uACA8\uB454 \uC2DD\uB7C9"
+      Data: "\uB0AF\uC120 \uC774\uB4E4\uACFC\uC758 \uC870\uC6B0"
     - Name: Description
       Entry: 1
-      Data: "\uC800\uBC88\uC5D0 \uC228\uACA8\uB1A8\uB358 \uC2DD\uB7C9\uC744 \uCC3E\uC558\uC5B4.
-        \uAC00\uC871\uB4E4\uC740 \uC774 \uC0AC\uC2E4\uC744 \uBAA8\uB974\uB294\uB370..."
+      Data: "\uD0D0\uD5D8\uD558\uB358 \uC911 \uB0AF\uC120 \uC774\uB4E4\uC744 \uB9CC\uB0AC\uC5B4.
+        \uADF8\uB4E4\uC740 \uB0A8\uB9E4\uAC19\uC558\uACE0 \uC6B0\uB9AC\uC5D0\uAC8C
+        \uC6B0\uD638\uC801\uC774\uC5C8\uC5B4. \uB0A8\uB9E4\uB294 \uC6B0\uB9AC\uC5D0\uAC8C
+        \uB2E4\uC74C \uBAA9\uC801\uC9C0\uB97C \uB9D0\uD574\uC8FC\uACE0 \uAC70\uAE38
+        \uCC3E\uC544\uC624\uB77C\uB358\uB370... \uBBFF\uC5B4\uB3C4 \uB420\uAE4C?"
     - Name: Talker
       Entry: 3
       Data: 3
     - Name: SpawnProbability
       Entry: 3
-      Data: 50
+      Data: 40
     - Name: IsStory
       Entry: 5
-      Data: false
+      Data: true
     - Name: Selections
       Entry: 7
       Data: 0|System.Collections.Generic.List`1[[QuestSelection, WolhaeTrain.Extensions]],
@@ -56,23 +59,23 @@ MonoBehaviour:
       Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
-      Data: "\uAC00\uC871\uB4E4\uC5D0\uAC8C \uBBF8\uC548\uD558\uC9C0\uB9CC \uB098
-        \uD63C\uC790 \uBA39\uB294\uB2E4."
+      Data: "\uD55C\uBC88 \uBBFF\uC5B4\uBCF4\uC790."
     - Name: ResultText
       Entry: 1
-      Data: "\uC591\uC2EC\uC5D0 \uCC14\uB9AC\uC9C0\uB9CC \uB108\uBB34 \uB9DB\uC788\uB2E4.."
+      Data: "\uAE30\uCC28\uB3C4 \uC5B8\uC820\uAC00 \uACE0\uC7A5\uB0A0\uAC70\uC57C.
+        \uACC4\uC18D \uC774\uACF3\uC5D0\uB9CC \uC788\uC744 \uC21C \uC5C6\uC5B4."
     - Name: Fuel
       Entry: 3
-      Data: 0
+      Data: -5
     - Name: Clean
       Entry: 3
       Data: 0
     - Name: Hunger
       Entry: 3
-      Data: 10
+      Data: 0
     - Name: Mental
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: true
@@ -97,19 +100,21 @@ MonoBehaviour:
       Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
-      Data: "\uAC00\uC871\uB4E4\uC5D0\uAC8C \uCC3E\uC740 \uC2DD\uB7C9\uC744 \uB9D0\uD574\uC900\uB2E4."
+      Data: "\uC9C0\uAE08\uC740 \uAC08\uB9CC\uD55C \uC0C1\uD669\uC774 \uC544\uB2C8\uC57C.
+        \uC2E0\uC911\uD788 \uC0DD\uAC01\uD558\uC790."
     - Name: ResultText
       Entry: 1
-      Data: "\uC5ED\uC2DC \uB9D0\uD574\uC8FC\uAE38 \uC798\uD55C \uAC83 \uAC19\uC544."
+      Data: "\uC9C0\uAE08\uC774 \uC544\uB2C8\uB77C \uB098\uC911\uC5D0\uB77C\uB3C4
+        \uAC00\uBCF4\uBA74 \uB3FC."
     - Name: Fuel
       Entry: 3
-      Data: 0
+      Data: -5
     - Name: Clean
       Entry: 3
       Data: 0
     - Name: Hunger
       Entry: 3
-      Data: -5
+      Data: 0
     - Name: Mental
       Entry: 3
       Data: 5
@@ -147,25 +152,22 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 4|CharacterStatCompareQuestCondition, WolhaeTrain.Extensions
-    - Name: Stat
+      Data: 4|IntVariableCompareQuestCondition, WolhaeTrain.Extensions
+    - Name: Variable
       Entry: 10
-      Data: 0
-    - Name: StatType
-      Entry: 3
       Data: 0
     - Name: Compare
       Entry: 7
       Data: CompareType, WolhaeTrain.Extensions
     - Name: Name
       Entry: 1
-      Data: <=
+      Data: '>='
     - Name: 
       Entry: 8
       Data: 
     - Name: Value
       Entry: 3
-      Data: 40
+      Data: 10
     - Name: 
       Entry: 8
       Data: 

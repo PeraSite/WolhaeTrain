@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d37cba921453a7540b60268e5ada6db8, type: 3}
-  m_Name: "\uC228\uACA8\uB454 \uC2DD\uB7C9"
+  m_Name: "\uB0B4\uBD80 \uAC10\uC5FC\uC790"
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 11400000, guid: a57a1191e999b6442ba27b9338d3ced8, type: 2}
+    - {fileID: 11400000, guid: 84faf7497092c264098a6ee216ad54d3, type: 2}
+    - {fileID: 11400000, guid: 48de6c9354dff574786a42b3e631fa1c, type: 2}
+    - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
     - {fileID: 11400000, guid: 94fc7c930c1f52f4b8b8ba4ab6804668, type: 2}
+    - {fileID: 11400000, guid: d1ece276f3123cc43bff446f5442b74d, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -27,40 +32,41 @@ MonoBehaviour:
       Data: Quest, WolhaeTrain.Extensions
     - Name: ID
       Entry: 3
-      Data: 11
+      Data: 20
     - Name: Title
       Entry: 1
-      Data: "\uC228\uACA8\uB454 \uC2DD\uB7C9"
+      Data: "\uB0B4\uBD80 \uAC10\uC5FC\uC790"
     - Name: Description
       Entry: 1
-      Data: "\uC800\uBC88\uC5D0 \uC228\uACA8\uB1A8\uB358 \uC2DD\uB7C9\uC744 \uCC3E\uC558\uC5B4.
-        \uAC00\uC871\uB4E4\uC740 \uC774 \uC0AC\uC2E4\uC744 \uBAA8\uB974\uB294\uB370..."
+      Data: "\uC880\uBE44\uB4E4\uC774 \uC6B0\uB9AC\uB97C \uBB3C\uC5C8\uC5B4. \uC6B0\uB9B0
+        \uB9DD\uD588\uC5B4."
     - Name: Talker
       Entry: 3
       Data: 3
     - Name: SpawnProbability
       Entry: 3
-      Data: 50
+      Data: 100
     - Name: IsStory
       Entry: 5
-      Data: false
+      Data: true
     - Name: Selections
       Entry: 7
       Data: 0|System.Collections.Generic.List`1[[QuestSelection, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
-      Data: "\uAC00\uC871\uB4E4\uC5D0\uAC8C \uBBF8\uC548\uD558\uC9C0\uB9CC \uB098
-        \uD63C\uC790 \uBA39\uB294\uB2E4."
+      Data: "\uC5B4\uB5A1\uD558\uC9C0?"
     - Name: ResultText
       Entry: 1
-      Data: "\uC591\uC2EC\uC5D0 \uCC14\uB9AC\uC9C0\uB9CC \uB108\uBB34 \uB9DB\uC788\uB2E4.."
+      Data: "\uC2DC\uAC04\uC774 \uC9C0\uB098\uC790 \uAC00\uC871\uB4E4\uC740 \uACE0\uD1B5\uC744
+        \uD638\uC18C\uD558\uAE30 \uC2DC\uC791\uD588\uC5B4. \uC6B0\uB9AC\uC758 \uC6B4\uB3C4
+        \uC5EC\uAE30\uAE4C\uC9C0\uC778\uAC00\uBD10."
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -69,60 +75,32 @@ MonoBehaviour:
       Data: 0
     - Name: Hunger
       Entry: 3
-      Data: 10
+      Data: 0
     - Name: Mental
       Entry: 3
       Data: 0
     - Name: canSelectIfHaveEffect
       Entry: 5
-      Data: true
+      Data: false
     - Name: Actions
       Entry: 7
       Data: 1|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
     - Name: 
-      Entry: 13
-      Data: 
+      Entry: 7
+      Data: 2|EndingAction, WolhaeTrain.Extensions
+    - Name: Event
+      Entry: 10
+      Data: 0
+    - Name: Data
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: QuestSelection, WolhaeTrain.Extensions
-    - Name: ButtonText
-      Entry: 1
-      Data: "\uAC00\uC871\uB4E4\uC5D0\uAC8C \uCC3E\uC740 \uC2DD\uB7C9\uC744 \uB9D0\uD574\uC900\uB2E4."
-    - Name: ResultText
-      Entry: 1
-      Data: "\uC5ED\uC2DC \uB9D0\uD574\uC8FC\uAE38 \uC798\uD55C \uAC83 \uAC19\uC544."
-    - Name: Fuel
-      Entry: 3
-      Data: 0
-    - Name: Clean
-      Entry: 3
-      Data: 0
-    - Name: Hunger
-      Entry: 3
-      Data: -5
-    - Name: Mental
-      Entry: 3
-      Data: 5
-    - Name: canSelectIfHaveEffect
-      Entry: 5
-      Data: false
-    - Name: Actions
-      Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -147,25 +125,47 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 4|CharacterStatCompareQuestCondition, WolhaeTrain.Extensions
-    - Name: Stat
+      Data: 4|EffectCountCompareCondition, WolhaeTrain.Extensions
+    - Name: Characters
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[UnityAtoms.CharacterStatVariable,
+        WolhaeTrain.Extensions]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
       Entry: 10
-      Data: 0
-    - Name: StatType
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Effect
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: Compare
       Entry: 7
       Data: CompareType, WolhaeTrain.Extensions
     - Name: Name
       Entry: 1
-      Data: <=
+      Data: '>='
     - Name: 
       Entry: 8
       Data: 
     - Name: Value
       Entry: 3
-      Data: 40
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -177,7 +177,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+      Data: 6|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12

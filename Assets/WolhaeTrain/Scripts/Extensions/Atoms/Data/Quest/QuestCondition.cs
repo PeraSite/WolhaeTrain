@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
@@ -63,6 +65,34 @@ public class CharacterStatCompareQuestCondition : IQuestCondition {
 	public enum CharacterStatType {
 		Hunger,
 		Mental
+	}
+}
+
+public class EffectCountCompareCondition : IQuestCondition {
+	public List<CharacterStatVariable> Characters;
+
+	[HorizontalGroup("Horiz"), HideLabel]
+	public StatusEffect Effect;
+
+	[HorizontalGroup("Horiz", 20), HideLabel]
+	[ValueDropdown("@CompareType.Values")]
+	public CompareType Compare = CompareType.EQUALS;
+
+	[HorizontalGroup("Horiz", 50), HideLabel]
+	public int Value;
+
+	public bool Check() {
+		var count = Characters.Where(c => c.Value.Effects.Contains(Effect)).Count();
+		return Compare.Compare(count, Value);
+	}
+}
+
+public class QuestContainsCondition : IQuestCondition {
+	public QuestConstant Quest;
+	public QuestValueList TargetList;
+
+	public bool Check() {
+		return TargetList.Any(q => q.Title == Quest.Value.Title);
 	}
 }
 

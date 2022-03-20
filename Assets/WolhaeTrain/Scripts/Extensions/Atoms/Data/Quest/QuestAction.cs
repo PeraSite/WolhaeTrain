@@ -28,6 +28,17 @@ public class SetBoolVariableAction : IQuestAction {
 	}
 }
 
+public class EndingAction : IQuestAction {
+
+	public EndingDataEvent Event;
+	[InlineProperty, HideLabel]
+	public EndingDataConstant Data;
+
+	public void Execute() {
+		Event.Raise(Data.Value);
+	}
+}
+
 public class AddStatusEffect : IQuestAction {
 
 	[HorizontalGroup(), HideLabel]
