@@ -224,7 +224,7 @@ namespace UnityAtoms
             }
             else
             {
-                SetValue(InitialValue);
+                SetValue(InitialValue, true);
             }
         }
 
@@ -241,6 +241,7 @@ namespace UnityAtoms
 
             if (changeValue)
             {
+                Debug.Log($"{name} Changed from {_value} to {preProcessedNewValue}");
                 _oldValue = _value;
                 _value = preProcessedNewValue;
             }
@@ -400,11 +401,6 @@ namespace UnityAtoms
             }
 
             throw new NotSupportedException($"Event type {typeof(E)} not supported! Use {typeof(E1)} or {typeof(E2)}.");
-        }
-
-        public override void ResetReplayBuffer() {
-            Changed?.ReplayBuffer?.Clear();
-            ChangedWithHistory?.ReplayBuffer?.Clear();
         }
     }
 }

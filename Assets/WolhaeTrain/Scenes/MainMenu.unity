@@ -1305,6 +1305,18 @@ MonoBehaviour:
           m_StringArgument: Play
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 237f5f11a0660cb4b9542b508a6e9e5e, type: 2}
+        m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, PixelCrushers
+        m_MethodName: DeleteSavedGameInSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &711734563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2014,6 +2026,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 20
+--- !u!1 &1433602924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433602926}
+  - component: {fileID: 1433602925}
+  m_Layer: 0
+  m_Name: GameplayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1433602925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433602924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a9cfc4d0be4a5ea061ccb2b4fa9045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  m_key: Variables
+  m_appendSaverTypeToKey: 0
+  m_saveAcrossSceneChanges: 1
+  m_restoreStateOnStart: 0
+  Variables:
+    _serializedList:
+    - {fileID: 11400000, guid: 4dc43eda60ea1fb4a83b35569380f879, type: 2}
+    - {fileID: 11400000, guid: 6e9bbc536a6648344bfdae7d2380a341, type: 2}
+    - {fileID: 11400000, guid: 0a1285db312bde34cbeb59529e0a521a, type: 2}
+    - {fileID: 11400000, guid: 48de6c9354dff574786a42b3e631fa1c, type: 2}
+    - {fileID: 11400000, guid: d1ece276f3123cc43bff446f5442b74d, type: 2}
+    - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
+    - {fileID: 11400000, guid: 94fc7c930c1f52f4b8b8ba4ab6804668, type: 2}
+    - {fileID: 11400000, guid: ce8742ec205962e4f92f78b48c4a523f, type: 2}
+  QuestDatabase: {fileID: 11400000, guid: 2377f903f3065a743838d3169c1c92b2, type: 2}
+  QuestLists:
+  - {fileID: 11400000, guid: 33956a2566b48b5409113b7278433d3f, type: 2}
+  - {fileID: 11400000, guid: 58ba8bf24cc60d847a04e920a63861fd, type: 2}
+  Events:
+  - {fileID: 11400000, guid: b5b779733ec6fa943b47145bb164adb4, type: 2}
+  - {fileID: 11400000, guid: 6efd045e3189dd0448ca1f0911a3531a, type: 2}
+  - {fileID: 11400000, guid: 90a02da66cb7382449834dcef036f41b, type: 2}
+  Separator: "\uB68C"
+--- !u!4 &1433602926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433602924}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1572493814
 GameObject:
   m_ObjectHideFlags: 0

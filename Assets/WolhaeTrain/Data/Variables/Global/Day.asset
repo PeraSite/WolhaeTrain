@@ -23,10 +23,10 @@ MonoBehaviour:
     SerializationNodes: []
   _developerDescription: 
   _id: 
-  _value: 3
+  _value: 1
   _changed: {fileID: 11400000, guid: b5b779733ec6fa943b47145bb164adb4, type: 2}
   _changedWithHistory: {fileID: 0}
-  _triggerChangedOnOnEnable: 1
+  _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
   _oldValue: 1
   _initialValue: 1

@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 5093490925378682945}
   - component: {fileID: 1297734434}
   - component: {fileID: 2716877847673412038}
-  - component: {fileID: 224011038395610179}
   m_Layer: 0
   m_Name: CoreManager
   m_TagString: Untagged
@@ -345,50 +344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Format: 1
---- !u!114 &224011038395610179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5093490925378682954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83a9cfc4d0be4a5ea061ccb2b4fa9045, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  m_key: Variables
-  m_appendSaverTypeToKey: 0
-  m_saveAcrossSceneChanges: 1
-  m_restoreStateOnStart: 0
-  Variables:
-    _serializedList:
-    - {fileID: 11400000, guid: 4dc43eda60ea1fb4a83b35569380f879, type: 2}
-    - {fileID: 11400000, guid: 6e9bbc536a6648344bfdae7d2380a341, type: 2}
-    - {fileID: 11400000, guid: 0a1285db312bde34cbeb59529e0a521a, type: 2}
-    - {fileID: 11400000, guid: 48de6c9354dff574786a42b3e631fa1c, type: 2}
-    - {fileID: 11400000, guid: d1ece276f3123cc43bff446f5442b74d, type: 2}
-    - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
-    - {fileID: 11400000, guid: 94fc7c930c1f52f4b8b8ba4ab6804668, type: 2}
-    - {fileID: 11400000, guid: ce8742ec205962e4f92f78b48c4a523f, type: 2}
-  QuestDatabase: {fileID: 11400000, guid: 2377f903f3065a743838d3169c1c92b2, type: 2}
-  QuestLists:
-  - {fileID: 11400000, guid: 33956a2566b48b5409113b7278433d3f, type: 2}
-  - {fileID: 11400000, guid: 58ba8bf24cc60d847a04e920a63861fd, type: 2}
-  Events:
-  - {fileID: 11400000, guid: b5b779733ec6fa943b47145bb164adb4, type: 2}
-  - {fileID: 11400000, guid: 6efd045e3189dd0448ca1f0911a3531a, type: 2}
-  - {fileID: 11400000, guid: 90a02da66cb7382449834dcef036f41b, type: 2}
-  Separator: "\uB68C"
 --- !u!1 &6715102357471418305
 GameObject:
   m_ObjectHideFlags: 0

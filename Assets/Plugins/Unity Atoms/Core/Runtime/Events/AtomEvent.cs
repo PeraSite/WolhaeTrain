@@ -36,6 +36,7 @@ namespace UnityAtoms
         private Queue<T> _replayBuffer = new Queue<T>();
 
         public override void ResetBuffer() {
+            Debug.Log($"Event {name} Buffer cleared!");
             _replayBuffer.Clear();
         }
 
@@ -142,6 +143,7 @@ namespace UnityAtoms
 
         protected void AddToReplayBuffer(T item)
         {
+            Debug.Log($"Buffer added {name}: {item}");
             if (_replayBufferSize > 0)
             {
                 while (_replayBuffer.Count >= _replayBufferSize) { _replayBuffer.Dequeue(); }
