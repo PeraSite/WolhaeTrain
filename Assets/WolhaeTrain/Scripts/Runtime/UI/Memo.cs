@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -35,9 +36,11 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 
 	private RectTransform _rectTransform;
 	private Canvas _canvas;
+	private CanvasGroup _canvasGroup;
 
 	private void Awake() {
 		_rectTransform = GetComponent<RectTransform>();
+		_canvasGroup = GetComponent<CanvasGroup>();
 	}
 
 	[Button]
@@ -71,5 +74,11 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 
 	public void OnDrag(PointerEventData eventData) {
 		_rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+	}
+
+	public void Destroy() {
+		_canvasGroup.DOFade(0f, 0.3f).OnComplete(() => {
+			Destroy(gameObject);
+		});
 	}
 }

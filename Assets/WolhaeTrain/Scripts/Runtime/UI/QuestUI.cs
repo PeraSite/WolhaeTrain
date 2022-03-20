@@ -7,7 +7,10 @@ using Sirenix.Utilities;
 using TMPro;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QuestUI : SerializedMonoBehaviour {
@@ -29,12 +32,14 @@ public class QuestUI : SerializedMonoBehaviour {
 	public QuestEvent OnActiveQuestRemoveEvent;
 
 	[Header("연료")]
+	public IntVariable Fuel;
 	public IntEvent FuelChangedEvent;
 	public TextMeshProUGUI FuelText;
 	public Image FuelGauge;
 
 
 	[Header("청결")]
+	public IntVariable Clean;
 	public IntEvent CleanChangedEvent;
 	public TextMeshProUGUI CleanText;
 	public List<GameObject> Checks;
@@ -55,6 +60,8 @@ public class QuestUI : SerializedMonoBehaviour {
 	public List<GameObject> Circles;
 	public CharacterStatEvent ExploreSelectedEvent;
 
+	private static bool shouldInit;
+
 	private void OnEnable() {
 		DayChangedEvent.Register(OnDayChanged);
 		SaveSystem.saveDataApplied += OnSaveLoaded;
@@ -66,6 +73,22 @@ public class QuestUI : SerializedMonoBehaviour {
 		CleanChangedEvent.Register(OnCleanChanged);
 
 		CharacterStatChangedEvent.Register(OnCharacterStatChanged);
+#if UNITY_EDITOR
+		if (shouldInit) {
+			OnDayChanged(Day.InitialValue);
+			OnFuelChanged(Fuel.InitialValue);
+			OnCleanChanged(Clean.InitialValue);
+		}
+#endif
+	}
+
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+	public static void Test() {
+		if (SceneManager.GetActiveScene().buildIndex != 0) {
+			shouldInit = true;
+		} else {
+			shouldInit = false;
+		}
 	}
 
 	private void OnDisable() {
@@ -154,7 +177,7 @@ public class QuestUI : SerializedMonoBehaviour {
 
 		var (index, memo) = pair;
 		CreatedMemo.Remove(index);
-		Destroy(memo.gameObject);
+		memo.Destroy();
 	}
 
 	public void MoveMapPin() {
