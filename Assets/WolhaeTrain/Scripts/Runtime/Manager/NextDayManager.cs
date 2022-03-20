@@ -34,14 +34,31 @@ public class NextDayManager : SerializedMonoBehaviour {
 	[SuffixLabel("Per day", true)]
 	public int MentalDecreaseAmount = 5;
 
+
+	[Header("퀘스트")]
+	public QuestDatabase QuestDatabase;
+
+	public IntPairEvent QuestSelectedEvent;
+
 	public int SaveSlot = 1;
+
+	private List<(Quest, int)> _lastSelection = new();
 
 	private void OnEnable() {
 		NextDayEvent.Register(OnNextDay);
+		QuestSelectedEvent.Register(OnQuestSelect);
+	}
+
+	private void OnQuestSelect(IntPair pair) {
+		var (questID, selectedIndex) = pair;
+		var quest = QuestDatabase.FirstOrDefault(q => q.Value.ID == questID);
+		if (quest == null) return;
+		_lastSelection.Add((quest.Value, selectedIndex));
 	}
 
 	private void OnDisable() {
 		NextDayEvent.Unregister(OnNextDay);
+		QuestSelectedEvent.Unregister(OnQuestSelect);
 	}
 
 	private void OnNextDay() {
@@ -87,6 +104,22 @@ public class NextDayManager : SerializedMonoBehaviour {
 			};
 		}
 		GenerateNewQuestEvent.Raise();
+
+		foreach (var pair in _lastSelection) {
+			var (quest, selectedIndex) = pair;
+			var selection = quest.Selections[selectedIndex];
+			FuelVariable.Subtract(selection.Fuel);
+			CleanVariable.Subtract(selection.Clean);
+
+			var stat = Stats[(int) quest.Talker - 1];
+			stat.Value = stat.Value with {
+				Hunger = Clamp100(stat.Value.Hunger - selection.Hunger),
+				Mental = Clamp100(stat.Value.Mental - selection.Mental),
+			};
+
+			selection.Actions.ForEach(a => a.Execute());
+		}
+		_lastSelection.Clear();
 
 		SaveSystem.SaveToSlot(SaveSlot);
 	}
