@@ -18,6 +18,8 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: a57a1191e999b6442ba27b9338d3ced8, type: 2}
     - {fileID: 11400000, guid: 6ac11f389ce078c47b2b55a49e3e9d34, type: 2}
+    - {fileID: 11400000, guid: 89bc846692f7f664e84a55287074c399, type: 2}
+    - {fileID: 11400000, guid: 33956a2566b48b5409113b7278433d3f, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -161,7 +163,19 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 5|QuestContainsCondition, WolhaeTrain.Extensions
+    - Name: Quest
+      Entry: 10
+      Data: 2
+    - Name: TargetList
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -170,7 +184,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+      Data: 6|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using PixelCrushers;
 using Sirenix.Utilities;
 using UnityAtoms;
@@ -8,7 +9,9 @@ using UnityAtoms.BaseAtoms;
 
 public class VariableSaver : Saver {
 	public AtomBaseVariableList Variables;
-	public List<BaseAtomValueList> Lists;
+
+	public QuestDatabase QuestDatabase;
+	public List<QuestValueList> QuestLists;
 
 	public string Separator = "뚌";
 
@@ -17,9 +20,9 @@ public class VariableSaver : Saver {
 			GetAtomID,
 			v => v.BaseValue
 		);
-		var listDict = Lists.ToDictionary(
+		var listDict = QuestLists.ToDictionary(
 			GetAtomID,
-			list => list.IList
+			list => list.Select(q => q.ID).ToList()
 		);
 		var recordData = SaveSystem.Serialize(varDict) + Separator + SaveSystem.Serialize(listDict);
 
@@ -37,11 +40,11 @@ public class VariableSaver : Saver {
 			variable.BaseValue = varDict[id];
 		}
 
-		var listDict = SaveSystem.Deserialize<Dictionary<string, IList>>(listDictString);
-		foreach (var list in Lists) {
-			var id = GetAtomID(list);
-			var valueList = listDict[id];
-			list.IList = valueList;
+		var listDict = SaveSystem.Deserialize<Dictionary<string, List<int>>>(listDictString);
+		foreach (var list in QuestLists) {
+			var dictName = GetAtomID(list);
+			var valueList = listDict[dictName];
+			list.IList = valueList.Select(id => QuestDatabase.First(q => q.Value.ID == id)).ToList();
 		}
 	}
 
@@ -49,7 +52,7 @@ public class VariableSaver : Saver {
 		foreach (var variable in Variables) {
 			variable.ResetValue();
 		}
-		foreach (var list in Lists) {
+		foreach (var list in QuestLists) {
 			list.Clear();
 		}
 	}
