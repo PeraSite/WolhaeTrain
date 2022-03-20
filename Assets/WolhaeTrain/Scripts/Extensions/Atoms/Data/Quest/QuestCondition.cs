@@ -10,10 +10,14 @@ public interface IQuestCondition {
 }
 
 public class BoolVariableQuestCondition : IQuestCondition {
+	[HorizontalGroup]
 	public BoolVariable Variable;
 
+	[HorizontalGroup, HideLabel]
+	public bool Value;
+
 	public bool Check() {
-		return Variable.Value;
+		return Variable.Value == Value;
 	}
 }
 
@@ -23,7 +27,7 @@ public class IntVariableCompareQuestCondition : IQuestCondition {
 
 	[HorizontalGroup("", 20), HideLabel]
 	[ValueDropdown("@CompareType.Values")]
-	public CompareType Compare;
+	public CompareType Compare = CompareType.EQUALS;
 
 	[HorizontalGroup("", 50), HideLabel]
 	public int Value;
@@ -45,7 +49,7 @@ public class CharacterStatCompareQuestCondition : IQuestCondition {
 
 	[HorizontalGroup("Horiz", 20), HideLabel]
 	[ValueDropdown("@CompareType.Values")]
-	public CompareType Compare;
+	public CompareType Compare = CompareType.EQUALS;
 
 	[HorizontalGroup("Horiz", 50), HideLabel]
 	public int Value;

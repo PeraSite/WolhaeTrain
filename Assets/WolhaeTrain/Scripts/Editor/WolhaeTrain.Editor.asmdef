@@ -9,7 +9,8 @@
         "UnityAtoms.UnityAtomsCore.Editor",
         "UnityAtoms.UnityAtomsCore.Runtime",
         "WolhaeTrain.Extensions",
-        "Sheet2Asset.Editor"
+        "Sheet2Asset.Editor",
+        "WolhaeTrain.Runtime"
     ],
     "includePlatforms": [
         "Editor"

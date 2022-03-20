@@ -15,7 +15,9 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: ce8742ec205962e4f92f78b48c4a523f, type: 2}
+    - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -77,6 +79,19 @@ MonoBehaviour:
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: true
+    - Name: Actions
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -105,6 +120,19 @@ MonoBehaviour:
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: false
+    - Name: Actions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -116,11 +144,47 @@ MonoBehaviour:
       Data: 
     - Name: Conditions
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[IQuestCondition, WolhaeTrain.Extensions]],
+      Data: 3|System.Collections.Generic.List`1[[IQuestCondition, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 4|BoolVariableQuestCondition, WolhaeTrain.Extensions
+    - Name: Variable
+      Entry: 10
       Data: 0
+    - Name: Value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|CharacterStatCompareQuestCondition, WolhaeTrain.Extensions
+    - Name: Stat
+      Entry: 10
+      Data: 1
+    - Name: StatType
+      Entry: 3
+      Data: 0
+    - Name: Compare
+      Entry: 7
+      Data: CompareType, WolhaeTrain.Extensions
+    - Name: Name
+      Entry: 1
+      Data: <=
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Value
+      Entry: 3
+      Data: 40
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -129,7 +193,7 @@ MonoBehaviour:
       Data: 
     - Name: Actions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+      Data: 6|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
         mscorlib
     - Name: 
       Entry: 12

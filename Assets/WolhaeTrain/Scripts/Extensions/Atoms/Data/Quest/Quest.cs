@@ -27,14 +27,11 @@ public struct Quest {
 	[BoxGroup("정보")]
 	public bool IsStory;
 
-	[OdinSerialize]
 	public List<QuestSelection> Selections;
 
-	[OdinSerialize]
 	[HideReferenceObjectPicker]
 	public List<IQuestCondition> Conditions;
 
-	[OdinSerialize]
 	[HideReferenceObjectPicker]
 	public List<IQuestAction> Actions;
 

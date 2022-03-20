@@ -18,7 +18,7 @@ public class QuestManager : MonoBehaviour {
 	public QuestEvent MakeQuestClearEvent;
 
 	[Header("목록")]
-	public QuestValueList QuestDatabase;
+	public QuestDatabase QuestDatabase;
 
 	public QuestValueList ActiveQuests;
 	public QuestValueList ClearedQuest;
@@ -35,7 +35,7 @@ public class QuestManager : MonoBehaviour {
 		MakeQuestClearEvent.Register(MakeQuestClear);
 		QuestSelectedEvent.Register(OnQuestSelected);
 
-		Debug.Log("QuestDatabase" + string.Join(",", QuestDatabase.Select(q => q.Title)));
+		Debug.Log("QuestDatabase" + string.Join(",", QuestDatabase.Select(q => q.Value.Title)));
 		Debug.Log("Active Quests" + string.Join(",", ActiveQuests.Select(q => q.Title)));
 		if (ActiveQuests.Count == 0)
 			GenerateNewQuest();
@@ -52,38 +52,33 @@ public class QuestManager : MonoBehaviour {
 	public void GenerateNewQuest() {
 		var possible = QuestDatabase.Where(
 			q =>
-				!IsActiveQuest(q) && !IsClearedQuest(q) && q.CheckConditions() &&
-				Random.Range(0, 100) <= q.SpawnProbability
+				!IsActiveQuest(q)
+				&& !IsClearedQuest(q)
+				&& q.Value.CheckConditions()
+				&& Random.Range(0, 100) <= q.Value.SpawnProbability
 		).ToList();
 
 		for (var i = 0; i < Random.Range(1, MaxNormalQuestAmount + 1); i++) {
-			var normal = possible.Where(q => !q.IsStory).RandomOrNull();
-			if (normal.Title != null) {
-				MakeQuestActive(normal);
+			var normal = possible.Where(q => !q.Value.IsStory).RandomOrNull();
+			if (normal != null) {
+				MakeQuestActive(normal.Value);
 			}
 		}
 
 		if (Random.Range(0, 100) <= StoryQuestProbability) {
-			var story = possible.Where(q => q.IsStory).RandomOrNull();
-			if (story.Title != null)
-				MakeQuestActive(story);
+			var story = possible.Where(q => q.Value.IsStory).RandomOrNull();
+			if (story != null)
+				MakeQuestActive(story.Value);
 		}
-	}
-
-	public void ClearRandom() {
-		var quest = ActiveQuests.RandomOrNull();
-		if (quest.Title == null) return;
-
-		MakeQuestClear(quest);
 	}
 
 	private void OnQuestSelected(IntPair pair) {
 		var (questID, selectIndex) = pair;
-		var quest = QuestDatabase.FirstOrDefault(q => q.ID == questID);
-		if (quest.Title == null) return;
+		var quest = QuestDatabase.FirstOrDefault(q => q.Value.ID == questID);
+		if (quest == null) return;
 		if (!IsActiveQuest(quest)) return;
-		Debug.Log("User select " + quest.Title + " to " + selectIndex);
-		MakeQuestClear(quest);
+		Debug.Log("User select " + quest.Value.Title + " to " + selectIndex);
+		MakeQuestClear(quest.Value);
 	}
 
 	public void MakeQuestActive(Quest quest) {
@@ -117,5 +112,14 @@ public class QuestManager : MonoBehaviour {
 
 	private bool IsClearedQuest(Quest quest) {
 		return ClearedQuest.Contains(quest);
+	}
+
+
+	private bool IsActiveQuest(QuestConstant quest) {
+		return ActiveQuests.Contains(quest.Value);
+	}
+
+	private bool IsClearedQuest(QuestConstant quest) {
+		return ClearedQuest.Contains(quest.Value);
 	}
 }

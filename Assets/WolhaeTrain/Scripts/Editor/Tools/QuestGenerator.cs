@@ -34,7 +34,7 @@ public class QuestGenerator : OdinEditorWindow {
 
 	public bool GenerateAsset;
 
-	public QuestValueList List;
+	public QuestDatabase QuestDatabase;
 
 	[Button]
 	private void Generate() {
@@ -56,14 +56,14 @@ public class QuestGenerator : OdinEditorWindow {
 		}
 
 		if (GenerateAsset) {
-			if(!List.SafeIsUnityNull()) List.Clear();
+			if (!QuestDatabase.SafeIsUnityNull()) QuestDatabase.Clear();
 
 			grid.Select(GenerateQuestionData)
 				.ForEach(data => {
 					if (data.Value.Title == "n") return;
 					data.CreateAsset(Path.Combine(TargetFolder, $"{data.Value.Title}.asset"));
-					if (!List.SafeIsUnityNull()) {
-						List.Add(data.Value);
+					if (!QuestDatabase.SafeIsUnityNull()) {
+						QuestDatabase.Add(data);
 					}
 				});
 			AssetDatabase.Refresh();
@@ -72,9 +72,13 @@ public class QuestGenerator : OdinEditorWindow {
 
 
 	private QuestConstant GenerateQuestionData(List<string> data) {
-		var instance = CreateInstance<QuestConstant>();
+		var id = data[0].AsInt(0);
+
+		var exist = QuestDatabase.Any(qc => qc.Value.ID == id);
+		var instance = QuestDatabase.FirstOrDefault(qc => qc.Value.ID == id) ?? CreateInstance<QuestConstant>();
+
 		instance.InitConstant(new Quest {
-			ID = data[0].AsInt(0),
+			ID = id,
 			Title = data[1],
 			Talker = data[2] switch {
 				"아빠" => CharacterType.Dad,
@@ -85,9 +89,9 @@ public class QuestGenerator : OdinEditorWindow {
 			},
 			Description = data[3],
 			SpawnProbability = data[7].Replace("%", "").AsInt(0),
-			Selections = new List<QuestSelection>(),
-			Actions = new List<IQuestAction>(),
-			Conditions = new List<IQuestCondition>()
+			Conditions = exist ? instance.Value.Conditions : new List<IQuestCondition>(),
+			Actions = exist ? instance.Value.Actions : new List<IQuestAction>(),
+			Selections = exist ? instance.Value.Selections : new List<QuestSelection>(),
 		});
 
 		var selection1 = new QuestSelection {
@@ -97,7 +101,8 @@ public class QuestGenerator : OdinEditorWindow {
 			Hunger = data[11].AsInt(0),
 			Mental = data[12].AsInt(0),
 			ResultText = data[13],
-			canSelectIfHaveEffect = data[6] == "선택지 1"
+			canSelectIfHaveEffect = data[6] == "선택지 1",
+			Actions = exist ? instance.Value.Selections[0].Actions : new List<IQuestAction>()
 		};
 
 		var selection2 = new QuestSelection {
@@ -107,11 +112,12 @@ public class QuestGenerator : OdinEditorWindow {
 			Hunger = data[17].AsInt(0),
 			Mental = data[18].AsInt(0),
 			ResultText = data[19],
-			canSelectIfHaveEffect = data[6] == "선택지 2"
+			canSelectIfHaveEffect = data[6] == "선택지 2",
+			Actions = exist ? instance.Value.Selections[1].Actions : new List<IQuestAction>()
 		};
 
-		instance.Value.Selections.Add(selection1);
-		instance.Value.Selections.Add(selection2);
+		instance.Value.Selections.Insert(0, selection1);
+		instance.Value.Selections.Insert(1, selection2);
 		return instance;
 	}
 }

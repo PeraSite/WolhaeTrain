@@ -19,7 +19,7 @@ public class DayEndUI : MonoBehaviour {
 	public VoidEvent NextDayEvent;
 
 	[Header("퀘스트")]
-	public QuestValueList QuestDatabase;
+	public QuestDatabase QuestDatabase;
 
 	public IntPairEvent QuestSelectedEvent;
 
@@ -64,9 +64,9 @@ public class DayEndUI : MonoBehaviour {
 
 	private void OnQuestSelected(IntPair pair) {
 		var (questID, selectedIndex) = pair;
-		var quest = QuestDatabase.FirstOrDefault(q => q.ID == questID);
-		if (quest.Title == null) return;
-		Summary.text += quest.Selections[selectedIndex].ResultText + "\n";
+		var quest = QuestDatabase.FirstOrDefault(q => q.Value.ID == questID);
+		if (quest == null) return;
+		Summary.text += quest.Value.Selections[selectedIndex].ResultText + "\n";
 	}
 
 

@@ -18,8 +18,6 @@ public class QuestUI : SerializedMonoBehaviour {
 	public TextMeshProUGUI DayText;
 
 	[Header("퀘스트")]
-	public QuestValueList QuestDatabase;
-
 	public QuestValueList ActiveQuest;
 
 	public Memo MemoPrefab;
@@ -27,23 +25,16 @@ public class QuestUI : SerializedMonoBehaviour {
 	private Dictionary<int, Memo> CreatedMemo = new(); //Dictionary<position, CreatedMemo>
 	public Canvas Canvas;
 
-	public QuestEvent MakeQuestActiveEvent;
 	public QuestEvent OnActiveQuestAddEvent;
 	public QuestEvent OnActiveQuestRemoveEvent;
-	public QuestEvent OnClearQuestAddEvent;
-	public QuestEvent OnClearQuestRemoveEvent;
 
 	[Header("연료")]
-	public IntVariable FuelVariable;
-
 	public IntEvent FuelChangedEvent;
 	public TextMeshProUGUI FuelText;
 	public Image FuelGauge;
 
 
 	[Header("청결")]
-	public IntVariable CleanVariable;
-
 	public IntEvent CleanChangedEvent;
 	public TextMeshProUGUI CleanText;
 	public List<GameObject> Checks;
