@@ -2,6 +2,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace PixelCrushers
@@ -873,6 +874,7 @@ namespace PixelCrushers
         /// starting scene. Same as ResetGameState except loads a starting scene.
         /// </summary>
         /// <param name="startingSceneName"></param>
+        [Button]
         public static void RestartGame(string startingSceneName)
         {
             ResetGameState();
@@ -884,6 +886,7 @@ namespace PixelCrushers
         /// RestartGame except it doesn't load a scene after resetting.
         /// </summary>
         /// <param name="startingSceneName"></param>
+        [Button]
         public static void ResetGameState()
         {
             ClearSavedGameData();

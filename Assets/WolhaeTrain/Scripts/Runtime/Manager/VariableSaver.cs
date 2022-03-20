@@ -6,12 +6,15 @@ using PixelCrushers;
 using Sirenix.Utilities;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
+using UnityEngine;
 
 public class VariableSaver : Saver {
 	public AtomBaseVariableList Variables;
 
 	public QuestDatabase QuestDatabase;
 	public List<QuestValueList> QuestLists;
+
+	public List<AtomEventBase> Events;
 
 	public string Separator = "뚌";
 
@@ -44,11 +47,17 @@ public class VariableSaver : Saver {
 		foreach (var list in QuestLists) {
 			var dictName = GetAtomID(list);
 			var valueList = listDict[dictName];
-			list.IList = valueList.Select(id => QuestDatabase.First(q => q.Value.ID == id)).ToList();
+			var result = valueList.Select(id => QuestDatabase.First(q => q.Value.ID == id)).ToList();
+			if (!result.IsNullOrEmpty()) {
+				list.IList = result.Select(qc => qc.Value).ToList();
+			}
 		}
 	}
 
 	public override void OnRestartGame() {
+		foreach (var atomEventBase in Events) {
+			atomEventBase.ResetBuffer();
+		}
 		foreach (var variable in Variables) {
 			variable.ResetValue();
 		}

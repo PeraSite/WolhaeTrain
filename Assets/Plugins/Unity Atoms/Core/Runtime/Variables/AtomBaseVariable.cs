@@ -24,6 +24,10 @@ namespace UnityAtoms
         /// Abstract method that could be implemented to reset the Variable value.
         /// </summary>
         public abstract void ResetValue(bool shouldTriggerEvents = true);
+
+        public virtual void ResetReplayBuffer() {
+            
+        }
     }
 
     /// <summary>

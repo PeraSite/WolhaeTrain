@@ -3,21 +3,26 @@ using UnityAtoms;
 using UnityEngine;
 
 public class EndingUI : MonoBehaviour {
-	public EndingDataEvent EndingEvent;
+	public EndingDataEvent LastEndingChanged;
 
 	public TextMeshProUGUI Title;
 	public TextMeshProUGUI Description;
 
 	private void OnEnable() {
-		EndingEvent.Register(OnEnding);
+		LastEndingChanged.Register(OnEnding);
 	}
 
 	private void OnDisable() {
-		EndingEvent.Unregister(OnEnding);
+		LastEndingChanged.Unregister(OnEnding);
 	}
 
 	private void OnEnding(EndingData data) {
+		Debug.Log($"Showing ending:" + data.Title);
 		Title.text = data.Title;
 		Description.text = data.Description;
+	}
+
+	public void ReturnToMain() {
+
 	}
 }

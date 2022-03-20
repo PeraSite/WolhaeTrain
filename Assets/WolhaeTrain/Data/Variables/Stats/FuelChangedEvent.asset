@@ -22,5 +22,5 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _developerDescription: 
-  _replayBufferSize: 3
+  _replayBufferSize: 1
   _inspectorRaiseValue: 0

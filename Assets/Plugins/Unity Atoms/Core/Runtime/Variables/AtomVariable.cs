@@ -401,5 +401,10 @@ namespace UnityAtoms
 
             throw new NotSupportedException($"Event type {typeof(E)} not supported! Use {typeof(E1)} or {typeof(E2)}.");
         }
+
+        public override void ResetReplayBuffer() {
+            Changed?.ReplayBuffer?.Clear();
+            ChangedWithHistory?.ReplayBuffer?.Clear();
+        }
     }
 }

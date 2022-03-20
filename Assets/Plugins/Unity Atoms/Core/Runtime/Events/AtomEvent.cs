@@ -35,7 +35,7 @@ namespace UnityAtoms
 
         private Queue<T> _replayBuffer = new Queue<T>();
 
-        public override void EditorInit() {
+        public override void ResetBuffer() {
             _replayBuffer.Clear();
         }
 

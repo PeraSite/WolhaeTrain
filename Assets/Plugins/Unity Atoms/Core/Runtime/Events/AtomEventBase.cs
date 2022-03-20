@@ -85,7 +85,7 @@ namespace UnityAtoms
             }
         }
 
-        public virtual void EditorInit() {
+        public virtual void ResetBuffer() {
 
         }
 
@@ -104,7 +104,7 @@ namespace UnityAtoms
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void InvokeEditorInit() {
             foreach (var instance in _instances) {
-                instance.EditorInit();
+                instance.ResetBuffer();
             }
         }
 #endif

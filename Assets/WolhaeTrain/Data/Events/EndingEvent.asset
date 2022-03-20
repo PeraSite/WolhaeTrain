@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac9968820e09d40ba0692b5b1431cf, type: 3}
   m_Name: EndingEvent
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _developerDescription: 
-  _replayBufferSize: 1
+  _replayBufferSize: 0
   _inspectorRaiseValue:
-    Title: 
-    Description: 
+    Title: ttasd
+    Description: ddd
