@@ -40,7 +40,7 @@ MonoBehaviour:
       Data: 4
     - Name: SpawnProbability
       Entry: 3
-      Data: 70
+      Data: 50
     - Name: IsStory
       Entry: 5
       Data: false
@@ -72,7 +72,7 @@ MonoBehaviour:
       Data: -5
     - Name: Mental
       Entry: 3
-      Data: 15
+      Data: 20
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: false

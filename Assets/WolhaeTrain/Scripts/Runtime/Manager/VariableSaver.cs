@@ -33,6 +33,7 @@ public class VariableSaver : Saver {
 	}
 
 	public override void ApplyData(string data) {
+		if(data == null)return;
 		var split = data.Split(Separator);
 		var varDictString = split[0];
 		var listDictString = split[1];
@@ -41,9 +42,8 @@ public class VariableSaver : Saver {
 		foreach (var variable in Variables) {
 			var id = GetAtomID(variable);
 			variable.BaseValue = varDict[id];
-		}
 
-		var listDict = SaveSystem.Deserialize<Dictionary<string, List<int>>>(listDictString);
+			var listDict = SaveSystem.Deserialize<Dictionary<string, List<int>>>(listDictString);
 		foreach (var list in QuestLists) {
 			var dictName = GetAtomID(list);
 			var valueList = listDict[dictName];

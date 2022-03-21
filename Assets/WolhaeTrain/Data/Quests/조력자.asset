@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: a57a1191e999b6442ba27b9338d3ced8, type: 2}
+    - {fileID: 11400000, guid: 58f082dfda697464d847d15963fe406d, type: 2}
     - {fileID: 11400000, guid: c5301d5ecc8666b40a5679ad218384c5, type: 2}
     - {fileID: 11400000, guid: f175b6d3aea488d41a535f2707a18f74, type: 2}
     - {fileID: 11400000, guid: 58ba8bf24cc60d847a04e920a63861fd, type: 2}
@@ -48,7 +49,7 @@ MonoBehaviour:
       Data: 40
     - Name: IsStory
       Entry: 5
-      Data: true
+      Data: false
     - Name: Selections
       Entry: 7
       Data: 0|System.Collections.Generic.List`1[[QuestSelection, WolhaeTrain.Extensions]],
@@ -64,10 +65,7 @@ MonoBehaviour:
       Data: "\uB9CE\uC774 \uC704\uAE09\uD574\uBCF4\uC5EC. \uAE30\uCC28\uB85C \uB370\uB824\uAC00\uC790."
     - Name: ResultText
       Entry: 1
-      Data: "\uB0A8\uB9E4\uB294 \uC815\uB9D0 \uACE0\uB9C8\uC6CC\uD588\uC5B4. \uADF8\uB9AC\uACE0
-        \uC790\uC2E0\uB4E4\uC758 \uBB34\uB9AC\uB3C4 \uC18C\uAC1C\uC2DC\uCF1C\uC92C\uC9C0.
-        \uADF8\uB4E4\uACFC \uD568\uAED8\uB77C\uBA74 \uD76C\uB9DD\uC774 \uC0DD\uAE38\uC9C0\uB3C4
-        \uBAB0\uB77C."
+      Data: n
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -96,9 +94,12 @@ MonoBehaviour:
     - Name: Event
       Entry: 10
       Data: 0
-    - Name: Data
+    - Name: Variable
       Entry: 10
       Data: 1
+    - Name: Data
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -116,12 +117,11 @@ MonoBehaviour:
       Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
-      Data: "\uC544\uBB34\uB9AC \uADF8\uB798\uB3C4 \uAE30\uCC28\uB294 \uC880 \uC544\uB2CC
-        \uAC83 \uAC19\uB2E4. \uAE30\uCC28 \uC8FC\uBCC0\uC5D0 \uB370\uB824\uB2E4\uC900\uB2E4."
+      Data: "\uC544\uBB34\uB9AC \uADF8\uB798\uB3C4 \uAE30\uCC28\uB294 \uC880.. \uAE30\uCC28
+        \uC8FC\uBCC0\uC5D0 \uB370\uB824\uB2E4\uC900\uB2E4."
     - Name: ResultText
       Entry: 1
-      Data: "\uB0A8\uB9E4\uB97C \uB450\uACE0 \uC628 \uAC74 \uB9C8\uC74C\uC774 \uC544\uD504\uC9C0\uB9CC
-        \uC5B4\uCA54 \uC218 \uC5C6\uB294 \uC77C\uC774\uC5C8\uC5B4."
+      Data: n
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -171,10 +171,10 @@ MonoBehaviour:
       Data: 5|QuestContainsCondition, WolhaeTrain.Extensions
     - Name: Quest
       Entry: 10
-      Data: 2
+      Data: 3
     - Name: TargetList
       Entry: 10
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 8
       Data: 

@@ -17,4 +17,7 @@ public struct QuestSelection {
 
 	[HideReferenceObjectPicker]
 	public List<IQuestAction> Actions;
+
+	[Button]
+	public void InvokeActions() => Actions.ForEach(a => a.Execute());
 }

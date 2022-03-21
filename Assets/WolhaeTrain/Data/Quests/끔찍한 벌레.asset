@@ -58,7 +58,7 @@ MonoBehaviour:
     - Name: ButtonText
       Entry: 1
       Data: "\uB054\uCC0D\uD558\uC9C0\uB9CC \uACC4\uC18D \uB194\uB480\uB2E4\uAC04
-        \uC704\uD5D8\uD558\uB2E4. \uBC8C\uB808\uB97C \uC7A1\uB294\uB2E4."
+        \uC704\uD5D8\uD574. \uBC8C\uB808\uB97C \uC7A1\uB294\uB2E4."
     - Name: ResultText
       Entry: 1
       Data: "\uBC8C\uB808\uB97C \uC7A1\uC73C\uB824\uB2E4 \uBB3C\uB824\uBC84\uB838\uC5B4.
@@ -68,7 +68,7 @@ MonoBehaviour:
       Data: 0
     - Name: Clean
       Entry: 3
-      Data: 10
+      Data: 20
     - Name: Hunger
       Entry: 3
       Data: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
       Data: 2
     - Name: Percent
       Entry: 4
-      Data: 50
+      Data: 30
     - Name: 
       Entry: 8
       Data: 
@@ -131,7 +131,7 @@ MonoBehaviour:
       Data: 0
     - Name: Mental
       Entry: 3
-      Data: 5
+      Data: 10
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: false

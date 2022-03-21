@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b935bc3bfd4944ab93c4a574dfd0da, type: 3}
+  m_Name: Daughter_walk
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 11400000, guid: 8ee0d2b7409249646816fc1cf29d24b0, type: 2}
+  - {fileID: 11400000, guid: b07cab1983af53649a0e85993b10baec, type: 2}
+  - {fileID: 11400000, guid: 10376b24e588cd242add9a9c7bec11b9, type: 2}
+  - {fileID: 11400000, guid: ac89abb4dba36bc44aea76df368a45bb, type: 2}
+  controlDriver:
+    name: effects
+    autoIncrement: 0
+    percentageBased: 0
+    guid: 508f5fd7-75c6-47a1-bda9-16b1b780d67e
+  drivers:
+    keys: []
+    values: 

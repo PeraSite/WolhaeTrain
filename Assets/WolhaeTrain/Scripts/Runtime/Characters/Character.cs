@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using Aarthificial.Reanimation;
 using Sirenix.OdinInspector;
 using UnityAtoms;
 using UnityEngine;
@@ -15,11 +15,13 @@ public class Character : MonoBehaviour {
 
 	public Vector3 UIOffset;
 
+	private Reanimator _reanimator;
 	private bool _isShowing;
 	private Transform _transform;
 
 	private void Awake() {
 		_transform = GetComponent<Transform>();
+		_reanimator = GetComponent<Reanimator>();
 	}
 
 	private void OnEnable() {
@@ -31,16 +33,34 @@ public class Character : MonoBehaviour {
 	}
 
 	private void OnStatChanged(CharacterStat stat) {
-		if (stat.Type == Stat.Value.Type)
-			Debug.Log(
-				$"Character Stat Updated: {stat.Type}: {stat.Hunger}, {stat.Mental}, {string.Join(",", stat.Effects)}");
-
 		if (!_isShowing) return;
 		StatusUIUpdateEvent.Raise(new StatusUIUpdatePayload {
 			ShowPanel = true,
 			Position = _transform.position + UIOffset,
 			Stat = stat
 		});
+	}
+
+	private enum EffectStates {
+		NORMAL = 0,
+		DIRTY = 1,
+		HURT = 2,
+		SICK = 3
+	}
+
+	private void UpdateAnimation() {
+		var stat = Stat.Value;
+		if (stat.Effects.Contains(StatusEffect.Infect)
+		    || stat.Effects.Contains(StatusEffect.Hurt)) {
+			_reanimator.Set("effects", (int) EffectStates.HURT);
+		} else if (stat.Effects.Contains(StatusEffect.Crazy)) {
+			_reanimator.Set("effects", (int) EffectStates.DIRTY);
+		} else if (stat.Effects.Contains(StatusEffect.Cold)
+		           || stat.Effects.Contains(StatusEffect.Exhaust)) {
+			_reanimator.Set("effects", (int) EffectStates.SICK);
+		} else {
+			_reanimator.Set("effects", 0);
+		}
 	}
 
 	public void OpenStatusUI() {
@@ -60,6 +80,11 @@ public class Character : MonoBehaviour {
 	}
 
 	private void Update() {
+		UpdateAnimation();
+		UpdateStatusUIPosition();
+	}
+
+	private void UpdateStatusUIPosition() {
 		if (!_isShowing) return;
 		StatusUIUpdateEvent.Raise(new StatusUIUpdatePayload {
 			ShowPanel = true,

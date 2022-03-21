@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b935bc3bfd4944ab93c4a574dfd0da, type: 3}
+  m_Name: Son_idle
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 11400000, guid: c199542ca47644e4783f6446b1adf37c, type: 2}
+  - {fileID: 11400000, guid: 97a2901b909677e4f8a825824cb16188, type: 2}
+  - {fileID: 11400000, guid: 6acbbf52a60879f4dbf932a57bfec5a1, type: 2}
+  - {fileID: 11400000, guid: 48045dd8d2443414881535b3b67d18cd, type: 2}
+  controlDriver:
+    name: effects
+    autoIncrement: 0
+    percentageBased: 0
+    guid: 508f5fd7-75c6-47a1-bda9-16b1b780d67e
+  drivers:
+    keys: []
+    values: 

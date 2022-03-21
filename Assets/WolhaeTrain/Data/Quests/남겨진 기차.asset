@@ -47,7 +47,7 @@ MonoBehaviour:
       Data: 40
     - Name: IsStory
       Entry: 5
-      Data: true
+      Data: false
     - Name: Selections
       Entry: 7
       Data: 0|System.Collections.Generic.List`1[[QuestSelection, WolhaeTrain.Extensions]],
@@ -69,13 +69,13 @@ MonoBehaviour:
         \uC4F8\uB9CC\uD55C\uAC8C \uB9CE\uC558\uC5B4."
     - Name: Fuel
       Entry: 3
-      Data: 5
+      Data: 10
     - Name: Clean
       Entry: 3
       Data: -5
     - Name: Hunger
       Entry: 3
-      Data: 10
+      Data: 20
     - Name: Mental
       Entry: 3
       Data: 5
@@ -129,7 +129,7 @@ MonoBehaviour:
       Data: 0
     - Name: Clean
       Entry: 3
-      Data: 5
+      Data: 10
     - Name: Hunger
       Entry: 3
       Data: -5

@@ -42,7 +42,7 @@ MonoBehaviour:
       Data: 2
     - Name: SpawnProbability
       Entry: 3
-      Data: 70
+      Data: 50
     - Name: IsStory
       Entry: 5
       Data: false
@@ -68,7 +68,7 @@ MonoBehaviour:
       Data: 0
     - Name: Clean
       Entry: 3
-      Data: -10
+      Data: -5
     - Name: Hunger
       Entry: 3
       Data: 0
