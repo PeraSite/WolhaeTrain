@@ -53,12 +53,6 @@ public class QuestGenerator : OdinEditorWindow {
 					.Select(cell => cell.FormattedValue).ToList()
 				).Where(row => !row.IsNullOrEmpty()).ToList()).ToList();
 
-		if (PrintDebug) {
-			foreach (var row in grid) {
-				Debug.Log(string.Join(",", row));
-			}
-		}
-
 		if (GenerateAsset) {
 			grid.Select(GenerateQuestionData)
 				.ForEach(data => {
@@ -74,6 +68,9 @@ public class QuestGenerator : OdinEditorWindow {
 
 
 	private QuestConstant GenerateQuestionData(List<string> data) {
+		if (PrintDebug) {
+			Debug.Log(string.Join(",", data));
+		}
 		var id = data[0].AsInt(0);
 		var exist = QuestDatabase.Any(qc => qc.Value.ID == id);
 		var instance = QuestDatabase.FirstOrDefault(qc => qc.Value.ID == id) ?? CreateInstance<QuestConstant>();

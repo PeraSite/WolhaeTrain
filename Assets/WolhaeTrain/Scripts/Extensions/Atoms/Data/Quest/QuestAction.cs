@@ -29,7 +29,6 @@ public class SetBoolVariableAction : IQuestAction {
 }
 
 public class EndingAction : IQuestAction {
-
 	public EndingDataEvent Event;
 	public EndingDataVariable Variable;
 
@@ -42,8 +41,36 @@ public class EndingAction : IQuestAction {
 	}
 }
 
-public class AddStatusEffect : IQuestAction {
+public class CharacterStatAction : IQuestAction {
+	[HorizontalGroup("Horiz"), HideLabel]
+	[VerticalGroup("Horiz/Stat")]
+	public CharacterStatVariable Stat;
 
+	[HorizontalGroup("Horiz"), HideLabel]
+	[VerticalGroup("Horiz/Stat")]
+	public CharacterStatType StatType;
+
+	[HorizontalGroup("Horiz", 50), HideLabel]
+	public int Value;
+
+	public enum CharacterStatType {
+		Hunger,
+		Mental
+	}
+
+	public void Execute() {
+		if (StatType == CharacterStatType.Hunger)
+			Stat.Value = Stat.Value with {
+				Hunger = Mathf.Clamp(Stat.Value.Hunger + Value, 0, 100)
+			};
+		else
+			Stat.Value = Stat.Value with {
+				Mental = Mathf.Clamp(Stat.Value.Mental + Value, 0, 100)
+			};
+	}
+}
+
+public class AddStatusEffect : IQuestAction {
 	[HorizontalGroup(), HideLabel]
 	public CharacterStatVariable Stat;
 
