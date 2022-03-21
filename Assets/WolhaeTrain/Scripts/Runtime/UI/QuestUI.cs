@@ -7,8 +7,6 @@ using Sirenix.Utilities;
 using TMPro;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
