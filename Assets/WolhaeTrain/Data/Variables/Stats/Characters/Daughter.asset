@@ -25,8 +25,8 @@ MonoBehaviour:
   _id: 
   _value:
     Type: 4
-    Hunger: 50
-    Mental: 65
+    Hunger: 55
+    Mental: 40
     Effects: 
   _changed: {fileID: 11400000, guid: a093c587b8c7de54da1c3f732032dff9, type: 2}
   _changedWithHistory: {fileID: 11400000, guid: 3aa328eb169965b4493af802c5345820,
@@ -35,12 +35,12 @@ MonoBehaviour:
   _triggerChangedWithHistoryOnOnEnable: 0
   _oldValue:
     Type: 4
-    Hunger: 50
-    Mental: 65
+    Hunger: 60
+    Mental: 45
     Effects: 
   _initialValue:
     Type: 4
-    Hunger: 50
+    Hunger: 55
     Mental: 65
     Effects: 
   _preChangeTransformers: []
