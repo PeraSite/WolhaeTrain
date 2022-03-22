@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using PixelCrushers;
@@ -58,6 +59,11 @@ public class QuestUI : SerializedMonoBehaviour {
 	public List<GameObject> Circles;
 	public CharacterStatEvent ExploreSelectedEvent;
 
+	[Header("입력")]
+	public string closeButtonName;
+
+	public UIPanel Panel;
+
 	private static bool shouldInit;
 
 	private void OnEnable() {
@@ -105,6 +111,12 @@ public class QuestUI : SerializedMonoBehaviour {
 			Destroy(memo.gameObject);
 		}
 		CreatedMemo.Clear();
+	}
+
+	private void Update() {
+		if (Panel.isOpen && InputDeviceManager.IsButtonDown(closeButtonName)) {
+			Panel.Close();
+		}
 	}
 
 	private void OnCleanChanged(int clean) {
