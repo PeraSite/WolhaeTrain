@@ -17,7 +17,7 @@ public class EndingUI : MonoBehaviour {
 	}
 
 	private void OnEnding(EndingData data) {
-		Debug.Log($"Showing ending:" + data.Title);
+		DebugUtils.Log($"Showing ending:" + data.Title);
 		Title.text = data.Title;
 		Description.text = data.Description;
 	}

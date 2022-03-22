@@ -35,8 +35,8 @@ public class QuestManager : MonoBehaviour {
 		MakeQuestClearEvent.Register(MakeQuestClear);
 		QuestSelectedEvent.Register(OnQuestSelected);
 
-		Debug.Log("QuestDatabase" + string.Join(",", QuestDatabase.Select(q => q.Value.Title)));
-		Debug.Log("Active Quests" + string.Join(",", ActiveQuests.Select(q => q.Title)));
+		DebugUtils.Log("QuestDatabase" + string.Join(",", QuestDatabase.Select(q => q.Value.Title)));
+		DebugUtils.Log("Active Quests" + string.Join(",", ActiveQuests.Select(q => q.Title)));
 		if (ActiveQuests.Count == 0)
 			GenerateNewQuest();
 	}
@@ -77,20 +77,20 @@ public class QuestManager : MonoBehaviour {
 		var quest = QuestDatabase.FirstOrDefault(q => q.Value.ID == questID);
 		if (quest == null) return;
 		if (!IsActiveQuest(quest)) return;
-		Debug.Log("User select " + quest.Value.Title + " to " + selectIndex);
+		DebugUtils.Log("User select " + quest.Value.Title + " to " + selectIndex);
 		MakeQuestClear(quest.Value);
 	}
 
 	public void MakeQuestActive(Quest quest) {
 		if (IsActiveQuest(quest)) return;
 		if (IsClearedQuest(quest)) return;
-		Debug.Log("New active quest:" + quest.Title);
+		DebugUtils.Log("New active quest:" + quest.Title);
 		ActiveQuests.Add(quest);
 	}
 
 	public void MakeQuestClear(Quest quest) {
 		if (IsClearedQuest(quest)) return;
-		Debug.Log("Quest Cleared: " + quest.Title);
+		DebugUtils.Log("Quest Cleared: " + quest.Title);
 		ActiveQuests.Remove(quest);
 		ClearedQuest.Add(quest);
 	}

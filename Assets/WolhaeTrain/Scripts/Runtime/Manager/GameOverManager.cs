@@ -56,7 +56,7 @@ public class GameOverManager : MonoBehaviour {
 	}
 
 	private void OnEndingRequest(EndingData data) {
-		Debug.Log($"Ending request:" + data.Title);
+		DebugUtils.Log($"Ending request:" + data.Title);
 		SceneManager.LoadScene(EndingScene);
 		EndingVariable.Value = data;
 	}

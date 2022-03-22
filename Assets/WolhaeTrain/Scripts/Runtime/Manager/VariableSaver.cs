@@ -60,7 +60,7 @@ public class VariableSaver : Saver {
 			atomEventBase.ResetBuffer();
 		}
 		foreach (var variable in Variables) {
-			Debug.Log("Resetting " + variable.name);
+			DebugUtils.Log("Resetting " + variable.name);
 			variable.ResetValue();
 		}
 		foreach (var list in QuestLists) {

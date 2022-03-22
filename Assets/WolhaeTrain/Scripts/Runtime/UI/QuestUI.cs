@@ -120,7 +120,7 @@ public class QuestUI : SerializedMonoBehaviour {
 	}
 
 	private void OnCleanChanged(int clean) {
-		Debug.Log("Clean changed to" + clean);
+		DebugUtils.Log("Clean changed to" + clean);
 		CleanText.text = clean switch {
 			>= 90 => "VERY\nCLEAN",
 			>= 80 => "CLEAN",
@@ -134,13 +134,13 @@ public class QuestUI : SerializedMonoBehaviour {
 	}
 
 	private void OnFuelChanged(int fuel) {
-		Debug.Log("Fuel changed to" + fuel);
+		DebugUtils.Log("Fuel changed to" + fuel);
 		FuelText.text = fuel.ToString();
 		FuelGauge.fillAmount = fuel / 100f;
 	}
 
 	private void OnDayChanged(int day) {
-		Debug.Log("Day changed to" + day);
+		DebugUtils.Log("Day changed to" + day);
 		DayText.text = day + "일 째";
 
 		ParentPinTransform.gameObject.SetActive(false);
@@ -168,7 +168,7 @@ public class QuestUI : SerializedMonoBehaviour {
 	}
 
 	private void CreateMemo(Quest quest) {
-		Debug.Log("CreateMemo: " + quest.Title);
+		DebugUtils.Log("CreateMemo: " + quest.Title);
 
 		var parent = MemoPositions.Where((pos, index) => !CreatedMemo.ContainsKey(index)).First();
 		var index = MemoPositions.IndexOf(parent);
@@ -178,7 +178,7 @@ public class QuestUI : SerializedMonoBehaviour {
 	}
 
 	private void DeleteMemo(Quest quest) {
-		Debug.Log("DeleteMemo: " + quest.Title);
+		DebugUtils.Log("DeleteMemo: " + quest.Title);
 
 		var pair = CreatedMemo.FirstOrDefault(pair => pair.Value.Quest.Title == quest.Title);
 		if (pair.Equals(null)) {
@@ -215,7 +215,7 @@ public class QuestUI : SerializedMonoBehaviour {
 
 		Circles.ForEach((obj, index) => { obj.SetActive(selected == index); });
 
-		Debug.Log("탐험 지정 : " + stat.Type);
+		DebugUtils.Log("탐험 지정 : " + stat.Type);
 		ExploreSelectedEvent.Raise(stat);
 	}
 }
