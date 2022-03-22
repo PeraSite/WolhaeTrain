@@ -22,23 +22,43 @@ public class GameOverManager : MonoBehaviour {
 
 	public EndingDataConstant CleanEnding;
 
+	[Header("배고픔")]
+	public CharacterStatEvent CharacterStatChangedEvent;
+
+	public EndingDataConstant HungerEnding;
+
+	[Header("멘탈")]
+	public EndingDataConstant MentalEnding;
+
 
 	public void OnEnable() {
 		FuelChangedEvent.Register(OnFuelChanged);
 		CleanChangedEvent.Register(OnCleanChanged);
 		EndingEvent.Register(OnEndingRequest);
-	}
 
-	private void OnEndingRequest(EndingData data) {
-		Debug.Log($"Ending request:" + data.Title);
-		SceneManager.LoadScene(EndingScene);
-		EndingVariable.Value = data;
+		CharacterStatChangedEvent.Register(OnCharacterStatChanged);
 	}
 
 	private void OnDisable() {
 		FuelChangedEvent.Unregister(OnFuelChanged);
 		CleanChangedEvent.Unregister(OnCleanChanged);
 		EndingEvent.Unregister(OnEndingRequest);
+
+		CharacterStatChangedEvent.Unregister(OnCharacterStatChanged);
+	}
+
+	private void OnCharacterStatChanged(CharacterStat stat) {
+		if (stat.Hunger <= 0) {
+			EndingEvent.Raise(HungerEnding.Value);
+		} else if (stat.Mental <= 0) {
+			EndingEvent.Raise(MentalEnding.Value);
+		}
+	}
+
+	private void OnEndingRequest(EndingData data) {
+		Debug.Log($"Ending request:" + data.Title);
+		SceneManager.LoadScene(EndingScene);
+		EndingVariable.Value = data;
 	}
 
 	private void OnFuelChanged(int newFuel) {
