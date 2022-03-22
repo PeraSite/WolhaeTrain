@@ -11,6 +11,8 @@ public class StatusUI : SerializedMonoBehaviour {
 
 	public GameObject Panel;
 
+	public TextMeshProUGUI Name;
+
 	public TextMeshProUGUI Hunger;
 	public TextMeshProUGUI Mental;
 	public Dictionary<StatusEffect, GameObject> RowData;
@@ -38,6 +40,8 @@ public class StatusUI : SerializedMonoBehaviour {
 				if (_lastType != CharacterType.None && payload.Stat.Type != _lastType) return;
 
 				_lastType = payload.Stat.Type;
+
+				Name.text = payload.Stat.Type.GetName();
 				Hunger.text = payload.Stat.Hunger.ToString();
 				Mental.text = payload.Stat.Mental.ToString();
 
