@@ -57,11 +57,6 @@ MonoBehaviour:
     Clean: 0
     Hunger: 0
     Mental: 10
-  - Name: "\uAE30\uB984\uD1B5"
-    Fuel: 10
-    Clean: 0
-    Hunger: 0
-    Mental: 0
   - Name: "\uBD80\uB8E8\uB9C8\uBE14"
     Fuel: 0
     Clean: 0
@@ -72,13 +67,23 @@ MonoBehaviour:
     Clean: 0
     Hunger: 0
     Mental: 10
-  - Name: "\uD070 \uAE30\uB984\uD1B5"
-    Fuel: 15
-    Clean: 0
-    Hunger: 0
-    Mental: 0
   - Name: "\uD734\uC9C0"
     Fuel: 0
     Clean: 10
+    Hunger: 0
+    Mental: 0
+  - Name: "\uC791\uC740 \uAE30\uB984\uD1B5"
+    Fuel: 20
+    Clean: 0
+    Hunger: 0
+    Mental: 0
+  - Name: "\uAE30\uB984\uD1B5"
+    Fuel: 30
+    Clean: 0
+    Hunger: 0
+    Mental: 0
+  - Name: "\uD070 \uAE30\uB984\uD1B5"
+    Fuel: 40
+    Clean: 0
     Hunger: 0
     Mental: 0

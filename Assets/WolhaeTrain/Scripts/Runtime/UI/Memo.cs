@@ -50,7 +50,10 @@ public class Memo : SerializedMonoBehaviour, IDragHandler {
 		Image.rectTransform.sizeDelta = new Vector2(sprite.rect.width * 10, sprite.rect.height * 10);
 		Title.text = quest.Title;
 		Description.text = quest.Description;
-		Selection.ForEach((sel, index) => { sel.text = quest.Selections[index].ButtonText; });
+		Selection.ForEach((sel, index) => {
+			if (index >= quest.Selections.Count) SelectionObjects[index].SetActive(false);
+			else sel.text = quest.Selections[index].ButtonText;
+		});
 
 		Quest = quest;
 		_canvas = canvas;

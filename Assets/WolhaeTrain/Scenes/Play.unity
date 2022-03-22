@@ -8298,7 +8298,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
   - {fileID: 11400000, guid: 94fc7c930c1f52f4b8b8ba4ab6804668, type: 2}
   - {fileID: 11400000, guid: d1ece276f3123cc43bff446f5442b74d, type: 2}
-  FuelDecreaseAmount: 10
+  FuelDecreaseAmount: 5
   CleanDecreaseAmount: 5
   HungerDecreaseAmount: 5
   MentalDecreaseAmount: 5
@@ -18855,8 +18855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 152.53723, y: 0}
-  m_SizeDelta: {x: 200, y: 80}
+  m_AnchoredPosition: {x: 129, y: 0}
+  m_SizeDelta: {x: 167.2151, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871795849
 MonoBehaviour:
@@ -18913,7 +18913,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
