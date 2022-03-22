@@ -82,19 +82,20 @@ public class DayEndUI : MonoBehaviour {
 				text += usable.Hunger > 0 ? $"모든 가족 배부름 {usable.Hunger}" : "";
 				text += usable.Mental > 0 ? $"모든 가족 멘탈 {usable.Mental}" : "";
 
-				if (usable.Fuel > 0) FuelVariable.Value += usable.Fuel;
-				if (usable.Clean > 0) CleanVariable.Value += usable.Clean;
+				if (usable.Fuel > 0) FuelVariable.Value = Clamp100(FuelVariable.Value + usable.Fuel);
+				if (usable.Clean > 0) CleanVariable.Value = Clamp100(CleanVariable.Value + usable.Clean);
+
 				if (usable.Hunger > 0)
 					Characters.ForEach(statVar => {
 						statVar.Value = statVar.Value with {
-							Hunger = statVar.Value.Hunger + usable.Hunger
+							Hunger = Clamp100(statVar.Value.Hunger + usable.Hunger)
 						};
 					});
 
 				if (usable.Mental > 0)
 					Characters.ForEach(statVar => {
 						statVar.Value = statVar.Value with {
-							Mental = statVar.Value.Mental + usable.Mental
+							Mental = Clamp100(statVar.Value.Mental + usable.Mental)
 						};
 					});
 
@@ -111,6 +112,8 @@ public class DayEndUI : MonoBehaviour {
 		});
 		Panel.Open();
 	}
+
+	private static int Clamp100(int value) => Mathf.Clamp(value, 0, 100);
 
 	public void InvokeNextDayEvent() {
 		InvokeNextDayEventAsync().Forget();

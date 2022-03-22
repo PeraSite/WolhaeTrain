@@ -108,8 +108,8 @@ public class NextDayManager : SerializedMonoBehaviour {
 		foreach (var pair in _lastSelection) {
 			var (quest, selectedIndex) = pair;
 			var selection = quest.Selections[selectedIndex];
-			FuelVariable.Subtract(selection.Fuel);
-			CleanVariable.Subtract(selection.Clean);
+			FuelVariable.Value = Clamp100(FuelVariable.Value + selection.Fuel);
+			CleanVariable.Value = Clamp100(CleanVariable.Value + selection.Clean);
 
 			var stat = Stats[(int) quest.Talker - 1];
 			stat.Value = stat.Value with {
