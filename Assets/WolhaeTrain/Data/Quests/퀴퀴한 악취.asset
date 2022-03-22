@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37cba921453a7540b60268e5ada6db8, type: 3}
+  m_Name: "\uD034\uD034\uD55C \uC545\uCDE8"
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
+    - {fileID: 11400000, guid: 0a1285db312bde34cbeb59529e0a521a, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _value
+      Entry: 7
+      Data: Quest, WolhaeTrain.Extensions
+    - Name: ID
+      Entry: 3
+      Data: 6
+    - Name: Title
+      Entry: 1
+      Data: "\uD034\uD034\uD55C \uC545\uCDE8"
+    - Name: Description
+      Entry: 1
+      Data: "\uAE30\uCC28 \uC548\uC5D0\uC11C \uC545\uCDE8\uAC00 \uB098\uAE30 \uC2DC\uC791\uD588\uC5B4.
+        \uCCAD\uC18C\uAC00 \uD544\uC694\uD574. \uADFC\uB370 \uC774\uAC74 \uBB34\uC2A8
+        \uBB3C\uAC74\uC774\uC9C0?"
+    - Name: Talker
+      Entry: 3
+      Data: 2
+    - Name: SpawnProbability
+      Entry: 3
+      Data: 50
+    - Name: IsStory
+      Entry: 5
+      Data: false
+    - Name: Selections
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[QuestSelection, WolhaeTrain.Extensions]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, WolhaeTrain.Extensions
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uC798\uBABB \uAC74\uB4DC\uB838\uB2E4\uAC04 \uB2E4\uCE60 \uAC83 \uAC19\uC544.
+        \uCCAD\uC18C\uB97C \uBBF8\uB8EC\uB2E4."
+    - Name: ResultText
+      Entry: 1
+      Data: "\uC545\uCDE8\uAC00 \uB098\uC9C0\uB9CC \uC5B4\uCA54 \uC218 \uC5C6\uC5B4."
+    - Name: Fuel
+      Entry: 3
+      Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: -5
+    - Name: Hunger
+      Entry: 3
+      Data: 0
+    - Name: Mental
+      Entry: 3
+      Data: 0
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: false
+    - Name: Actions
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: QuestSelection, WolhaeTrain.Extensions
+    - Name: ButtonText
+      Entry: 1
+      Data: "\uC545\uCDE8 \uB54C\uBB38\uC5D0 \uC5B4\uCA54 \uC218 \uC5C6\uC5B4. \uCCAD\uC18C
+        \uD55C\uB2E4."
+    - Name: ResultText
+      Entry: 1
+      Data: "\uAE30\uCC28\uAC00 \uAE68\uB057\uD574\uC84C\uC5B4."
+    - Name: Fuel
+      Entry: 3
+      Data: 0
+    - Name: Clean
+      Entry: 3
+      Data: 20
+    - Name: Hunger
+      Entry: 3
+      Data: 0
+    - Name: Mental
+      Entry: 3
+      Data: 0
+    - Name: canSelectIfHaveEffect
+      Entry: 5
+      Data: true
+    - Name: Actions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|AddStatusEffect, WolhaeTrain.Extensions
+    - Name: Stat
+      Entry: 10
+      Data: 0
+    - Name: Effect
+      Entry: 3
+      Data: 3
+    - Name: Percent
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Conditions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IQuestCondition, WolhaeTrain.Extensions]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 5|IntVariableCompareQuestCondition, WolhaeTrain.Extensions
+    - Name: Variable
+      Entry: 10
+      Data: 1
+    - Name: Compare
+      Entry: 7
+      Data: CompareType, WolhaeTrain.Extensions
+    - Name: Name
+      Entry: 1
+      Data: <=
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Value
+      Entry: 3
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Actions
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[IQuestAction, WolhaeTrain.Extensions]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _developerDescription: 
+  _id: 

@@ -40,7 +40,7 @@ MonoBehaviour:
       Data: 3
     - Name: SpawnProbability
       Entry: 3
-      Data: 70
+      Data: 60
     - Name: IsStory
       Entry: 5
       Data: false
@@ -60,7 +60,7 @@ MonoBehaviour:
         \uD63C\uC790 \uBA39\uB294\uB2E4."
     - Name: ResultText
       Entry: 1
-      Data: "\uC591\uC2EC\uC5D0 \uCC14\uB9AC\uC9C0\uB9CC \uB108\uBB34 \uB9DB\uC788\uB2E4.."
+      Data: "\uC591\uC2EC\uC5D0 \uCC14\uB9AC\uC9C0\uB9CC \uB108\uBB34 \uB9DB\uC788\uC5B4.."
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
       Data: 0
     - Name: Hunger
       Entry: 3
-      Data: 10
+      Data: 15
     - Name: Mental
       Entry: 3
       Data: 0
@@ -109,10 +109,10 @@ MonoBehaviour:
       Data: 0
     - Name: Hunger
       Entry: 3
-      Data: -5
+      Data: 5
     - Name: Mental
       Entry: 3
-      Data: 5
+      Data: 10
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: false

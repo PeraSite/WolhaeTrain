@@ -59,9 +59,8 @@ MonoBehaviour:
       Entry: 1
       Data: "\uD639\uC2DC \uBAA8\uB974\uB2C8\uAE4C \uC8FC\uBCC0\uC744 \uACBD\uACC4\uD558\uC790."
     - Name: ResultText
-      Entry: 1
-      Data: "\uBC24\uC5D0 \uACBD\uACC4\uB97C \uC11C\uB290\uB77C \uD53C\uACE4\uD558\uC9C0\uB9CC
-        \uC704\uD5D8\uC744 \uB9C9\uB294\uB2E4\uBA74 \uB2E4\uD589\uC774\uC9C0."
+      Entry: 6
+      Data: 
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -101,8 +100,7 @@ MonoBehaviour:
       Data: "\uC18C\uBB38\uC740 \uC18C\uBB38\uC77C\uBFD0\uC774\uC57C."
     - Name: ResultText
       Entry: 1
-      Data: "\uAD1C\uD55C \uC18C\uBB38\uB54C\uBB38\uC5D0 \uC2E0\uACBD\uC4F0\uC9C0
-        \uB9D0\uC790."
+      Data: "\uAD1C\uD55C \uC18C\uBB38\uC5D0 \uD718\uB458\uB9AC\uC9C0 \uB9D0\uC790."
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -114,7 +112,7 @@ MonoBehaviour:
       Data: 0
     - Name: Mental
       Entry: 3
-      Data: 10
+      Data: 20
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: true

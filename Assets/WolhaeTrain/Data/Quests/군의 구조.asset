@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: a57a1191e999b6442ba27b9338d3ced8, type: 2}
+    - {fileID: 11400000, guid: 58f082dfda697464d847d15963fe406d, type: 2}
     - {fileID: 11400000, guid: 7ae89d1a703cb2e44b1a0762b9c6c143, type: 2}
     - {fileID: 11400000, guid: 48de6c9354dff574786a42b3e631fa1c, type: 2}
     - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
@@ -82,7 +83,7 @@ MonoBehaviour:
       Data: 0
     - Name: Mental
       Entry: 3
-      Data: 10
+      Data: 20
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: false
@@ -100,11 +101,11 @@ MonoBehaviour:
       Entry: 10
       Data: 0
     - Name: Variable
-      Entry: 6
-      Data: 
-    - Name: Data
       Entry: 10
       Data: 1
+    - Name: Data
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -178,7 +179,7 @@ MonoBehaviour:
       Data: 5|CharacterStatCompareQuestCondition, WolhaeTrain.Extensions
     - Name: Stat
       Entry: 10
-      Data: 2
+      Data: 3
     - Name: StatType
       Entry: 3
       Data: 1
@@ -202,7 +203,7 @@ MonoBehaviour:
       Data: 6|CharacterStatCompareQuestCondition, WolhaeTrain.Extensions
     - Name: Stat
       Entry: 10
-      Data: 3
+      Data: 4
     - Name: StatType
       Entry: 3
       Data: 1
@@ -226,7 +227,7 @@ MonoBehaviour:
       Data: 7|CharacterStatCompareQuestCondition, WolhaeTrain.Extensions
     - Name: Stat
       Entry: 10
-      Data: 4
+      Data: 5
     - Name: StatType
       Entry: 3
       Data: 1
@@ -250,7 +251,7 @@ MonoBehaviour:
       Data: 8|CharacterStatCompareQuestCondition, WolhaeTrain.Extensions
     - Name: Stat
       Entry: 10
-      Data: 5
+      Data: 6
     - Name: StatType
       Entry: 3
       Data: 1
@@ -274,7 +275,7 @@ MonoBehaviour:
       Data: 9|IntVariableCompareQuestCondition, WolhaeTrain.Extensions
     - Name: Variable
       Entry: 10
-      Data: 6
+      Data: 7
     - Name: Compare
       Entry: 7
       Data: CompareType, WolhaeTrain.Extensions

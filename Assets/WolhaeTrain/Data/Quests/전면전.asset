@@ -65,7 +65,7 @@ MonoBehaviour:
         \uACF5\uACA9\uD558\uC790."
     - Name: ResultText
       Entry: 1
-      Data: n
+      Data: 
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
         \uC57D\uD574. \uBB38\uC744 \uC5F4\uC9C0 \uC54A\uB294\uB2E4."
     - Name: ResultText
       Entry: 1
-      Data: n
+      Data: 
     - Name: Fuel
       Entry: 3
       Data: 0

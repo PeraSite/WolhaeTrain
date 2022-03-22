@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: a57a1191e999b6442ba27b9338d3ced8, type: 2}
+    - {fileID: 11400000, guid: 58f082dfda697464d847d15963fe406d, type: 2}
     - {fileID: 11400000, guid: 84faf7497092c264098a6ee216ad54d3, type: 2}
     - {fileID: 11400000, guid: 48de6c9354dff574786a42b3e631fa1c, type: 2}
     - {fileID: 11400000, guid: a1602741a82c3e84eb17be66c3e730ea, type: 2}
@@ -61,12 +62,12 @@ MonoBehaviour:
       Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
-      Data: "\uC5B4\uB5A1\uD558\uC9C0?"
+      Data: "\uC880\uBE44\uB4E4\uC774 \uC6B0\uB9AC\uB97C \uBB3C\uC5C8\uC5B4. \uC6B0\uB9B0
+        \uB9DD\uD588\uC5B4."
     - Name: ResultText
       Entry: 1
-      Data: "\uC2DC\uAC04\uC774 \uC9C0\uB098\uC790 \uAC00\uC871\uB4E4\uC740 \uACE0\uD1B5\uC744
-        \uD638\uC18C\uD558\uAE30 \uC2DC\uC791\uD588\uC5B4. \uC6B0\uB9AC\uC758 \uC6B4\uB3C4
-        \uC5EC\uAE30\uAE4C\uC9C0\uC778\uAC00\uBD10."
+      Data: "\uC880\uBE44\uB4E4\uC774 \uC6B0\uB9AC\uB97C \uBB3C\uC5C8\uC5B4. \uC6B0\uB9B0
+        \uB9DD\uD588\uC5B4."
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -95,9 +96,12 @@ MonoBehaviour:
     - Name: Event
       Entry: 10
       Data: 0
-    - Name: Data
+    - Name: Variable
       Entry: 10
       Data: 1
+    - Name: Data
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -135,9 +139,6 @@ MonoBehaviour:
       Data: 4
     - Name: 
       Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 10
       Data: 3
     - Name: 
       Entry: 10
@@ -145,6 +146,9 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 13
       Data: 

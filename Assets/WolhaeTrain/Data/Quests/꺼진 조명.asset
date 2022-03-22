@@ -104,16 +104,16 @@ MonoBehaviour:
       Data: "\uAE30\uCC28 \uC548\uC774 \uB108\uBB34 \uC5B4\uB450\uC6CC."
     - Name: Fuel
       Entry: 3
-      Data: 5
+      Data: 15
     - Name: Clean
       Entry: 3
-      Data: -10
+      Data: -5
     - Name: Hunger
       Entry: 3
       Data: 0
     - Name: Mental
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: true

@@ -68,8 +68,26 @@ public class CharacterStatCompareQuestCondition : IQuestCondition {
 	}
 }
 
+
+public class AnyEffectCountCompareCondition : IQuestCondition {
+	[HorizontalGroup("Horiz"), HideLabel]
+	public List<CharacterStatVariable> Characters = new();
+
+	[HorizontalGroup("Horiz", 20), HideLabel]
+	[ValueDropdown("@CompareType.Values")]
+	public CompareType Compare = CompareType.EQUALS;
+
+	[HorizontalGroup("Horiz", 50), HideLabel]
+	public int Value;
+
+	public bool Check() {
+		var count = Characters.Count(c => c.Value.Effects.Length > 0);
+		return Compare.Compare(count, Value);
+	}
+}
+
 public class EffectCountCompareCondition : IQuestCondition {
-	public List<CharacterStatVariable> Characters;
+	public List<CharacterStatVariable> Characters = new();
 
 	[HorizontalGroup("Horiz"), HideLabel]
 	public StatusEffect Effect;
@@ -82,7 +100,7 @@ public class EffectCountCompareCondition : IQuestCondition {
 	public int Value;
 
 	public bool Check() {
-		var count = Characters.Where(c => c.Value.Effects.Contains(Effect)).Count();
+		var count = Characters.Count(c => c.Value.Effects.Contains(Effect));
 		return Compare.Compare(count, Value);
 	}
 }

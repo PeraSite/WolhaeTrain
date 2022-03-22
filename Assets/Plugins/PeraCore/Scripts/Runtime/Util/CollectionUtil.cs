@@ -12,7 +12,7 @@ namespace PeraCore.Runtime {
 			return false;
 		}
 
-		public static V GetOrDefault<K, V>(this Dictionary<K, V> map, K key, V def) {
+		public static V GetOrDefault<K, V>(this Dictionary<K, V> map, K key, V def = default) {
 			return map.ContainsKey(key) ? map[key] : def;
 		}
 
@@ -25,7 +25,7 @@ namespace PeraCore.Runtime {
 			return list.IsValidIndex(index) ? list[index] : default;
 		}
 
-		public static T GetOrDefault<T>(this List<T> list, int index, T def) {
+		public static T GetOrDefault<T>(this List<T> list, int index, T def = default) {
 			return list.IsValidIndex(index) ? list[index] : def;
 		}
 

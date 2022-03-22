@@ -96,7 +96,7 @@ MonoBehaviour:
       Data: 2
     - Name: Percent
       Entry: 4
-      Data: 30
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -131,7 +131,7 @@ MonoBehaviour:
       Data: 0
     - Name: Mental
       Entry: 3
-      Data: 10
+      Data: 15
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: false

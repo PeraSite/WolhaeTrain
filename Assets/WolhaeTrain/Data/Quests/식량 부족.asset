@@ -65,7 +65,7 @@ MonoBehaviour:
     - Name: ResultText
       Entry: 1
       Data: "\uB9DB\uC740 \uB9E4\uC6B0 \uC5C6\uC9C0\uB9CC \uC774\uAC70\uB77C\uB3C4
-        \uBA39\uC5B4\uC57C\uACA0\uB2E4."
+        \uBA39\uC5B4\uC57C\uACA0\uC5B4."
     - Name: Fuel
       Entry: 3
       Data: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
       Data: 0
     - Name: Hunger
       Entry: 3
-      Data: 10
+      Data: 20
     - Name: Mental
       Entry: 3
       Data: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
       Data: 0
     - Name: Mental
       Entry: 3
-      Data: 5
+      Data: 15
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: false

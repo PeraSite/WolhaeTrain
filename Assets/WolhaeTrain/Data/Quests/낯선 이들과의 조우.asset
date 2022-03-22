@@ -75,7 +75,7 @@ MonoBehaviour:
       Data: 0
     - Name: Mental
       Entry: 3
-      Data: 10
+      Data: 20
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: true

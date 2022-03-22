@@ -57,20 +57,20 @@ MonoBehaviour:
     - Name: ButtonText
       Entry: 1
       Data: "\uD639\uC2DC\uB098 \uB3C4\uC6C0\uC774 \uB418\uB294 \uAC83\uC774 \uC788\uC744
-        \uC218\uB3C4 \uC788\uB2E4. \uC0C1\uC790\uB97C \uC5F0\uB2E4."
+        \uC218\uB3C4 \uC788\uC5B4. \uC0C1\uC790\uB97C \uC5F0\uB2E4."
     - Name: ResultText
       Entry: 1
-      Data: "\uBB38\uC744 \uC5EC\uB2C8 \uAE30\uB984\uD1B5\uACFC \uBB3C\uC744 \uBC1C\uACAC\uD588\uB2E4.
+      Data: "\uBB38\uC744 \uC5EC\uB2C8 \uAE30\uB984\uD1B5\uACFC \uBB3C\uC744 \uBC1C\uACAC\uD588\uC5B4.
         \uC774\uAC78\uB85C \uBA70\uCE60\uC740 \uB354 \uBCF4\uB0BC \uC218 \uC788\uACA0\uC5B4."
     - Name: Fuel
       Entry: 3
-      Data: 5
+      Data: 10
     - Name: Clean
       Entry: 3
       Data: 5
     - Name: Hunger
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: Mental
       Entry: 3
       Data: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
       Data: QuestSelection, WolhaeTrain.Extensions
     - Name: ButtonText
       Entry: 1
-      Data: "\uC704\uD5D8\uD55C \uAC8C \uC788\uC744 \uC218\uB3C4 \uC788\uB2E4. \uC0C1\uC790\uB97C
+      Data: "\uC704\uD5D8\uD55C \uAC8C \uC788\uC744 \uC218\uB3C4 \uC788\uC5B4. \uC0C1\uC790\uB97C
         \uC5F4\uC9C0 \uC54A\uB294\uB2E4."
     - Name: ResultText
       Entry: 1
@@ -115,7 +115,7 @@ MonoBehaviour:
       Data: -5
     - Name: Mental
       Entry: 3
-      Data: 5
+      Data: 10
     - Name: canSelectIfHaveEffect
       Entry: 5
       Data: true

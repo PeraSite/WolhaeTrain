@@ -129,7 +129,7 @@ MonoBehaviour:
       Data: 0
     - Name: Clean
       Entry: 3
-      Data: 10
+      Data: 15
     - Name: Hunger
       Entry: 3
       Data: -5

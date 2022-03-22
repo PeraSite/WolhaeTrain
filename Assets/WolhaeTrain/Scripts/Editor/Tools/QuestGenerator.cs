@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Web.WebPages;
 using PeraCore.Editor;
+using PeraCore.Runtime;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
@@ -51,7 +52,7 @@ public class QuestGenerator : OdinEditorWindow {
 				.Skip(SkipRow)
 				.Select(row => row.Values
 					.Select(cell => cell.FormattedValue).ToList()
-				).Where(row => !row.IsNullOrEmpty()).ToList()).ToList();
+				).Where(row => !LinqExtensions.IsNullOrEmpty(row)).ToList()).ToList();
 
 		if (GenerateAsset) {
 			grid.Select(GenerateQuestionData)
@@ -74,10 +75,14 @@ public class QuestGenerator : OdinEditorWindow {
 		var id = data[0].AsInt(0);
 		var exist = QuestDatabase.Any(qc => qc.Value.ID == id);
 		var instance = QuestDatabase.FirstOrDefault(qc => qc.Value.ID == id) ?? CreateInstance<QuestConstant>();
-
+		var questTitle = data[1];
+		instance.name = questTitle;
+		if (exist) {
+			AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(instance), questTitle);
+		}
 		instance.InitConstant(new Quest {
 			ID = id,
-			Title = data[1],
+			Title = questTitle,
 			Talker = data[2] switch {
 				"아빠" => CharacterType.Dad,
 				"엄마" => CharacterType.Mom,
@@ -85,6 +90,7 @@ public class QuestGenerator : OdinEditorWindow {
 				"아들" => CharacterType.Son,
 				_ => CharacterType.None
 			},
+			IsStory = exist && instance.Value.IsStory,
 			Description = data[3],
 			SpawnProbability = data[7].Replace("%", "").AsInt(0),
 			Conditions = exist ? instance.Value.Conditions : new List<IQuestCondition>(),
@@ -100,7 +106,9 @@ public class QuestGenerator : OdinEditorWindow {
 			Mental = data[12].AsInt(0),
 			ResultText = data[13],
 			canSelectIfHaveEffect = data[6] == "선택지 1",
-			Actions = exist ? instance.Value.Selections[0].Actions : new List<IQuestAction>()
+			Actions = exist && instance.Value.Selections.Count >= 1
+				? instance.Value.Selections[0].Actions
+				: new List<IQuestAction>(),
 		};
 
 		var selection2 = new QuestSelection {
@@ -111,10 +119,13 @@ public class QuestGenerator : OdinEditorWindow {
 			Mental = data[18].AsInt(0),
 			ResultText = data[19],
 			canSelectIfHaveEffect = data[6] == "선택지 2",
-			Actions = exist ? instance.Value.Selections[1].Actions : new List<IQuestAction>()
+			Actions = exist && instance.Value.Selections.Count >= 2
+				? instance.Value.Selections[1].Actions
+				: new List<IQuestAction>()
 		};
 
 		instance.Value.Selections.Clear();
+
 		instance.Value.Selections.Add(selection1);
 		instance.Value.Selections.Add(selection2);
 		return instance;

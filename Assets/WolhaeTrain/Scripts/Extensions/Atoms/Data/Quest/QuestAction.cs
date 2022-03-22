@@ -1,8 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using Random = UnityEngine.Random;
 
 public interface IQuestAction {
 	void Execute();
@@ -67,6 +71,18 @@ public class CharacterStatAction : IQuestAction {
 			Stat.Value = Stat.Value with {
 				Mental = Mathf.Clamp(Stat.Value.Mental + Value, 0, 100)
 			};
+	}
+}
+
+public class ClearStatusEffect : IQuestAction {
+	[Title("ClearStatusEffect")]
+	[HideLabel]
+	public List<CharacterStatVariable> Characters = new();
+
+	public void Execute() {
+		Characters.ForEach(c => c.Value = c.Value with {
+			Effects = Array.Empty<StatusEffect>()
+		});
 	}
 }
 
