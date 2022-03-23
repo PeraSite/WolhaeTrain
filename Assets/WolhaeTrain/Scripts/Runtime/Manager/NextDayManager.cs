@@ -70,28 +70,28 @@ public class NextDayManager : SerializedMonoBehaviour {
 
 			//탈진
 			if (stat.Value.Hunger <= 20) {
-				if (Random.Range(0, 100) <= 30) {
+				if (Random.Range(0, 100) <= 10) {
 					willAddedEffects.Add(StatusEffect.Exhaust);
 				}
 			}
 
 			//감기
 			if (CleanVariable.Value <= 20) {
-				if (Random.Range(0, 100) <= 30) {
+				if (Random.Range(0, 100) <= 10) {
 					willAddedEffects.Add(StatusEffect.Cold);
 				}
 			}
 
 			//감염
-			if (CleanVariable.Value <= 10 && stat.Value.Mental <= 10) {
-				if (Random.Range(0, 100) <= 5) {
+			if (CleanVariable.Value <= 20 && stat.Value.Mental <= 20) {
+				if (Random.Range(0, 100) <= 10) {
 					willAddedEffects.Add(StatusEffect.Infect);
 				}
 			}
 
 			//미침
-			if (stat.Value.Mental <= 10) {
-				if (Random.Range(0, 100) <= 20) {
+			if (stat.Value.Mental <= 20) {
+				if (Random.Range(0, 100) <= 10) {
 					willAddedEffects.Add(StatusEffect.Crazy);
 				}
 			}
